@@ -1,0 +1,65 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% include "../base/js.html"%}
+<style>
+  body {
+  width:500px;
+  background: #fafafa;
+  background-image: url("../../../media/3.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  color: #333333;
+  margin-top: 5rem;
+  }
+
+  .fa {
+  padding: 8px;
+  font-size: 22px;
+  width: 36px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  }
+
+  .fa:hover {
+  opacity: 0.7;
+}
+
+  .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+  .fa-instagram {
+  background: rgb(196, 32, 89);
+  color: white;
+}
+</style>
+
+<article class="media content-section" style="margin-left: 180px; width:1100px;">
+  <div class="media-body">
+    <div class="article-metadata" style="margin-left: 10px">
+      <center><small class="text-muted">nirmaan.org</small></center>
+    </div>
+    <center><h1 class="article-title" style="align-self: center;">About Us</h2></center>
+
+    <p><img src ="../../../media/default.png" width=1070px, height=330px, style="margin-left: 15px;"></p>
+
+    <!---Page Description Goes Here-->
+    <p style="margin-left: 10px;margin-right: 10px; text-align: justify;"></p>
+
+    <!--Page Description Ends-->
+
+    <!--Social Links-->
+    <p>
+      <h4 style="margin-left: 10px;">Follow on :</h4>
+      <div style="margin-left: 10px;">
+        <a class="fa fa-instagram" href="https://www.instagram.com/nirmaan_pilani/"></a><a href="https://www.instagram.com/nirmaan_pilani/"> Instagram</a>&nbsp&nbsp&nbsp<a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/"></a><a href="https://www.facebook.com/NirmaanPilaniPage/"> Facebook</a>
+      </div>
+    </p>      
+  
+  </div>
+</article>
+
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "initiatives/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <body>
+    <div class="content-section" style="margin-left: 180px; width:1100px;">
+      <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4"> Write about a New Initiative</legend>
+          {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+      </form>
+    </div>
+  </body>
+{% endblock content %}

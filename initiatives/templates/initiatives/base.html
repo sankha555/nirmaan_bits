@@ -1,0 +1,292 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="footer, links, icons" />
+    <meta name="theme-color" content="black">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'initiatives/main.css' %}">
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    {% if title %}
+        <title>Nirmaan Organization - {{ title }}</title>
+    {% else %}
+        <title>Nirmaan Organization</title>
+    {% endif %}
+
+  <style>
+      .footer-bs {
+        background-color: #3c3d41;
+        padding: 60px 40px;
+        color: rgba(255, 255, 255, 1.00);
+        margin-bottom: 0px;
+        border-bottom-right-radius: 6px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+    
+      .footer-bs .footer-brand,
+      .footer-bs .footer-nav,
+      .footer-bs .footer-social,
+      .footer-bs .footer-ns {
+        padding: 10px 25px;
+      }
+    
+      .footer-bs .footer-nav,
+      .footer-bs .footer-social,
+      .footer-bs .footer-ns {
+        border-color: transparent;
+      }
+    
+      .footer-bs .footer-brand h2 {
+        margin: 0px 0px 10px;
+      }
+    
+      .footer-bs .footer-brand p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.70);
+      }
+    
+      .footer-bs .footer-nav ul.pages {
+        list-style: none;
+        padding: 0px;
+      }
+    
+      .footer-bs .footer-nav ul.pages li {
+        padding: 5px 0px;
+      }
+    
+      .footer-bs .footer-nav ul.pages a {
+        color: rgba(255, 255, 255, 1.00);
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    
+      .footer-bs .footer-nav ul.pages a:hover {
+        color: #ffb300;
+        text-decoration: none;
+      }
+    
+      .footer-bs .footer-nav h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+      }
+    
+      .footer-bs .footer-nav ul.list {
+        list-style: none;
+        padding: 0px;
+      }
+    
+      .footer-bs .footer-nav ul.list li {
+        padding: 5px 0px;
+      }
+    
+      .footer-bs .footer-nav ul.list a {
+        color: rgba(255, 255, 255, 0.80);
+      }
+    
+      .footer-bs .footer-nav ul.list a:hover {
+        color: #ffb300;
+        text-decoration: none;
+      }
+    
+      .footer-bs .footer-social ul {
+        list-style: none;
+        padding: 0px;
+      }
+    
+      .footer-bs .footer-social h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+    
+      .footer-bs .footer-social li {
+        padding: 5px 4px;
+      }
+    
+      .footer-bs .footer-social a {
+        color: rgba(255, 255, 255, 1.00);
+      }
+    
+      .footer-bs .footer-social a:hover {
+        color: #ffb300;
+        text-decoration: none;
+      }
+    
+      .footer-bs .footer-ns h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+      }
+    
+      .footer-bs .footer-ns p {
+        font-size: 12px;
+        color: #ffb300;
+      }
+    
+      @media (min-width: 768px) {
+    
+        .footer-bs .footer-nav,
+        .footer-bs .footer-social,
+        .footer-bs .footer-ns {
+          border-left: solid 1px rgba(255, 255, 255, 0.10);
+        }
+      }
+  
+  </style>
+</head>
+
+<body>
+  
+   <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <img class="rounded-circle logo-img" src="../../media/nirmaan_logo.png" width=50, height=50>
+          <a class="navbar-brand mr-4" href="{% url 'index' %}" style="color: black; font-weight: 500;">&nbsp&nbspNirmaan Organization</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'init_create' %}">Create New Initiative</a>
+                <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'home' %}">Events</a>
+                <a class="nav-item nav-link" href="{% url 'home' %}">Initiatives</a>
+                <a class="nav-item nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+              {% endif %}
+              
+            </div>
+            
+            {% if user.is_authenticated %}
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Hello, {{user.username}} </a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              </div>
+            {% else %}
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'home' %}">Events</a>
+                <a class="nav-item nav-link" href="{% url 'home' %}">Initiatives</a>
+                <a class="nav-item nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+          {% block content %}{% endblock %}
+         
+    <!----------- Footer ------------>
+    <div id="footer">
+      <footer class="footer-bs" style="width: 1440px;">
+        <table>
+    
+          <tr>
+            <td style="width:800px;">
+              <a><img src="../../../media/nirmaan.png" style="z-index: 1; width: 400px;"></a>
+              <p style="margin-left: 10px;">
+                Phone: +91 9000276903<br>
+                E-mail: contact@nirmaan.org <br>
+                Birla Institute of Technology and Science, Pilani<br>
+                Vidya Vihar, Pilani, Rajasthan - 333031</p>
+            </td>
+            <td style="width:300px">
+              <div class="col-md-4 footer-nav animated fadeInUp">
+                <div class="col-md-6">
+                  <ul class="pages">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Initiatives</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Developers</a></li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-2 footer-social animated fadeInDown">
+                <h4 style="color: white;">Follow</h4>
+                <ul>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">BITS Pilani</a></li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+    
+        </table>
+      </footer>
+   </div>
+    
+    </body>
+    
+    <script type="text/javascript">
+      var myVar, myVar2;
+      function load() {
+        myVar = setTimeout(fadePage, 3000);
+      }
+      function fadePage() {
+        // document.getElementsByClassName("site-header")[0].style.display = "none";
+        // document.getElementById("footer").style.opacity = "0";
+        document.getElementById("loader").style.opacity = "0";
+        myVar = setTimeout(showPage, 300);
+        myVar2 = setTimeout(show_footer, 300);
+      }
+      function showPage() {
+        // document.getElementById("footer").style.opacity = "";
+        // document.getElementsByClassName("site-header")[0].style.display = "block";
+        document.getElementById("loader").style.display = "none";
+        var x = document.getElementsByClassName("myDiv");
+        var i;
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "block";
+        }
+      }
+      function show_footer() {
+          document.getElementById("footer").style.opacity = "1";
+        }
+    </script>
+    
+    <script type="text/javascript">
+      function disableselect(e) {
+        return false;
+      }
+      function reEnable() {
+        return true;
+      }
+      document.onselectstart = new Function("return false");
+
+      if (window.sidebar) {
+        document.onmousedown = disableselect;
+        document.onclick = reEnable;
+      }
+    </script>
+    
+    <script src="data/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>

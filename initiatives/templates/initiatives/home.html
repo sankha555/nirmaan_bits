@@ -1,0 +1,85 @@
+{% extends "initiatives/base.html" %}
+{% block content %}
+
+<style>
+  body {
+  width:500px;
+  background: #fafafa;
+  background-image: url("../../../media/2.png");
+  background-attachment: fixed;
+  background-size: 100%;
+  color: #333333;
+  margin-top: 5rem;
+  }
+
+  .fa {
+  padding: 8px;
+  font-size: 25px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  }
+
+  .fa:hover {
+  opacity: 0.7;
+}
+
+  .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+  .fa-instagram {
+  background: rgb(196, 32, 89);
+  color: white;
+}
+
+
+</style>
+
+  <div class="body" style="margin-left:135px;">
+    <table style="border-collapse: separate; border-spacing: 20px; ;">
+      <tr>
+        {% for init in inits %} 
+          {% if forloop.counter|divisibleby:2 %}
+            <td> 
+              <div class="card" style="width:550px; ">
+                <div class="article-metadata" style="margin-left: 10px;">
+                  <small class="text-muted">&nbsp{{ init.date_started }}</small>
+                </div>
+                <h2><a class="article-title" href="{% url 'init_detail' init.id %}" style="margin-left: 10px;">{{ init.name }}</a></h2>
+                <p><img src = "{{ init.banner_image.url }}" width=548px, height=285></p>
+                <p style="margin-left: 10px; word-wrap: break-word;">{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}"><i>Read More</i></a></p>
+                <p style="margin-left: 10px; padding-top: 10px; border-top: 1px solid grey;">
+                  <b>Follow on :</b>
+                  &nbsp<a class="fa fa-instagram" href="{{ init.ig_url }}"></a>
+                  &nbsp&nbsp&nbsp<a class="fa fa-facebook" href="{{ init.fb_url }}"></a>
+                </p>
+              </div>             
+            </td>       
+      </tr>
+    </table>
+    <table style="border-collapse: separate; border-spacing: 20px;">
+      <tr>
+          {% else %}
+            <td> 
+              <div class="card" style="width: 550px; ">
+                <div class="article-metadata" style="margin-left: 10px;">
+                  <small class="text-muted">&nbsp{{ init.date_started }}</small>
+                </div>
+                <h2><a class="article-title" href="{% url 'init_detail' init.id %}" style="margin-left: 10px;">{{ init.name }}</a></h2>
+                <p><img src = "{{ init.banner_image.url }}" width=548px, height=285></p>
+                <p style="margin-left: 10px;">{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}"><i>Read More</i></a></p>
+                <p style="margin-left: 10px; padding-top: 10px; border-top: 1px solid grey;">
+                  <b>Follow on : </b>
+                  &nbsp<a class="fa fa-instagram" href="{{ init.ig_url }}"></a>
+                  &nbsp&nbsp&nbsp<a class="fa fa-facebook" href="{{ init.fb_url }}"></a>                </p>
+              </div>             
+            </td>  
+          {% endif %}
+        {% endfor %}          
+      </tr>
+    </table>
+  </div>
+{% endblock content %}
