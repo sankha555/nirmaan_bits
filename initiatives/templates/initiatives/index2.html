@@ -26,7 +26,18 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      // Handler for .ready() called.
+      $('html, body').animate({
+        scrollTop: $('#contact_links').offset().top
+      }, 'slow');
+    });
+
+  </script>
 
   <!--Nav Bar-->
   <style>
@@ -502,58 +513,10 @@
   </style>
 
 
+
 </head>
 
 <body class="demo" style="overflow: scroll; overflow-x: hidden; " onload="load()">
-
-  <div id="loader" class="bgimg-4" style=" background-image:url(); background-color: white; filter: none; transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;">
-    <div class="caption">
-      <span class="border"><img class="logo" src="../../../media/load.jpg">
-      </span>
-    </div>
-
-
-    <div class="gooey">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-
-  </div>
-
-  <!--<header id="nav-bar" class="site-header">
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="font-family: Helvetica Neue; background-color: white; height: 70px; border: white; box-shadow: #474b4d;">
-      <div class="container-fluid" style="margin-left: 160px; margin-top: 10px;">
-        <div class="navbar-header">
-          <table>
-            <td>
-              <img class="rounded-circle logo-img" src="../../media/nirmaan_logo.png" width=50, height=50>
-            </td>
-            <td>
-              <a class="navbar-brand mr-4" href="{% url 'index' %}" style="color: black; font-weight: 1000; font-size: 25px;">&nbsp&nbspNirmaan
-                Organization</a>
-            </td>
-          </table>
-        </div>
-        
-
-        <ul class="nav navbar-nav navbar-right" style="margin-right: 150px;">
-          <div class="navbar-nav">
-            <li><a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home" style="font-size: 24px;"></i>  Home</a></li>
-            <li><a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info-circle" style="font-size:24px"></i>  About</a></li>
-            <li><a class="nav-link" href="{% url 'home' %}"><i class="fa fa-child" style="font-size:24px"></i>  Events</a></li>
-            <li><a class="nav-link" href="{% url 'home' %}"><i class="fa fa-lightbulb-o"style="font-size:24px"></i>  Initiatives</a></li>
-            <li><a class="nav-link" href="{% url 'contact_us' %}"><i class="fa fa-phone" style="font-size:24px"></i>  Contact Us</a></li>
-          </div>
-        </ul>
-      </div>
-    </nav>
-  </header>-->
 
   <div class="bgimg-4 myDiv">
     <div class="caption">
@@ -666,8 +629,8 @@
     </div>
   </div>
 
-  <a name="contact_links">
-    <div style="position:relative;" class="myDiv">
+  <div id="contact_links">
+    <div id="contact_links" style="position:relative;" class="myDiv">
       <div style="color:#ddd;background-color:#000;text-align:center;padding:50px 80px;">
         <p>
           <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
@@ -684,7 +647,8 @@
         </p>
       </div>
     </div>
-  </a>
+  </div>
+  
 
   <div class="bgimg-4 myDiv">
     <div class="caption">
@@ -695,20 +659,20 @@
   
   <script src="data/main.js"></script>
 
+  
+
   <script type="text/javascript">
     var myVar;
 
     function load() {
-      myVar = setTimeout(fadePage, 3000);
+      myVar = setTimeout(fadePage, 0);
     }
 
     function fadePage() {
-      document.getElementById("loader").style.opacity = "0";
-      myVar = setTimeout(showPage, 300);
+      myVar = setTimeout(showPage, 100);
     }
 
     function showPage() {
-      document.getElementById("loader").style.display = "none";
       var x = document.getElementsByClassName("myDiv");
       var i;
       for (i = 0; i < x.length; i++) {
@@ -736,7 +700,5 @@
     }
   </script>
 </body>
-
-
 
 </html>

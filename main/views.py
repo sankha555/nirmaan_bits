@@ -9,6 +9,9 @@ from .forms import ContactForm
 def index(request):
     return render(request, "initiatives/index.html")
 
+def index2(request):
+    return render(request, "initiatives/index2.html")
+
 def about(request):
     return render(request, "initiatives/about.html")
 

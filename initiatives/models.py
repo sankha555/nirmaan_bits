@@ -2,7 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.conf import settings
-from PIL import Image
+from PIL import Image, ImageFile
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
                             
 # Models for Initiatives and Events of Nirmaan Organization
 
@@ -16,6 +18,7 @@ class Initiative(models.Model):
 
     ig_url = models.URLField(verbose_name = "Instagram Page URL", max_length = 255, default = "https://www.instagram.com/nirmaan_pilani/")
     fb_url = models.URLField(verbose_name = "Facebook Page URL", max_length = 255, default = "https://www.facebook.com/NirmaanPilaniPage/")
+    ketto_url = models.URLField(verbose_name = "Ketto Page URL", max_length = 255, default="https://www.ketto.org/")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -35,7 +38,7 @@ class Initiative(models.Model):
 class InitiativeComment(models.Model):
     initiative = models.ForeignKey(Initiative, on_delete=models.CASCADE, related_name='comments')
     published_on = models.DateField(default = timezone.now())
-    message = models.TextField(max_length = 255, default = "")
+    message = models.CharField(verbose_name = "", max_length = 255, default = "")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

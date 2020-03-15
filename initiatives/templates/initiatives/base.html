@@ -10,6 +10,11 @@
     <meta name="keywords" content="footer, links, icons" />
     <meta name="theme-color" content="black">
 
+    <link rel="icon" href="../../../media/nirmaan_logo.png">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,8 +31,14 @@
     {% endif %}
 
   <style>
+
+      .site-header .navbar-nav .nav-link:hover {
+        color: #ffb300;
+      }
+
       .footer-bs {
         background-color: #3c3d41;
+        background-image: url("../../../media/footer_bg.png");
         padding: 60px 40px;
         color: rgba(255, 255, 255, 1.00);
         margin-bottom: 0px;
@@ -149,6 +160,7 @@
       }
   
   </style>
+
 </head>
 
 <body>
@@ -156,8 +168,8 @@
    <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <img class="rounded-circle logo-img" src="../../media/nirmaan_logo.png" width=50, height=50>
-          <a class="navbar-brand mr-4" href="{% url 'index' %}" style="color: black; font-weight: 500;">&nbsp&nbspNirmaan Organization</a>
+          <img  src="../../media/nirmaan_logo.png" width=50, height=50>
+          <a class="navbar-brand mr-4" href="{% url 'index' %}" style="color: black; font-weight: 500;">&nbsp&nbsp&nbspNirmaan Organization</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -165,10 +177,7 @@
             <div class="navbar-nav mr-auto">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'init_create' %}">Create New Initiative</a>
-                <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-                <a class="nav-item nav-link" href="{% url 'home' %}">Events</a>
-                <a class="nav-item nav-link" href="{% url 'home' %}">Initiatives</a>
-                <a class="nav-item nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'index2' %">Contact Us</a>
               {% endif %}
               
             </div>
@@ -180,10 +189,8 @@
               </div>
             {% else %}
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-                <a class="nav-item nav-link" href="{% url 'home' %}">Events</a>
-                <a class="nav-item nav-link" href="{% url 'home' %}">Initiatives</a>
-                <a class="nav-item nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'index2' %}"><i class="fa fa-home" style="font-size: 24px;"></i></a>
+                <a class="nav-item nav-link" href="{% url 'index2' %}"><i class="fa fa-phone" style="font-size:24px"></i> Contact Us</a>
               </div>
             {% endif %}
           </div>
@@ -191,7 +198,18 @@
       </nav>
     </header>
     
-          {% block content %}{% endblock %}
+    
+    {% block content %}
+      <br>
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      <!--Main Content of Page goes here-->
+    {% endblock %}
          
     <!----------- Footer ------------>
     <div id="footer">
@@ -199,60 +217,43 @@
         <table>
     
           <tr>
-            <td style="width:800px;">
-              <a><img src="../../../media/nirmaan.png" style="z-index: 1; width: 400px;"></a>
+            <td style="width:1100px;">
+              <a><img src="../../../media/nirmaan.png" style="z-index: 1; width: 330px; height: 100px;"></a>
+              <br><br>
               <p style="margin-left: 10px;">
                 Phone: +91 9000276903<br>
                 E-mail: contact@nirmaan.org <br>
                 Birla Institute of Technology and Science, Pilani<br>
                 Vidya Vihar, Pilani, Rajasthan - 333031</p>
             </td>
-            <td style="width:300px">
-              <div class="col-md-4 footer-nav animated fadeInUp">
-                <div class="col-md-6">
-                  <ul class="pages">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Initiatives</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Developers</a></li>
-                  </ul>
-                </div>
-              </div>
-            </td>
             <td>
               <div class="col-md-2 footer-social animated fadeInDown">
-                <h4 style="color: white;">Follow</h4>
+                <!--<h3 style="color: white;">Follow</h4>-->
                 <ul>
-                  <li><a href="#">Instagram</a></li>
-                  <li><a href="#">Facebook</a></li>
-                  <li><a href="#">BITS Pilani</a></li>
+                  <li><a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/ig_footer.png" width=50px height=50px, style="border-radius:50%"></a></li> 
+                  <li><a href="https://www.facebook.com/NirmaanPilaniPage/"><img src="../../../media/fb_footer.png" width=50px height=50px, style="border-radius:50%"></a></li>
                 </ul>
               </div>
             </td>
           </tr>
-    
         </table>
       </footer>
    </div>
     
     </body>
     
+    <!--Scripts-->
     <script type="text/javascript">
       var myVar, myVar2;
       function load() {
         myVar = setTimeout(fadePage, 3000);
       }
       function fadePage() {
-        // document.getElementsByClassName("site-header")[0].style.display = "none";
-        // document.getElementById("footer").style.opacity = "0";
         document.getElementById("loader").style.opacity = "0";
         myVar = setTimeout(showPage, 300);
         myVar2 = setTimeout(show_footer, 300);
       }
       function showPage() {
-        // document.getElementById("footer").style.opacity = "";
-        // document.getElementsByClassName("site-header")[0].style.display = "block";
         document.getElementById("loader").style.display = "none";
         var x = document.getElementsByClassName("myDiv");
         var i;

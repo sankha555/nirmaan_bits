@@ -4,8 +4,7 @@
 <style>
   body {
   width:500px;
-  background: #fafafa;
-  background-image: url("../../../media/2.png");
+  background: #fbfbfb;
   background-attachment: fixed;
   background-size: 100%;
   color: #333333;
@@ -41,6 +40,7 @@
   <div class="body" style="margin-left:135px;">
     <table style="border-collapse: separate; border-spacing: 20px; ;">
       <tr>
+
         {% for init in inits %} 
           {% if forloop.counter|divisibleby:2 %}
             <td> 
@@ -50,13 +50,17 @@
                 </div>
                 <h2><a class="article-title" href="{% url 'init_detail' init.id %}" style="margin-left: 10px;">{{ init.name }}</a></h2>
                 <p><img src = "{{ init.banner_image.url }}" width=548px, height=285></p>
-                <p style="margin-left: 10px; word-wrap: break-word;">{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}"><i>Read More</i></a></p>
-                <p style="margin-left: 10px; padding-top: 10px; border-top: 1px solid grey;">
-                  <b>Follow on :</b>
-                  &nbsp<a class="fa fa-instagram" href="{{ init.ig_url }}"></a>
-                  &nbsp&nbsp&nbsp<a class="fa fa-facebook" href="{{ init.fb_url }}"></a>
-                </p>
-              </div>             
+                <p style="margin-left: 10px; margin-right:10px; word-wrap: break-word;">{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}" style="color: #ffb300;"><i>Read More</i></a></p>
+                             
+                <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 13px;">
+                  <a href="{{ init.ig_url }}" title="Instagram"><img src="../../../media/ig_icon.png" width=33px
+                      height=33px></a>&nbsp&nbsp
+                  <a href="{{ init.fb_url }}" title="Facebook"><img src="../../../media/fb_icon.png" width=33px
+                      height=33px></a>&nbsp&nbsp
+                  <a href="{{ init.ketto_url }}" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px></a>
+                </div>                  
+                
+                        
             </td>       
       </tr>
     </table>
@@ -70,11 +74,17 @@
                 </div>
                 <h2><a class="article-title" href="{% url 'init_detail' init.id %}" style="margin-left: 10px;">{{ init.name }}</a></h2>
                 <p><img src = "{{ init.banner_image.url }}" width=548px, height=285></p>
-                <p style="margin-left: 10px;">{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}"><i>Read More</i></a></p>
-                <p style="margin-left: 10px; padding-top: 10px; border-top: 1px solid grey;">
-                  <b>Follow on : </b>
-                  &nbsp<a class="fa fa-instagram" href="{{ init.ig_url }}"></a>
-                  &nbsp&nbsp&nbsp<a class="fa fa-facebook" href="{{ init.fb_url }}"></a>                </p>
+                <p style="margin-left: 10px; margin-right: 10px;" >{{ init.description|slice:":150" }}... <a href="{% url 'init_detail' init.id %}" style="color: #ffb300;"><i>Read More</i></a></p>
+                              
+                <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 13px;">
+                    <a href="{{ init.ig_url }}" title="Instagram"><img src="../../../media/ig_icon.png" width=33px
+                        height=33px></a>&nbsp&nbsp
+                    <a href="{{ init.fb_url }}" title="Facebook"><img src="../../../media/fb_icon.png" width=33px
+                        height=33px></a>&nbsp&nbsp
+                    <a href="{{ init.ketto_url }}" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px></a>
+                </div>
+                
+              
               </div>             
             </td>  
           {% endif %}

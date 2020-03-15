@@ -7,15 +7,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.admin.views.decorators import staff_member_required
 from .forms import CommentForm, InitiativeCreateForm, InitiativeUpdateForm
 from django.conf import settings
+from django.contrib import messages
 
-#ADMIN_USER = User.objects.get(username = settings.ADMIN_USERNAME)
-
-inits = Initiative.objects.all().order_by('-date_started')
-context = { 
-    'inits' : Initiative.objects.all()
-}
 
 def home(request):
+
+    inits = Initiative.objects.all().order_by('-date_started')
+    context = {'inits':inits}
     return render(request, 'initiatives/home.html', context)
 
 @staff_member_required
@@ -26,12 +24,10 @@ def create_initiative(request):
         if form.is_valid():
 
             initiative = form.save(commit=False)
-            #img = request.FILES.getlist('file_field')
-
-            #initiative.banner_image = img
             initiative.save()
+            messages.success(request, 'New initiative "%s" created successfully!' % initiative.name, fail_silently=True)
 
-            return redirect('init_detail')
+            return redirect('init_detail', pk=initiative.id)
     else:
         form = InitiativeCreateForm()
 
@@ -40,41 +36,33 @@ def create_initiative(request):
 @staff_member_required
 def update_initiative(request, pk):
 
+    init = get_object_or_404(Initiative, pk=pk)
     if request.method == 'POST':
-        form = InitiativeUpdateForm(request.POST, request.FILES)
+        form = InitiativeUpdateForm(
+            request.POST, request.FILES, instance=init)
+
         if form.is_valid():
+            init.save()
+            messages.info(request, 'Initiative "%s" updated successfully!' % init.name, fail_silently=True)
 
-            initiative = form.save(commit=False)
-            img = request.FILES.getlist('file_field')
-
-            initiative.banner_image = img
-            initiative.save()
-
-            return redirect('init_detail', pk=initiative.id)
+            return redirect('init_detail', pk=init.id)
     else:
         form = InitiativeUpdateForm()
 
     return render(request, 'initiatives/initiative_form.html', {'form': form})
 
 
-class InitiativeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class InitiativeDeleteView(LoginRequiredMixin, DeleteView):
     model = Initiative
-    success_url = '/'
+    success_url = '/initiatives'
     context_object_name = 'init'
+    '''messages.success(
+        request, 'New initiative "%s" created successfully!' % initiative.name)'''
 
-    def test_func(self):
-        initiative = self.get_object()
-        if self.request.user == ADMIN_USER:
-            return True
-        return False
 
-class InitiativeDetailView(DetailView):
-    model = Initiative
-    template_name = 'initiatives/init_detail.html'
-    context_object_name = 'init'
-
-def add_comment(request, pk):
+def init_detail(request, pk):
     initiative = get_object_or_404(Initiative, pk=pk)
+    
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -83,9 +71,9 @@ def add_comment(request, pk):
             comment.save()
             return redirect('init_detail', pk=initiative.pk)
     else:
-        form = CommentForm(instance=initiative)
+        form = CommentForm()
 
-    return render(request, 'initiatives/add_comment.html', {'form':form, 'initiative':initiative})
+    return render(request, 'initiatives/init_detail.html', {'form':form, 'init':initiative})
 
 def like_initiative(request, pk):
     initiative = get_object_or_404(Initiative, pk=pk)

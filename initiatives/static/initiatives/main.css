@@ -27,13 +27,11 @@ ul {
 
 .site-header .navbar-nav .nav-link:hover {
   color: #ffb300;
-  border-bottom-style: solid;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
-  border-bottom-style: solid;
-  border-bottom: #ffb300;
+
 }
 
 .content-section {

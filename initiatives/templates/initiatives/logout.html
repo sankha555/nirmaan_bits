@@ -1,11 +1,18 @@
-{% extends "blog/base.html" %}
+{% extends "initiatives/base.html" %}
 {% block content %}
-  <body>
-      <div class="border-top pt-3">
-        <h1> You have been logged out </h1>
-        <small class="text-muted">
-          <a href="{% url 'login' %}"> Log In Again </a>
-        </small>
+  <body style="background: #fbfbfb;">
+    <br>
+    <div class="media content-section" style="margin-left: 250px;">
+      <div style="margin-left: 10px; margin-bottom: 10px;">
+        <br>
+        <h4> You have been successfully logged out </h4>
+        <br>
+
+        <a class="btn btn-outline-secondary" href="{% url 'login' %}"> Log In Again </a>
+        
       </div>
+      
+    </div>
+    <br><br><br><br>
   </body>
 {% endblock content %}
