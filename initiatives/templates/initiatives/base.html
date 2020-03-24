@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership." >
+    <meta name="keywords" content="nirmaan, organization, bits, pilani, social, work, ngo, education">
     <meta name="keywords" content="footer, links, icons" />
     <meta name="theme-color" content="black">
 
@@ -23,13 +25,88 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
     {% if title %}
-        <title>Nirmaan Organization - {{ title }}</title>
+        <title>Nirmaan Organization | {{ title }}</title>
     {% else %}
         <title>Nirmaan Organization</title>
     {% endif %}
 
+
+  <!--Scrollbars-->
+  <style type="text/css">
+    .forwarder {
+      text-decoration: none;
+      background-color: #222222;
+      color: #999999;
+      padding: 10px 3px;
+      border-radius: 2px;
+  
+    }
+  
+    .forwarder:hover {
+      text-decoration: none;
+      background-color: #333333;
+      color: #ffffff;
+  
+  
+    }
+  
+    @media only screen and (min-width: 1000px) {
+  
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+  
+      .bgimg-1 {
+        background-image: url("1.JPG");
+      }
+  
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: white;
+      }
+  
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #aaaaaa;
+        border-radius: 4px;
+      }
+  
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #888888;
+      }
+  
+      .logo {
+        width: 15%;
+      }
+  
+      .forwarder {
+        text-decoration: none;
+        background-color: #111111;
+        color: #333333;
+        padding: 50px;
+        border-radius: 0px;
+  
+      }
+  
+      .forwarder:hover {
+        text-decoration: none;
+        background-color: #222222;
+        color: #ffffff;
+        padding: 50px;
+        border-radius: 0px;
+  
+      }
+  
+      .social {
+        height: 100px;
+      }
+    }
+  </style>
+
+  <!--Footer-->
   <style>
 
       .site-header .navbar-nav .nav-link:hover {
@@ -184,7 +261,7 @@
             
             {% if user.is_authenticated %}
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Hello, {{user.username}} </a>
+                <a class="nav-item nav-link">Hello, {{user.username}} </a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               </div>
             {% else %}
@@ -240,7 +317,7 @@
       </footer>
    </div>
     
-    </body>
+</body>
     
     <!--Scripts-->
     <script type="text/javascript">
