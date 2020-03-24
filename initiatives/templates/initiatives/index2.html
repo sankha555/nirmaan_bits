@@ -10,12 +10,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership.">
-  <meta name="keywords" content="nirmaan, organization, bits, pilani, social, work, ngo, education">
-  <meta name="keywords" content="footer, links, icons" />
+  <meta name="keywords" content="nirmaan, organization, bits, pilani, social, work, ngo, education, footer, links, icons">
   <meta name="theme-color" content="black">
 
   <link rel="icon" href="../../../media/nirmaan_logo.png">
-
   <link rel="stylesheet" type="text/css" href="data/main.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,16 +28,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <script type="text/javascript">
 
-    $(document).ready(function () {
-      // Handler for .ready() called.
-      $('html, body').animate({
-        scrollTop: $('#contact_links').offset().top
-      }, 'slow');
-    });
-
-  </script>
 
   <!--Nav Bar-->
   <style>
@@ -631,25 +620,25 @@
     </div>
   </div>
 
-  <div id="contact_links">
-    <div id="contact_links" style="position:relative;" class="myDiv">
-      <div style="color:#ddd;background-color:#000;text-align:center;padding:50px 80px;">
-        <p>
-          <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
-          </h3>
-          <br><br><br>
 
-          <a href="mailto:f20170269@pilani.bits-pilani.ac.in"><img src="../../../media/mail.png" class="social"
-              style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
-          <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
-              style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
-          <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
-              style=" display: inline-block;"></a>
+  <div style="position:relative;" class="myDiv">
+    <div style="color:#ddd;background-color:#000;text-align:center;padding:50px 80px;">
+      <p>
+        <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
+        </h3>
+        <br><br><br>
 
-        </p>
-      </div>
+        <a href="mailto:f20170269@pilani.bits-pilani.ac.in"><img src="../../../media/mail.png" class="social"
+            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
+            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
+            style=" display: inline-block;"></a>
+
+      </p>
     </div>
   </div>
+ 
   
 
   <div class="bgimg-4 myDiv">
@@ -658,33 +647,38 @@
     </div>
   </div>
 
+<!--<script src="data/main.js"></script>-->
   
-  <script src="data/main.js"></script>
+<script type="text/javascript">
+  var myVar;
 
-  
+  function load() {
+    myVar = setTimeout(fadePage, 0);
+  }
 
-  <script type="text/javascript">
-    var myVar;
+  function fadePage() {
+    myVar = setTimeout(showPage, 100);
+  }
 
-    function load() {
-      myVar = setTimeout(fadePage, 0);
+  function showPage() {
+    var x = document.getElementsByClassName("myDiv");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "block";
+      var pos = 3400;
+      $("html,body").animate({ scrollTop: pos }, "fast");
     }
 
-    function fadePage() {
-      myVar = setTimeout(showPage, 100);
-    }
+    
 
-    function showPage() {
-      var x = document.getElementsByClassName("myDiv");
-      var i;
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "block";
-      }
-    }
+    /*var contact = getElementsById("contact_links");
+    contact.scrollIntoView();*/
+    
+  }
 
-  </script>
+</script>
 
-  <script type="text/javascript">
+<!--<script type="text/javascript">
 
     function disableselect(e) {
       return false;
@@ -700,7 +694,8 @@
       document.onmousedown = disableselect;
       document.onclick = reEnable;
     }
-  </script>
+</script>-->
+
 </body>
 
 </html>

@@ -254,7 +254,7 @@
             <div class="navbar-nav mr-auto">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'init_create' %}">Create New Initiative</a>
-                <a class="nav-item nav-link" href="{% url 'index2' %">Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'contact' %}">Contact Us</a>
               {% endif %}
               
             </div>
@@ -266,8 +266,8 @@
               </div>
             {% else %}
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'index2' %}"><i class="fa fa-home" style="font-size: 24px;"></i></a>
-                <a class="nav-item nav-link" href="{% url 'index2' %}"><i class="fa fa-phone" style="font-size:24px"></i> Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}"><i class="fa fa-home" style="font-size: 24px;"></i></a>
+                <a class="nav-item nav-link" href="{% url 'contact' %}"><i class="fa fa-phone" style="font-size:24px"></i> Contact Us</a>
               </div>
             {% endif %}
           </div>

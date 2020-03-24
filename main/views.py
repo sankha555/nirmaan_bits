@@ -9,10 +9,10 @@ from .forms import ContactForm
 def index(request):
     return render(request, "initiatives/index.html")
 
-def index2(request):
+def contact(request):
     return render(request, "initiatives/index2.html")
 
-def about(request):
+'''def about(request):
     return render(request, "initiatives/about.html")
 
 def contact_us(request):
@@ -27,6 +27,6 @@ def contact_us(request):
     else:
         form = ContactForm()
 
-    return render(request, 'initiatives/contact_form.html', {'form': form})
+    return render(request, 'initiatives/contact_form.html', {'form': form})'''
 
-# Create your views here.
+
