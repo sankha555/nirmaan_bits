@@ -13,6 +13,8 @@ Features included :
 The website has been created using the technologies of Python, Django, HTML, CSS, JQuery and Javascript.
 The launch of the website on a paid server is yet to be completed and will be done shortly after reviewing final changes.
 
--Sankha Das<br>
- Backend Developer
+
+
+Sankha Das<br>
+Backend Developer
 
