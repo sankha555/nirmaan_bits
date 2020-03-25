@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Initiative, InitiativeComment
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.admin.views.decorators import staff_member_required
 from .forms import CommentForm, InitiativeCreateForm, InitiativeUpdateForm
 from django.conf import settings
@@ -52,12 +53,14 @@ def update_initiative(request, pk):
     return render(request, 'initiatives/initiative_form.html', {'form': form})
 
 
-class InitiativeDeleteView(LoginRequiredMixin, DeleteView):
+class InitiativeDeleteView(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
     model = Initiative
     success_url = '/initiatives'
     context_object_name = 'init'
-    '''messages.success(
-        request, 'New initiative "%s" created successfully!' % initiative.name)'''
+    success_message = "Initiative %(name)s was deleted"
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message % dict(cleaned_data, init_name=self.object.name)
 
 
 def init_detail(request, pk):

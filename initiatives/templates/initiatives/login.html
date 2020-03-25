@@ -5,14 +5,14 @@
     
     <br>
     <div class="content-section" style="margin-left: 250px;">
-      <form method="POST" style="margin-left: 10px;">
+      <form method="POST" style="margin-left: 10px; margin-right: 10px;">
         {% csrf_token %}
         <fieldset class="form-group">
           <legend class="border-bottom mb-4"> Administrator's Login </legend>
-          {{ form.as_p }}
+          {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-          <button class="btn btn-outline" type="submit" style=" border-color: black;">Log In</button>
+          <button class="btn btn-outline-secondary" type="submit">Log In</button>
         </div>
         <div class="form-group">
         </div>

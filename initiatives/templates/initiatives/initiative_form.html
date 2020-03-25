@@ -3,7 +3,7 @@
 {% block content %}
   <body style="background: #fbfbfb;">
     <div class="content-section" style="margin-left: 180px; width:1100px;">
-      <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+      <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
           <legend class="border-bottom mb-4"> Write About the Initiative</legend>
