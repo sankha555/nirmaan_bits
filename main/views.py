@@ -4,29 +4,40 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from .models import ContactSender
 from .forms import ContactForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 def index(request):
     return render(request, "initiatives/index.html")
 
+def about(request):
+    return render(request, "initiatives/index.html")
+
 def contact(request):
     return render(request, "initiatives/index2.html")
 
-'''def about(request):
-    return render(request, "initiatives/about.html")
 
-def contact_us(request):
+def password_reset(request):
+
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = PasswordChangeForm(request.user, request.POST)
+
         if form.is_valid():
-
-            sender = form.save(commit=False)
-            sender.save()
-
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Password for Administrator Changed Successfully!', fail_silently=False)
             return redirect('home')
+    
     else:
-        form = ContactForm()
+        form = PasswordChangeForm(request.user)
+    return render(request, 'initiatives/password_reset.html', {'form': form})
 
-    return render(request, 'initiatives/contact_form.html', {'form': form})'''
+
+def internal_index(request):
+    return render(request, "initiatives/index3.html")
+
+
 
 

@@ -31,6 +31,51 @@
         <title>Nirmaan Organization</title>
     {% endif %}
 
+    <script type="text/javascript">
+      function refreshPage() {
+        var page_y = document.getElementsByTagName("body")[0].scrollTop;
+        window.location.href = window.location.href.split('?')[0] + '?page_y=' + page_y;
+      }
+      window.onload = function () {
+        setTimeout(refreshPage, 35000);
+        if (window.location.href.indexOf('page_y') != -1) {
+          var match = window.location.href.split('?')[1].split("&")[0].split("=");
+          document.getElementsByTagName("body")[0].scrollTop = match[1];
+        }
+      }
+    </script>
+
+ <!--Messages-->
+ <style>
+   .info {
+	background-color: #e7f6fd;
+	color: #27aae1;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #27aae1;
+}
+.success {
+	background-color: #c9f4b9;
+	color: #52b52b;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #52b52b;
+}
+.error {
+	background-color: #F2C2CC;
+	color: #E63235;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #870508;
+}
+
+#messages-container {
+	width: 100%;
+	height: 25px;
+	top: 0px;
+	position: absolute;
+}
+ </style>
 
   <!--Scrollbars-->
   <style type="text/css">
@@ -246,7 +291,7 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           <img  src="../../media/nirmaan_logo.png" width=50, height=50>
-          <a class="navbar-brand mr-4" href="{% url 'index' %}" style="color: black; font-weight: 500;">&nbsp&nbsp&nbspNirmaan Organization</a>
+          <a class="navbar-brand mr-4" href="index.html" style="color: black; font-weight: 500;">&nbsp&nbsp&nbspNirmaan Organization</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -254,20 +299,20 @@
             <div class="navbar-nav mr-auto">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'init_create' %}">Create New Initiative</a>
-                <a class="nav-item nav-link" href="{% url 'contact' %}">Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'contact_us' %}">Contact Us</a>
               {% endif %}
               
             </div>
             
             {% if user.is_authenticated %}
               <div class="navbar-nav">
-                <a class="nav-item nav-link">Hello, {{user.username}} </a>
+                <a class="nav-item nav-link" href="{% url 'pwd_reset' %}">Hello, {{user.username}} </a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               </div>
             {% else %}
               <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'index' %}"><i class="fa fa-home" style="font-size: 24px;"></i></a>
-                <a class="nav-item nav-link" href="{% url 'contact' %}"><i class="fa fa-phone" style="font-size:24px"></i> Contact Us</a>
+                <a class="nav-item nav-link" href="{% url 'contact_us' %}"><i class="fa fa-phone" style="font-size:24px"></i> Contact Us</a>
               </div>
             {% endif %}
           </div>
@@ -275,16 +320,18 @@
       </nav>
     </header>
     
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}" style="width: 1415px; margin-left: 10px;">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <center>{{ message }}</center>
+      </div>
+    {% endfor %}
     
     {% block content %}
-      <br>
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
+      
+      
       <!--Main Content of Page goes here-->
     {% endblock %}
          
