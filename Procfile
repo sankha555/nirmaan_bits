@@ -1,0 +1,1 @@
+web: gunicorn nirmaan_backend.wsgi
