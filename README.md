@@ -13,7 +13,7 @@ Features included :
 The website has been created using the technologies of Python, Django, HTML, CSS, JQuery and Javascript.
 The launch of the website on a paid server is yet to be completed and will be done shortly after reviewing final changes.
 
-As a test launch, the website is temporarily hosted as nirmaan-bppc.herokuapp.com
+As a test launch, the website is temporarily hosted at <a href="nirmaan-bppc.herokuapp.com">nirmaan-bppc.herokuapp.com</a>
 <br>
 
 Sankha Das<br>
