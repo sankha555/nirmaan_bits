@@ -12,7 +12,7 @@ class Initiative(models.Model):
     name = models.CharField(verbose_name = "Name", max_length = 255, default = "")
     description = models.TextField(verbose_name = "Description", max_length = 1000, default = "")
     meta_description = models.TextField(verbose_name = "Meta_Description", max_length = 1000, default = description.description[:50]+"....")
-    date_started = models.DateField(verbose_name = "Start Date", default = timezone.now())
+    date_started = models.DateField(verbose_name = "Start Date")
     banner_image = models.ImageField(verbose_name = "Banner Image", default = "default.png", upload_to='banner_images/')
     likes = models.IntegerField(default = 0)
 

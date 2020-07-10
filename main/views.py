@@ -10,17 +10,17 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 
 def index(request):
-    return render(request, "initiatives/index.html")
+    return render(request, "initiatives/index.htm")
 
 def about(request):
-    return render(request, "initiatives/index.html")
+    return render(request, "initiatives/about.htm")
 
 def contact(request):
-    return render(request, "initiatives/index2.html")
+    return render(request, "initiatives/index2.htm")
 
 
 def password_reset(request):
-
+    
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
 
@@ -32,11 +32,11 @@ def password_reset(request):
     
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'initiatives/password_reset.html', {'form': form})
+    return render(request, 'initiatives/password_reset.htm', {'form': form})
 
 
 def internal_index(request):
-    return render(request, "initiatives/index3.html")
+    return render(request, "initiatives/index3.htm")
 
 
 

@@ -22,12 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE')=='True')
+DEBUG = (os.environ.get('DEBUG_VALUE')=='True') or True
 
-ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com']
+ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com']
 INSTALLED_APPS = [
     'initiatives.apps.InitiativesConfig',
     'main.apps.MainConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

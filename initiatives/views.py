@@ -15,7 +15,7 @@ def home(request):
 
     inits = Initiative.objects.all().order_by('-date_started')
     context = {'inits':inits}
-    return render(request, 'initiatives/home.html', context)
+    return render(request, 'initiatives/home.htm', context)
 
 @staff_member_required
 def create_initiative(request):
@@ -32,7 +32,7 @@ def create_initiative(request):
     else:
         form = InitiativeCreateForm()
 
-    return render(request, 'initiatives/initiative_form.html', {'form': form})
+    return render(request, 'initiatives/initiative_form.htm', {'form': form})
 
 @staff_member_required
 def update_initiative(request, pk):
@@ -50,7 +50,7 @@ def update_initiative(request, pk):
     else:
         form = InitiativeUpdateForm()
 
-    return render(request, 'initiatives/initiative_form.html', {'form': form})
+    return render(request, 'initiatives/initiative_form.htm', {'form': form})
 
 
 class InitiativeDeleteView(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
@@ -76,7 +76,7 @@ def init_detail(request, pk):
     else:
         form = CommentForm()
 
-    return render(request, 'initiatives/init_detail.html', {'form':form, 'init':initiative})
+    return render(request, 'initiatives/init_detail.htm', {'form':form, 'init':initiative})
 
 def like_initiative(request, pk):
     initiative = get_object_or_404(Initiative, pk=pk)

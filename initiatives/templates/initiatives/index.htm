@@ -28,11 +28,65 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
-
   <!--Nav Bar-->
   <style>
-        ul {
+    .navbar-brand {
+        font-weight: 500;
+        font-size: 50px;
+        color: aliceblue;
+        text-decoration-color: aliceblue;
+    }
+
+    .nav-link {
+        font-size: large;
+        font-weight: 600;
+        color: aliceblue;
+        margin-top: 5px;
+    }
+
+    .hero-wrapper {
+        margin-top: 90px;
+        text-align: left;
+        vertical-align: middle;
+        line-height: normal;
+        font-size: 100px;
+        font-weight: 600;
+        color: beige;
+        animation: flow cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    }
+
+
+    .container {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .navbar {       
+        width: 99.4%;
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+        z-index: 1;
+        background-color: #000;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    }
+
+    .bg-light{
+        background-color: rgb(113, 27, 27);
+        background: rgb(113, 27, 27);
+    }
+
+    .bg {
+        background-image: url(https://cdn.shopify.com/s/files/1/0081/1222/files/urban-commuter-palander-Nov19-93_WEB_copy_1200x.progressive.jpg?v=1582051911);
+        height: 645px;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    ul {
       margin: 0;
     }
 
@@ -136,6 +190,18 @@
       min-height: 100%;
       webkit-filter: saturate(0%)contrast(120%)sepia(80%);
       filter: saturate(0%)contrast(120%)sepia(80%);
+    }
+
+    .caption-navbar{
+      left: 0;
+      display: inline;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-family: fantasy;
+      font-size: 40px;
     }
 
     .caption {
@@ -319,8 +385,6 @@
       text-decoration: none;
       background-color: #333333;
       color: #ffffff;
-
-
     }
 
     @media only screen and (min-width: 1000px) {
@@ -328,6 +392,7 @@
       /* width */
       ::-webkit-scrollbar {
         width: 8px;
+        z-index: 2;
       }
 
       .bgimg-1 {
@@ -503,14 +568,13 @@
       }
   </style>
 
-
 </head>
 
 <body class="demo" style="overflow: scroll; overflow-x: hidden; " onload="load()">
 
   <div id="loader" class="bgimg-4" style=" background-image:url(); background-color: white; filter: none; transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;">
-    <div class="caption">
+    <div class="caption" >
       <span class="border"><img class="logo" src="../../../media/load.jpg">
       </span>
     </div>
@@ -525,17 +589,47 @@
       </div>
     </div>
 
-
   </div>
 
-
-
+  <nav class="navbar navbar-expand-lg navbar-light" style="padding-top: 5px; padding-bottom: 6px; border-radius: 0;">
+    <a class="navbar-brand" href="{% url 'index' %}" style="color: aliceblue;">
+      <div class="caption-navbar" style="text-align: left; margin-left: 20px;">
+        <!--<img class="logo" src="../../../media/nirmaan.png">-->
+        Nirmaan
+      </div>  
+    </a>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 800px; margin-top: 0;">
+      <ul class="navbar-nav mr-auto" style="list-style: none;">
+        <li class="nav-item" >
+          <a class="nav-link" href="{% url 'about' %}" style="color: white;">About Us</a>
+        </li>
+        <li class="nav-item"  >
+          <a class="nav-link" href="{% url 'home' %}" style="color: white;">Initiatives</a>
+        </li>
+        <li class="nav-item"  >
+          <a class="nav-link" href="{% url 'contact_us' %}" style="color: white;">Contact Us</a>
+        </li>
+  
+        {% if user.is_authenticated %}
+          <li class="nav-item"  >
+            <a class="nav-link" href="#" style="color: white;">Hi, {{ user.username }}</a>
+          </li>
+        {% else %}
+          <li class="nav-item"  >
+            <a class="nav-link" href="#" style="color: white;">Register</a>
+          </li>
+        {% endif %}
+      </ul>
+  
+    </div>
+  </nav>
+  
   <div class="bgimg-4 myDiv">
     <div class="caption">
       <span class="border"><img class="logo" src="../../../media/nirmaan.png"></span>
     </div>
   </div>
-
 
 
   <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;"
@@ -580,7 +674,7 @@
         <b>Gyan Bodh, UTKARSH SHIKSHA ki ore & School Adoption</b>
 
         <br>
-        Education is often referred to as the noblest of all professions. With ﻿our various education schemes, we embark
+        Education is often referred to as the noblest of all professions. With our various education schemes, we embark
         upon a journey to end illiteracy. Gyan Bodh and SKO are our prime evening tuition schemes. Along with them, we
         have gone a step further with school adoption, taking the government school in Khelda Ka Baas under our wing
         overseeing it's renovation and development. Along with this in partnership with Aditya Birla group, we provide

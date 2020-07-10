@@ -7,6 +7,6 @@ urlpatterns = [
     path('contact', contact, name='contact_us'),
     path('about', about, name='about'),
     path('reset_password', password_reset, name='pwd_reset'),
-    path(' ', internal_index, name='internal_index'),
+    path('', internal_index, name='internal_index'),
 ]
 
