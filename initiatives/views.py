@@ -17,6 +17,10 @@ def home(request):
     context = {'inits':inits}
     return render(request, 'initiatives/home.htm', context)
 
+def dash(request):
+    return render(request, 'initiatives/dash.htm')
+
+
 @staff_member_required
 def create_initiative(request):
 

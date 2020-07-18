@@ -20,111 +20,72 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="icon" href="data/fav.png" type="image/gif">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.3.0/css/font-awesome.min.css">
-
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.bundle.min.js "></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-  <!--Nav Bar-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link
+  href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fondamento&family=Indie+Flower&family=Rowdies:wght@300&display=swap"
+  rel="stylesheet">
+
   <style>
-    .navbar-brand {
-        font-weight: 500;
-        font-size: 50px;
-        color: aliceblue;
-        text-decoration-color: aliceblue;
-    }
 
-    .nav-link {
-        font-size: large;
-        font-weight: 600;
-        color: aliceblue;
-        margin-top: 5px;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
 
-    .hero-wrapper {
-        margin-top: 90px;
-        text-align: left;
-        vertical-align: middle;
-        line-height: normal;
-        font-size: 100px;
-        font-weight: 600;
-        color: beige;
-        animation: flow cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-    }
+  ul {
+    margin: 0;
+  }
 
+  .bg-steel {
+    background-color: black;
+    color: white;
+  }
 
-    .container {
-        margin-top: 40px;
-        width: 100%;
-    }
+  .site-header .navbar-nav .nav-link .nav-item{
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: medium;
+  }
 
-    .navbar {       
-        width: 99.4%;
-        position: fixed;
-        top: 0;
-        margin-top: 0;
-        z-index: 1;
-        background-color: #000;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    }
+  .nav-item {
+    color: white;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: large;
+    border-bottom: none;
+  }
 
-    .bg-light{
-        background-color: rgb(113, 27, 27);
-        background: rgb(113, 27, 27);
-    }
-
-    .bg {
-        background-image: url(https://cdn.shopify.com/s/files/1/0081/1222/files/urban-commuter-palander-Nov19-93_WEB_copy_1200x.progressive.jpg?v=1582051911);
-        height: 645px;
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+  .nav-item:hover {
+    color: #ffb300;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: large;
+    border-bottom: solid;
+    text-decoration: none;
+  }
 
 
-    ul {
-      margin: 0;
-    }
+  .site-header .navbar-nav .nav-link:hover .nav-item:hover{
+    color: #ffb300;
+  }
 
-    .nav-link{
-      color: #474b4d;
-      margin-left: 8px;
-      display: block;
-      padding: .5rem 1rem;
-      text-decoration: none;
-    }
+  .site-header .navbar-nav .nav-link.active .nav-item:hover{
+    font-weight: 600;
+  }
 
-    .nav-link:hover{
-      color: #ffb300;
-      border-bottom-style: solid;
-      text-decoration: none;
-    }
-
-    .nav-link.active {
-      font-weight: 500;
-    }
-
-    .bg-steel {
-      background-color: white;
-    }
-
-    .site-header .navbar-nav .nav-link {
-      color: #474b4d;
-      margin-left: 15px;
-    }
-
-    .site-header .navbar-nav .nav-link:hover {
-      color: #ffb300;
-      border-bottom-style: solid;
-    }
-
-    .site-header .navbar-nav .nav-link.active {
-      font-weight: 500;
-    }
+  
   </style>
 
   <style>
@@ -133,7 +94,7 @@
       height: 100%;
       margin: 0;
       font: 400 15px/1.8 "Lato", sans-serif;
-      color: #777;
+      /*color: #777;*/
     }
 
 
@@ -217,7 +178,8 @@
     }
 
     .caption span.border {
-
+      border-color: #ffffff00;
+      border: none;
       color: #fff;
       padding: 18px;
       font-size: 25px;
@@ -337,40 +299,6 @@
     }
   </style>
 
-  <style>
-    input[type=text],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      resize: vertical;
-    }
-
-    input[type=submit] {
-      background-color: #ffb300;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-      background-color: #ffcc00;
-    }
-
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-  </style>
-
   <style type="text/css">
     .forwarder {
       text-decoration: none;
@@ -443,131 +371,6 @@
     }
   </style>
 
-  <!--Footer-->
-  <style>
-    .footer-bs {
-        background-color: #3c3d41;
-        padding: 60px 40px;
-        color: rgba(255, 255, 255, 1.00);
-        margin-bottom: 0px;
-        border-bottom-right-radius: 6px;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-      }
-    
-      .footer-bs .footer-brand,
-      .footer-bs .footer-nav,
-      .footer-bs .footer-social,
-      .footer-bs .footer-ns {
-        padding: 10px 25px;
-      }
-    
-      .footer-bs .footer-nav,
-      .footer-bs .footer-social,
-      .footer-bs .footer-ns {
-        border-color: transparent;
-      }
-    
-      .footer-bs .footer-brand h2 {
-        margin: 0px 0px 10px;
-      }
-    
-      .footer-bs .footer-brand p {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.70);
-      }
-    
-      .footer-bs .footer-nav ul.pages {
-        list-style: none;
-        padding: 0px;
-      }
-    
-      .footer-bs .footer-nav ul.pages li {
-        padding: 5px 0px;
-      }
-    
-      .footer-bs .footer-nav ul.pages a {
-        color: rgba(255, 255, 255, 1.00);
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-    
-      .footer-bs .footer-nav ul.pages a:hover {
-        color: #ffb300;
-        text-decoration: none;
-      }
-    
-      .footer-bs .footer-nav h4 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-      }
-    
-      .footer-bs .footer-nav ul.list {
-        list-style: none;
-        padding: 0px;
-      }
-    
-      .footer-bs .footer-nav ul.list li {
-        padding: 5px 0px;
-      }
-    
-      .footer-bs .footer-nav ul.list a {
-        color: rgba(255, 255, 255, 0.80);
-      }
-    
-      .footer-bs .footer-nav ul.list a:hover {
-        color: #ffb300;
-        text-decoration: none;
-      }
-    
-      .footer-bs .footer-social ul {
-        list-style: none;
-        padding: 0px;
-      }
-    
-      .footer-bs .footer-social h4 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-      }
-    
-      .footer-bs .footer-social li {
-        padding: 5px 4px;
-      }
-    
-      .footer-bs .footer-social a {
-        color: rgba(255, 255, 255, 1.00);
-      }
-    
-      .footer-bs .footer-social a:hover {
-        color: #ffb300;
-        text-decoration: none;
-      }
-    
-      .footer-bs .footer-ns h4 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-      }
-    
-      .footer-bs .footer-ns p {
-        font-size: 12px;
-        color: #ffb300;
-      }
-    
-      @media (min-width: 768px) {
-    
-        .footer-bs .footer-nav,
-        .footer-bs .footer-social,
-        .footer-bs .footer-ns {
-          border-left: solid 1px rgba(255, 255, 255, 0.10);
-        }
-      }
-  </style>
-
 </head>
 
 <body class="demo" style="overflow: scroll; overflow-x: hidden; " onload="load()">
@@ -575,7 +378,7 @@
   <div id="loader" class="bgimg-4" style=" background-image:url(); background-color: white; filter: none; transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;">
     <div class="caption" >
-      <span class="border"><img class="logo" src="../../../media/load.jpg">
+      <span><img class="logo" src="../../../media/load.jpg">
       </span>
     </div>
 
@@ -591,44 +394,77 @@
 
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-light" style="padding-top: 5px; padding-bottom: 6px; border-radius: 0;">
-    <a class="navbar-brand" href="{% url 'index' %}" style="color: aliceblue;">
-      <div class="caption-navbar" style="text-align: left; margin-left: 20px;">
-        <!--<img class="logo" src="../../../media/nirmaan.png">-->
-        Nirmaan
-      </div>  
-    </a>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 800px; margin-top: 0;">
-      <ul class="navbar-nav mr-auto" style="list-style: none;">
-        <li class="nav-item" >
-          <a class="nav-link" href="{% url 'about' %}" style="color: white;">About Us</a>
-        </li>
-        <li class="nav-item"  >
-          <a class="nav-link" href="{% url 'home' %}" style="color: white;">Initiatives</a>
-        </li>
-        <li class="nav-item"  >
-          <a class="nav-link" href="{% url 'contact_us' %}" style="color: white;">Contact Us</a>
-        </li>
-  
-        {% if user.is_authenticated %}
-          <li class="nav-item"  >
-            <a class="nav-link" href="#" style="color: white;">Hi, {{ user.username }}</a>
-          </li>
-        {% else %}
-          <li class="nav-item"  >
-            <a class="nav-link" href="#" style="color: white;">Register</a>
-          </li>
-        {% endif %}
-      </ul>
-  
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="width: 99.45%; height: 120px; position: fixed;">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}" style="color: black;"><img class="logo" src="../../media/nirmaan.png" height="80px"></a>
+      <div class="collapse navbar-collapse" id="navbarToggle" style="position:absolute; right: 80px; margin-top: 30px; border-radius: none;">
+        <div class="navbar-nav">
+          <a class="nav-item " href="{% url 'about' %}">About</a>
+
+          <!-- Dropdown Menu for Projects -->
+          <a class="dropdown nav-item" style="margin-left: 0;">
+            <a class="nav-item dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Projects
+            </a>
+            <div class="nav-item dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Siksha ki Ore </a>
+              <a class="dropdown-item" href="#">PRD</a>
+              <a class="dropdown-item" href="#">GB BAAS</a>
+            </div>
+          </a>
+          <!-- Menu Ends -->
+
+          <a class="nav-item " href="{% url 'contact_us' %}">Contact</a>
+          <a class="nav-item " href="#">Peahen</a>
+          <a class="nav-item " href="{% url 'login' %}">Login</a>
+
+
+          {% if user.is_authenticated %}
+            {% if user.volunteer.is_pl %}
+              <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.username}} </a>
+            {% else %}
+              <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.username}} </a>
+            {% endif %}
+            <a class="nav-item " href="{% url 'logout' %}">Logout</a>
+          {% endif %}
+        </div>
+
+      </div>
     </div>
   </nav>
   
-  <div class="bgimg-4 myDiv">
-    <div class="caption">
-      <span class="border"><img class="logo" src="../../../media/nirmaan.png"></span>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="bgimg-1" src="../../../media/1.JPG" style="height: 700px; width: 100%;">
+      </div>
+  
+      <div class="item">
+        <img class="bgimg-2" src="../../../media/2.png" style="height: 700px; width: 100%;" >
+      </div>
+  
+      <div class="item">
+        <img class="bgimg-3" src="../../../media/3.jpg" style="height: 700px; width: 100%;">
+      </div>
     </div>
+  
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
 
@@ -660,8 +496,8 @@
 
   <div class="bgimg-2 myDiv">
     <div class="caption">
-      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">"We have only one<p>
-          Passion,</p>the rise of a great<p>Nation"</p></span>
+      <span style="background-color:transparent;font-size:25px;color: #f7f7f7; color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">We have only one
+          <p>Passion,</p>the rise of a great<p>Nation"</p></span>
     </div>
   </div>
 
@@ -728,9 +564,10 @@
     <div class="caption" style="height: 100%; background-color: black; opacity: 0.5;top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); ">
-      <span class="border" style="background-color:transparent;font-size:25px;color: #ffffff;top: 50%;
+      <span  style="background-color:transparent;font-size:25px;color: #ffffff;top: 50%;
   -ms-transform: translateY(-50%)translateX(50%);
   transform: translateY(-50%)translateX(50%); position: absolute; right: 50%;
+  color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;
   ">"Be the change you want to see"</span>
     </div>
   </div>
@@ -757,7 +594,7 @@
 
   <div class="bgimg-4 myDiv">
     <div class="caption">
-      <span class="border end">Thanks for visiting :)</span>
+      <span style="color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">Thanks for visiting :)</span>
     </div>
   </div>
 
@@ -766,6 +603,10 @@
 
   <script type="text/javascript">
     var myVar;
+    var nav = document.getElementById("navbar");
+    var carousel = document.getElementById("myCarousel");
+    nav.style.display = "none";
+    carousel.style.display = "none";
 
     function load() {
       myVar = setTimeout(fadePage, 3000);
@@ -778,6 +619,8 @@
 
     function showPage() {
       document.getElementById("loader").style.display = "none";
+      navbar.style.display = "block";
+      carousel.style.display = "block";
       var x = document.getElementsByClassName("myDiv");
       var i;
       for (i = 0; i < x.length; i++) {

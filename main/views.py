@@ -7,7 +7,8 @@ from .forms import ContactForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-
+from initiatives.models import Initiative
+from accounts.models import Volunteer
 
 def index(request):
     return render(request, "initiatives/index.htm")
@@ -38,6 +39,10 @@ def password_reset(request):
 def internal_index(request):
     return render(request, "initiatives/index3.htm")
 
+def volunteers(request, name):
+    project = get_object_or_404(Initiative, slug = name)
+    volunteers = Volunteer.objects.filter(project = project).order_by('-year')
 
+    return render(request, 'initiatives/volunteers.htm', {'project':project, 'volunteers':volunteers})
 
 

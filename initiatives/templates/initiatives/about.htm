@@ -12,6 +12,11 @@
   margin-top: 5rem;
   }
 
+  .button {
+    text-align: center;
+    padding-top: 15px;
+  }
+
   .fa {
   padding: 8px;
   font-size: 22px;
@@ -34,35 +39,120 @@
   background: rgb(196, 32, 89);
   color: white;
 }
+
+.banner {
+  opacity: 0.65;
+}
+
+.team{
+  background-color: #ffb300;
+  border-color: #ffb300;
+  color: black;
+  color: white; 
+  border-radius: 25px; 
+  align-self: center;
+  width: fit-content;
+  padding: 8px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.team:hover {
+  background-color: black;
+  color: white;
+  border-radius: 25px; 
+  align-self: center;
+  width: fit-content;
+  padding: 8px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.social {
+  display: inline;
+  text-decoration: none;
+  color: white;
+}
+
+.social:hover {  
+  display: inline;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
 </style>
 
 <article class="media content-section" style="margin-left: 180px; width:1100px;">
   <div class="media-body">
-    <div class="article-metadata" style="margin-left: 10px; margin-right: 10px;">
-      <center><a href="https://nirmaan.org/"><small class="text-muted">nirmaan.org</small></a></center>
-    </div>
-    <center><h1 class="article-title" style="align-self: center;">About Us</h2></center>
-
-    <p><img src ="../../../media/default.png" width=1070px, height=330px, style="margin-left: 15px;"></p>
-
+    <center>
+      <br>
+      <div class="image mb-4" style="align-content: center; z-index: 0;">
+          <img class="banner" src="../../../media/3.jpg" alt="banner" width=97% style="height: 570px;" style="opacity: 0;">
+          <div class="text card" style="vertical-align: middle; background-color: #ffffff00; border: none; margin-top: 20px;">
+            <h1 style="color: white; font-size: 50px; font-weight: 800;">BEAUTIFUL SCENE</h1>
+            <button class="team">
+              MEET THE TEAM
+            </button>
+            <div>
+              <a class="fa fa-instagram social" href="https://www.instagram.com/nirmaan_pilani/"></a>&nbsp
+              <a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/" style="border-radius: 33px;"></a>&nbsp
+              <a class="social" href="#" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px
+                  style="border-radius: 33px; display: inline; margin-top: 12px;"></a>
+            </div>
+          </div>
+      </div>
+    </center>
+    
     <!---Page Description Goes Here-->
-    <p style="margin-left: 10px;margin-right: 10px; text-align: justify;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <div class="description" style="padding: 20px; font-size: large;">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+        Lorem Ipsum.
+      </p>
+    </div>
     <!--Page Description Ends-->
 
-    <!--Social Links-->
-    <p>
-      <h4 style="margin-left: 10px;">Follow on :</h4>
-      <div style="margin-left: 10px;">
-        <a class="fa fa-instagram" href="https://www.instagram.com/nirmaan_pilani/"></a><a href="https://www.instagram.com/nirmaan_pilani/"> Instagram</a>&nbsp&nbsp&nbsp<a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/"></a><a href="https://www.facebook.com/NirmaanPilaniPage/"> Facebook</a>
+    <center><hr style="width: 60%; color: gray; align-self: center;"></center>
+    
+    <div class="text-gray-700 body-font relative" style="margin-top: -27px;">
+        <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-1">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch!</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a note for us and never miss out on a new update from Nirmaan</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Name" type="text">
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Email" type="email">
+            </div>
+            <div class="p-2 w-full">
+              <textarea
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-red-500 text-base px-4 py-2 resize-none block"
+                placeholder="Message"></textarea>
+            </div>
+            <div class="p-2 w-full">
+              <button
+                class="flex mx-auto team rounded">Submit</button>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
-    </p>      
   
   </div>
+
 </article>
 
 

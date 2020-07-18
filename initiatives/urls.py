@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import (home, create_initiative, update_initiative, 
                      InitiativeDeleteView, init_detail,
-                     like_initiative)
+                     like_initiative, dash)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [

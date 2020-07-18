@@ -27,9 +27,19 @@
 <article class="media content-section" style="margin-left:330px; width:750px; ">  
   <div class="media-body" style="width:750px;">
     <br>
-    <h1 class="article-title" style="align-self: center;">&nbsp {{ init.name }}</h1>
 
-    <img src ="{{ init.banner_image.url }}" width=720px, height=330px, style="margin-left: 15px; margin-right:18px; margin-top: 10px;">
+    <!--<img src ="{{ init.banner_image.url }}" width=720px, height=330px, style="margin-left: 15px; margin-right:18px; margin-top: 10px;">-->
+
+    <div class="image">
+      <img src="../../../media/3.jpg" alt="banner" width=100% style="height: 330px;">
+      <div class="text article" style="vertical-align: middle;">
+        <h1 class="article-title" style="align-self: center; color: white;">&nbsp {{ init.name }}</h1>
+        <button class="btn btn-outline-primary"
+          style="background-color: #ffb300; border-color: #ffb300; color: white; border-radius: 25px; align-self: center;">
+          <h5>MEET THE TEAM</h5>
+        </button>
+      </div>
+    </div>
     
     <br><br>
     <p style="margin-left: 17px; margin-right: 20px; font-size: 20px;text-align: justify;">{{ init.description }}</p>
@@ -72,7 +82,9 @@
   </div>
 </article>
 
-<!--Comments Section Goes Here-->
+
+
+<!--Comments Section Goes Here
 <article class="media content-section" style="margin-left:330px; width:750px; ">
   
   <div class="media-body" style="width:750px; margin-left:10px; margin-top:10px; margin-right: 10px;">
@@ -102,6 +114,6 @@
     {% endfor %}
   </div>
 </article>
-
+-->
 
 {% endblock content %}

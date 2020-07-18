@@ -2,21 +2,39 @@
 {% load crispy_forms_tags %}
 {% block content %}
   <body style="background:  #fbfbfb;">
-    
     <br>
-    <div class="content-section" style="margin-left: 250px;">
-      <form method="POST" style="margin-left: 10px; margin-right: 10px;">
-        {% csrf_token %}
-        <fieldset class="form-group">
-          <legend class="border-bottom mb-4"> Administrator's Login </legend>
-          {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-          <button class="btn btn-outline-secondary" type="submit">Log In</button>
+    <center>
+      <div class="row content-section mb-5" style="width: 900px; margin: auto;">
+        <div class="column" style="float: left; width: 50%; flex: 50%; margin-right: 100px; border-right: 1px solid gray;">
+          <form method="POST" style="padding: 20px; margin-top: 30px;">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="mb-4"> Volunteers' Login </legend>
+              <h5>Log in with your BITS Email</h5>
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-secondary" type="submit" style="background-image: url(../../../media/google.png); width: 250px; height: 55px"></button>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
+        <div class="column" style="margin-right:100px">
+          <form method="POST" style="padding: 20px;">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="mb-4"> Administrator's Login </legend>
+              <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="username" placeholder="Password">
+              </div>
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-secondary" type="submit"> Log In </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      </div>
+    </center>
   </body>
 {% endblock content %}

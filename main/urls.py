@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index, contact, about, password_reset, internal_index
+from .views import index, contact, about, password_reset, internal_index, volunteers
 
 urlpatterns = [
     path('', index, name='index'),
@@ -8,5 +8,6 @@ urlpatterns = [
     path('about', about, name='about'),
     path('reset_password', password_reset, name='pwd_reset'),
     path('', internal_index, name='internal_index'),
+    path('<str:slug>/volunteers', volunteers, name='volunteers'),
 ]
 
