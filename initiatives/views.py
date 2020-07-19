@@ -9,6 +9,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 from .forms import CommentForm, InitiativeCreateForm, InitiativeUpdateForm
 from django.conf import settings
 from django.contrib import messages
+from accounts.models import Volunteer
+
 
 
 def home(request):
@@ -18,7 +20,10 @@ def home(request):
     return render(request, 'initiatives/home.htm', context)
 
 def dash(request):
-    return render(request, 'initiatives/dash.htm')
+    return render(request, 'initiatives/pl_volunteers.htm')
+
+def prd(request):
+    return render(request, 'initiatives/prd.htm')
 
 
 @staff_member_required
@@ -39,9 +44,9 @@ def create_initiative(request):
     return render(request, 'initiatives/initiative_form.htm', {'form': form})
 
 @staff_member_required
-def update_initiative(request, pk):
+def update_initiative(request, slug):
 
-    init = get_object_or_404(Initiative, pk=pk)
+    init = get_object_or_404(Initiative, slug=slug)
     if request.method == 'POST':
         form = InitiativeUpdateForm(
             request.POST, request.FILES, instance=init)
@@ -50,9 +55,9 @@ def update_initiative(request, pk):
             init.save()
             messages.info(request, 'Initiative "%s" updated successfully!' % init.name, fail_silently=True)
 
-            return redirect('init_detail', pk=init.id)
+            return redirect('init_detail', slug=slug)
     else:
-        form = InitiativeUpdateForm()
+        form = InitiativeUpdateForm(instance=init)
 
     return render(request, 'initiatives/initiative_form.htm', {'form': form})
 
@@ -67,8 +72,8 @@ class InitiativeDeleteView(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
         return self.success_message % dict(cleaned_data, init_name=self.object.name)
 
 
-def init_detail(request, pk):
-    initiative = get_object_or_404(Initiative, pk=pk)
+def init_detail(request, slug):
+    initiative = get_object_or_404(Initiative, slug = slug)
     
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -90,4 +95,9 @@ def like_initiative(request, pk):
     
     return redirect('init_detail', pk=initiative.id)
 
+def volunteers(request, slug):
+    project = get_object_or_404(Initiative, slug = slug)
+    volunteers = Volunteer.objects.filter(project = project).order_by('-year')
+
+    return render(request, 'initiatives/volunteers.htm', {'project':project, 'volunteers':volunteers})
 

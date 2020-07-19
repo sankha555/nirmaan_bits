@@ -39,10 +39,10 @@ def password_reset(request):
 def internal_index(request):
     return render(request, "initiatives/index3.htm")
 
-def volunteers(request, name):
-    project = get_object_or_404(Initiative, slug = name)
-    volunteers = Volunteer.objects.filter(project = project).order_by('-year')
+def main_contacts(request):
+    return render(request, "initiatives/main_contacts.htm")
 
-    return render(request, 'initiatives/volunteers.htm', {'project':project, 'volunteers':volunteers})
+
+
 
 

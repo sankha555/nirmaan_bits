@@ -6,15 +6,17 @@ from PIL import Image, ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
                             
-# Models for Initiatives and Events of Nirmaan Organization
+# Models for Project of Nirmaan Organization
 
 class Initiative(models.Model):  
-    name = models.CharField(verbose_name = "Name", max_length = 255, default = "")
-    description = models.TextField(verbose_name = "Description", max_length = 1000, default = "")
-    meta_description = models.TextField(verbose_name = "Meta_Description", max_length = 1000, default = description.description[:50]+"....")
+    name = models.CharField(verbose_name = "Name", max_length = 255, default = " ")
+    slug = models.CharField(verbose_name = "Short Name", max_length = 255, default = " ")
+    description = models.TextField(verbose_name = "Description", max_length = 1000, default = " ", blank=True)
     date_started = models.DateField(verbose_name = "Start Date")
     banner_image = models.ImageField(verbose_name = "Banner Image", default = "default.png", upload_to='banner_images/')
     likes = models.IntegerField(default = 0)
+
+    volunteers_file = models.FileField(upload_to='media/volunteers_files', max_length=100, null=True)
 
     ig_url = models.URLField(verbose_name = "Instagram Page URL", max_length = 255, default = "https://www.instagram.com/nirmaan_pilani/")
     fb_url = models.URLField(verbose_name = "Facebook Page URL", max_length = 255, default = "https://www.facebook.com/NirmaanPilaniPage/")
@@ -23,7 +25,6 @@ class Initiative(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        self.meta_description = self.description[:50] + "...."
         img = Image.open(self.banner_image.path)
 
         if img.height>800 or img.width > 1000:

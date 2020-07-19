@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from main.views import password_reset
-from initiatives.views import dash
+from initiatives.views import dash, prd
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,8 @@ urlpatterns = [
     path('', include('main.urls')),
     #path('reset_password', password_reset, 'pwd_reset'),
     path('dash/', dash, name='dash'),
+    path('prd/', prd, name='prd'),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:

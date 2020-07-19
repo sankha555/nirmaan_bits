@@ -1,119 +1,165 @@
 {% extends "initiatives/base.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
 {% include "base/js.html"%}
-
 <style>
   body {
-  width:500px;
-  background: #fbfbfb;
-  color: #333333;
-  margin-top: 5rem;
+    width: 500px;
+    background: #fafafa;
+    background-image: url("../../../media/3.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    color: #333333;
+    margin-top: 5rem;
   }
 
-  .content-section {
-  width:500px;
-  background: #ffffff;
-  padding: 0px 0px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+  .button {
+    text-align: center;
+    padding-top: 15px;
   }
 
+  .fa {
+    padding: 8px;
+    font-size: 22px;
+    width: 36px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: rgb(196, 32, 89);
+    color: white;
+  }
+
+  .banner {
+    opacity: 0.65;
+  }
+
+  .team {
+    background-color: #ffb300;
+    border-color: #ffb300;
+    color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .team:hover {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .social {
+    display: inline;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social:hover {
+    display: inline;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .container {
+    width: 80vw;
+    left: 10vw;
+  }
 </style>
 
-<br>
-
-<article class="media content-section" style="margin-left:330px; width:750px; ">  
-  <div class="media-body" style="width:750px;">
-    <br>
-
-    <!--<img src ="{{ init.banner_image.url }}" width=720px, height=330px, style="margin-left: 15px; margin-right:18px; margin-top: 10px;">-->
-
-    <div class="image">
-      <img src="../../../media/3.jpg" alt="banner" width=100% style="height: 330px;">
-      <div class="text article" style="vertical-align: middle;">
-        <h1 class="article-title" style="align-self: center; color: white;">&nbsp {{ init.name }}</h1>
-        <button class="btn btn-outline-primary"
-          style="background-color: #ffb300; border-color: #ffb300; color: white; border-radius: 25px; align-self: center;">
-          <h5>MEET THE TEAM</h5>
-        </button>
-      </div>
-    </div>
-    
-    <br><br>
-    <p style="margin-left: 17px; margin-right: 20px; font-size: 20px;text-align: justify;">{{ init.description }}</p>
-
-    <br>
-    <table>
-      <tr>
-
-        <td>
-          <form action="{% url 'like_initiative' init.id %}">
-            <button type="submit" class="btn" and style="background-color:transparent; outline : none;">
-              <i class="fa fa-heart" style="margin-right: 0px; font-size:25px; color:red"></i>
-              <small class="text-muted" style="margin-left:8px; font-size: 19px;">{{ init.likes}} Likes</small>
+<article class="card container mb-20">
+  <div class="media-body">
+    <center>
+      <br>
+      <div class="image mb-4" style="align-content: center; z-index: 0;">
+        <img class="banner" src="{{ init.banner_image.url }}" alt="banner" width=99% style="height: 570px;"
+          style="opacity: 0;">
+        <div class="text card"
+          style="vertical-align: middle; background-color: #ffffff00; border: none; width: 70%; top: 23%;">
+          <h1 style="color: white; font-size: 40px; font-weight: 800; text-transform: uppercase;">{{ init.name }}</h1>
+          <a href="{% url 'volunteers' init.slug %}">
+            <button class="team">
+              MEET THE TEAM
             </button>
-          </form>
-        </td>
-
-        <td>
-          <div style="margin-left: 470px; margin-right: 10px;">
-            <a href="{{ init.ig_url }}" title="Instagram"><img src="../../../media/ig_icon.png" width=33px height=33px></a>&nbsp&nbsp
-            <a href="{{ init.fb_url }}" title="Facebook"><img src="../../../media/fb_icon.png" width=33px height=33px></a>&nbsp&nbsp
-            <a href="{{ init.ketto_url }}" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px></a>
+          </a>
+          <div>
+            <a class="fa fa-instagram social" href="https://www.instagram.com/nirmaan_pilani/"></a>&nbsp
+            <a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/"
+              style="border-radius: 33px;"></a>&nbsp
+            <a class="social" href="#" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px
+                style="border-radius: 33px; display: inline; margin-top: 12px;"></a>
           </div>
-        </td>
+        </div>
+      </div>
+    </center>
 
-      </tr>
-    </table>
-
-    
-    <hr style="margin-left: 10px; margin-right: 10px;">
-    
-
-    {% if user.is_authenticated %}    
+    <!---Page Description Goes Here-->
+    <div class="description" style="padding: 20px; font-size: large;">
       <p>
-        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'init_update' init.id %}" style="margin-left: 10px; ">Update Initiative</a>&nbsp&nbsp&nbsp
-        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'init_delete' init.id %}" style="margin-left: 10px; ">Delete Initiative</a>
+        {{ init.description }}
       </p>
-    {% endif %}
-      
-  </div>
-</article>
+    </div>
+    <!--Page Description Ends-->
 
+    <center>
+      <hr style="width: 60%; color: gray; align-self: center;">
+    </center>
 
-
-<!--Comments Section Goes Here
-<article class="media content-section" style="margin-left:330px; width:750px; ">
-  
-  <div class="media-body" style="width:750px; margin-left:10px; margin-top:10px; margin-right: 10px;">
-    <h3 class="mr-2">Comments</h3>
-    
-
-    <div style="margin-left: 3px; margin-right: 13px;">
-      <p class="text-muted">Add a Comment...</p>
-      <form method="POST" style="margin-left: 0px; margin-right: 13px;">
-        {% csrf_token %}
-        <fieldset class="form-group">
-          {{ form|crispy }}
-        </fieldset>
-        <button class="btn btn-outline-secondary" type="submit">Post</button>       
-      </form>
+    <div class="text-gray-700 body-font relative" style="margin-top: -27px;">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-1">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch!</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a note for us and never miss out on a new update
+            from Nirmaan</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Name" type="text">
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Email" type="email">
+            </div>
+            <div class="p-2 w-full">
+              <textarea
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-red-500 text-base px-4 py-2 resize-none block"
+                placeholder="Message"></textarea>
+            </div>
+            <div class="p-2 w-full">
+              <button class="flex mx-auto team rounded">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <br>
-    {% for comment in init.comments.all reversed %}
-      <div class="comment" style="margin-left: 3px; margin-right: 13px;">
-          <small class="text-muted">{{ comment.published_on }}</small>    
-          <div class="article-content">{{ comment.message|linebreaks }}</div>
-          <hr>
-      </div>
-    {% empty %}
-        <p>No comments for this initiative yet...</p>
-    {% endfor %}
   </div>
+
 </article>
--->
+
 
 {% endblock content %}

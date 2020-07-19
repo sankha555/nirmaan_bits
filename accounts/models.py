@@ -4,14 +4,16 @@ from PIL import Image
 from initiatives.models import Initiative
 
 class Volunteer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(verbose_name = "name", max_length=50, default = "Name")
     bits_id = models.CharField(verbose_name = "BITS ID", max_length=15, unique = True)
-    year = models.IntegerField(default = 1)
+    year = models.IntegerField(verbose_name = "year", default = 1)
     phone = models.CharField(max_length=13)
-    image = models.ImageField(upload_to='media/volunteer_pics', default = None)
+    image = models.ImageField(upload_to='media/volunteer_pics', default = 'default_user.png')
+    bits_email = models.EmailField(verbose_name = "bits_email", max_length=254, null=True)
     
-    project = models.ForeignKey(Initiative, on_delete=models.CASCADE, related_name = 'project')
+    project = models.ForeignKey(Initiative, on_delete=models.CASCADE, related_name = 'project', null=True, blank=True)
+    prd_member = models.BooleanField(default = False)
     is_pl = models.BooleanField(default = False)
     visits = models.IntegerField(default = 0)
 

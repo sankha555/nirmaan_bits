@@ -5,13 +5,13 @@ class InitiativeCreateForm(forms.ModelForm):
 
     class Meta:
         model = Initiative
-        fields = ['name', 'description', 'date_started', 'ig_url', 'fb_url', 'ketto_url', 'banner_image']
+        fields = ['name', 'description', 'date_started', 'banner_image']
 
 class InitiativeUpdateForm(forms.ModelForm):
 
     class Meta:
         model = Initiative
-        fields = ['description', 'ig_url', 'fb_url', 'ketto_url', 'banner_image']
+        fields = ['description', 'banner_image']
     
 
 class CommentForm(forms.ModelForm):

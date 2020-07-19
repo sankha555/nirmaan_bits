@@ -1,0 +1,48 @@
+{% extends "initiatives/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  
+  <div class="sidenav">
+    <div class="pl_details">
+      <center><img src="../../../media/fb_2.png" alt="Avatar"></center>
+      <p>NAME</p>
+      <p>ID</p>
+      <p>PL - Project</p>
+    </div>
+  
+    <a href="#clients">Project</a>
+    <a href="#about">Volunteers</a>
+    <a href="#services">New Initiative</a>
+    <a href="#contact">All Initiatives</a>
+  </div>
+  
+  <div class="main">
+    <section class="text-gray-700 body-font p-10" style="margin-top: -80px;">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-10">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-0 text-gray-900">New Initiative</h1>
+          </div>
+        </div>
+  
+        <div class="content-section" style="margin-left: 180px; width:1100px;">
+          <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4"> Write About the Initiative</legend>
+              <input class = "form-control" >
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-secondary" type="submit">Post</button>&nbsp
+              <a class="btn btn-outline-danger" href="{% url 'home' %}">Cancel</a>
+            </div>
+          </form>
+        </div>
+  
+  
+      </div>
+    </section>
+  </div>
+
+
+{% endblock content %}

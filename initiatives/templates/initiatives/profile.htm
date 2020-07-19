@@ -1,0 +1,45 @@
+{% extends "initiatives/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  <body style="background: #fbfbfb;">
+    <div class="main" style="width: 80vw; font-size: 17px; margin-left: 10vw;">
+      <div class="content-section" style="width: 50vw; margin-left: 15vw; margin-top: 18vh;">
+
+        <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;" enctype="multipart/form-data">
+          {% csrf_token %}
+          <center>
+          <fieldset class="form-group">
+            {% if volunteer.is_pl %}
+            <legend class="border-bottom mb-4"> Project Leader Profile</legend>
+            {% else %}
+            <legend class="border-bottom mb-4"> Volunteer Profile</legend>
+            {% endif %}
+
+            <center><img style="border-radius: 200px; width: 200px; height: 200px; border-style: inset; border-width: 3px; border-color: #ffb300; margin-bottom: 20px;"
+              src="{{ volunteer.image.url }}"
+              alt="content"></center>
+
+            <h5 style="color: #ffb300;">{{ volunteer.bits_id }}</h5>
+            <h2>{{ volunteer.name }}</h2>
+            <h4>Project - {{ volunteer.project.name }}</h4>
+            <br>
+            <h5>Phone - {{ volunteer.phone }}</h5>
+            <h5>Email - {{ volunteer.bits_email }}</h5>
+            <br>
+            
+            <center>{{ form|crispy }}</center>
+
+          </fieldset>
+          
+            <div class="form-group">
+              <button class="btn btn-outline-secondary" type="submit">Update Profile Picture</button>&nbsp
+            </div>
+            <br>
+          </center>
+          
+        </form>
+      </div>
+    </div>
+  </body>
+{% endblock content %}

@@ -406,26 +406,33 @@
             <a class="nav-item dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Projects
             </a>
-            <div class="nav-item dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Siksha ki Ore </a>
-              <a class="dropdown-item" href="#">PRD</a>
-              <a class="dropdown-item" href="#">GB BAAS</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/initiatives/sko">SKO</a>
+              <a class="dropdown-item" href="/initiatives/utkarsh">Utkarsh</a>
+              <a class="dropdown-item" href="/initiatives/gb_baas">GB BAAS</a>
+              <a class="dropdown-item" href="/initiatives/pcd">PCD</a>
+              <a class="dropdown-item" href="/initiatives/unnati_1">Unnati 1</a>
+              <a class="dropdown-item" href="/initiatives/unnati_2">Unnati 2</a>
+              <a class="dropdown-item" href="/initiatives/sap">SAP</a>
+              <a class="dropdown-item" href="/initiatives/pkp">PKP</a>
+              <a class="dropdown-item" href="/prd">PRD</a>
             </div>
           </a>
           <!-- Menu Ends -->
 
           <a class="nav-item " href="{% url 'contact_us' %}">Contact</a>
-          <a class="nav-item " href="#">Peahen</a>
-          <a class="nav-item " href="{% url 'login' %}">Login</a>
-
 
           {% if user.is_authenticated %}
             {% if user.volunteer.is_pl %}
-              <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.username}} </a>
+            <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.volunteer.name.split.0}} </a>
+            {% elif user.is_superuser %}
+            <a class="nav-item " href="#">Hello, {{user.username}} </a>
             {% else %}
-              <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.username}} </a>
+            <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.volunteer.name.split.0}} </a>
             {% endif %}
             <a class="nav-item " href="{% url 'logout' %}">Logout</a>
+          {% else %}
+            <a class="nav-item " href="{% url 'login' %}">Login</a>
           {% endif %}
         </div>
 
