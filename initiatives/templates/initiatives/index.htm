@@ -394,7 +394,7 @@
 
   </div>
 
-  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="width: 99.45%; height: 120px; position: fixed;">
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="width: 99.45%; height: 120px; position: fixed; z-index: 10;">
     <div class="container">
       <a class="navbar-brand" href="{% url 'index' %}" style="color: black;"><img class="logo" src="../../media/nirmaan.png" height="80px"></a>
       <div class="collapse navbar-collapse" id="navbarToggle" style="position:absolute; right: 80px; margin-top: 30px; border-radius: none;">
@@ -407,25 +407,26 @@
               Projects
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/initiatives/sko">SKO</a>
-              <a class="dropdown-item" href="/initiatives/utkarsh">Utkarsh</a>
-              <a class="dropdown-item" href="/initiatives/gb_baas">GB BAAS</a>
-              <a class="dropdown-item" href="/initiatives/pcd">PCD</a>
-              <a class="dropdown-item" href="/initiatives/unnati_1">Unnati 1</a>
-              <a class="dropdown-item" href="/initiatives/unnati_2">Unnati 2</a>
-              <a class="dropdown-item" href="/initiatives/sap">SAP</a>
-              <a class="dropdown-item" href="/initiatives/pkp">PKP</a>
+              <a class="dropdown-item" href="/projects/sko">SKO</a>
+              <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+              <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
+              <a class="dropdown-item" href="/projects/pcd">PCD</a>
+              <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+              <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+              <a class="dropdown-item" href="/projects/sap">SAP</a>
+              <a class="dropdown-item" href="/projects/pkp">PKP</a>
               <a class="dropdown-item" href="/prd">PRD</a>
             </div>
           </a>
           <!-- Menu Ends -->
 
-          <a class="nav-item " href="{% url 'contact_us' %}">Contact</a>
+          <a class="nav-item " href="{% url 'register_visitor' %}">Contact</a>
 
           {% if user.is_authenticated %}
             {% if user.volunteer.is_pl %}
             <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.volunteer.name.split.0}} </a>
             {% elif user.is_superuser %}
+            <a class="nav-item " href="{% url 'all_visitors' %}">Visitors</a>
             <a class="nav-item " href="#">Hello, {{user.username}} </a>
             {% else %}
             <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.volunteer.name.split.0}} </a>
@@ -439,8 +440,30 @@
       </div>
     </div>
   </nav>
+
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.tags != "error" %}
+  <div class="alert alert-{{ message.tags }}"
+    style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100;  margin-top: 7vw; display: none;">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <center>{{ message }}</center>
+  </div>
+  {% else %}
+  <div class="alert alert-{{ message.tags }}" style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100;  margin-top: 7vw; background-color: red; color: maroon; padding: 5px; border-radius: 8px; border-color: maroon; border-width: 2px;">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <center>{{ message }}</center>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+
   
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: 5;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import (home, create_initiative, update_initiative, 
                      InitiativeDeleteView, init_detail,
-                     like_initiative, dash, volunteers)
+                     like_initiative, volunteers)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -13,7 +13,5 @@ urlpatterns = [
     path('<str:slug>', init_detail, name='init_detail' ),
     path('<str:slug>/volunteers', volunteers, name='volunteers' ),
     path('<int:pk>/liked', like_initiative, name='like_initiative' ),
-    #path('post/<int:pk>/comment/', add_comment, name='add_comment'),
-    
 ]
 

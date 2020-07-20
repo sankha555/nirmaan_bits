@@ -19,18 +19,20 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from main.views import password_reset
-from initiatives.views import dash, prd
+from initiatives.views import prd, prd_volunteers, all_visitors, delete_visitor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(template_name='initiatives/login.htm'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='initiatives/logout.htm'), name='logout'),
-    path('initiatives/', include('initiatives.urls')),
+    path('projects/', include('initiatives.urls')),
     path('', include('main.urls')),
-    #path('reset_password', password_reset, 'pwd_reset'),
-    path('dash/', dash, name='dash'),
     path('prd/', prd, name='prd'),
-    path('accounts/', include('accounts.urls')),
+    path('prd/volunteers', prd_volunteers, name='prd_volunteers'),
+    path('users/', include('accounts.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('visitors', all_visitors, name='all_visitors'),
+    path('delete_visitor/<int:pk>', delete_visitor, name='delete_visitor'),
 ]
 
 if settings.DEBUG:

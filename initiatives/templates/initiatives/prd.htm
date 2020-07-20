@@ -96,9 +96,11 @@
           <img class="banner" src="../../../media/3.jpg" alt="banner" width=99% style="height: 570px;" style="opacity: 0;">
             <div class="text card" style="vertical-align: middle; background-color: #ffffff00; border: none; width: 70%; top: 20%;">
               <h1 style="color: white; font-size: 40px; font-weight: 800; margin-bottom: 20px;">PUBLIC RELATIONS DEPARTMENT</h1>
-              <button class="team">
-                MEET THE TEAM
-              </button>
+              <a href="{% url 'prd_volunteers' %}">
+                <button class="team">
+                  MEET THE TEAM
+                </button>
+              </a>
               <div>
                 <a class="fa fa-instagram social" href="https://www.instagram.com/nirmaan_pilani/"></a>&nbsp
                 <a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/" style="border-radius: 33px;"></a>&nbsp
@@ -131,27 +133,27 @@
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a note for us and never miss out on a new update from Nirmaan</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-          <div class="flex flex-wrap -m-2">
+          <form method="POST" class="flex flex-wrap -m-2">
+            {% csrf_token %}
             <div class="p-2 w-1/2">
               <input
                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
-                placeholder="Name" type="text">
+                name="name" placeholder="Name" type="text">
             </div>
             <div class="p-2 w-1/2">
               <input
                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
-                placeholder="Email" type="email">
+                name="email" placeholder="Email" type="email">
             </div>
             <div class="p-2 w-full">
               <textarea
                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-red-500 text-base px-4 py-2 resize-none block"
-                placeholder="Message"></textarea>
+                name="message" placeholder="Message"></textarea>
             </div>
             <div class="p-2 w-full">
-              <button
-                class="flex mx-auto team rounded">Submit</button>
+              <button class="flex mx-auto team rounded">Submit</button>
             </div>
-          </div>
+          </form>
         </div>
         </div>
       </div>

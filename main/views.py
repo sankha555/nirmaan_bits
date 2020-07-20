@@ -9,16 +9,24 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from initiatives.models import Initiative
 from accounts.models import Volunteer
+from accounts.forms import VisitorRegistrationForm
 
 def index(request):
     return render(request, "initiatives/index.htm")
 
 def about(request):
-    return render(request, "initiatives/about.htm")
+    if request.method == "POST":
+        form = VisitorRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('about')
+    else:
+        form = VisitorRegistrationForm()
 
-def contact(request):
-    return render(request, "initiatives/index2.htm")
+    return render(request, 'initiatives/about.htm', {'form':form})
 
+#def contact(request):
+#    return render(request, "initiatives/index2.htm")
 
 def password_reset(request):
     

@@ -206,21 +206,21 @@
 
   <!--Messages-->
 <style>
-      .info {
+      .alert {
       background-color: #e7f6fd;
       color: #27aae1;
       border-width: 1px;
       border-style: solid;
       border-color: #27aae1;
     }
-    .success {
+    .alert-success {
       background-color: #c9f4b9;
       color: #52b52b;
       border-width: 1px;
       border-style: solid;
       border-color: #52b52b;
     }
-    .error {
+    .alert-error {
       background-color: #F2C2CC;
       color: #E63235;
       border-width: 1px;
@@ -590,23 +590,24 @@
                   Projects
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/initiatives/sko">SKO</a>
-                  <a class="dropdown-item" href="/initiatives/utkarsh">Utkarsh</a>
-                  <a class="dropdown-item" href="/initiatives/gb_baas">GB BAAS</a>
-                  <a class="dropdown-item" href="/initiatives/pcd">PCD</a>
-                  <a class="dropdown-item" href="/initiatives/unnati_1">Unnati 1</a>
-                  <a class="dropdown-item" href="/initiatives/unnati_2">Unnati 2</a>
-                  <a class="dropdown-item" href="/initiatives/sap">SAP</a>
-                  <a class="dropdown-item" href="/initiatives/pkp">PKP</a>
+                  <a class="dropdown-item" href="/projects/sko">SKO</a>
+                  <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+                  <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
+                  <a class="dropdown-item" href="/projects/pcd">PCD</a>
+                  <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+                  <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+                  <a class="dropdown-item" href="/projects/sap">SAP</a>
+                  <a class="dropdown-item" href="/projects/pkp">PKP</a>
                   <a class="dropdown-item" href="/prd">PRD</a>
                 </div>
               </a>
-              <a class="nav-item " href="{% url 'contact_us' %}">Contact</a>
+              <a class="nav-item " href="{% url 'register_visitor' %}">Contact</a>
 
               {% if user.is_authenticated %}
                 {% if user.volunteer.is_pl %}
                   <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.volunteer.name.split.0}} </a>
                 {% elif user.is_superuser %}
+                  <a class="nav-item " href="{% url 'all_visitors' %}">Visitors</a>
                   <a class="nav-item " href="#">Hello, {{user.username}} </a>
                 {% else %}
                   <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.volunteer.name.split.0}} </a>
@@ -621,18 +622,30 @@
         </div>
       </nav>
       <div class="box" style="height: 80px;">
-        <a href="{% url 'index' %}"><img class="logo" src="../../media/nirmaan.png" style="width: 150px; margin-top: 0px; align-self: center; padding: 5px;"></a>
+        <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png" style="width: 150px; margin-top: 0px; align-self: center; padding: 5px;"></a>
       </div>
   </header>
     
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}" style="width: 60vw; margin-left: 20vw; position: fixed;">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <center>{{ message }}</center>
-      </div>
-    {% endfor %}
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.tags != "error" %}
+  <div class="alert alert-{{ message.tags }}"
+    style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100;  margin-top: 7vw; display: none;">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <center>{{ message }}</center>
+  </div>
+  {% else %}
+  <div class="alert alert-{{ message.tags }}" style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100; ">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <center>{{ message }}</center>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
     
     {% block content %}
       

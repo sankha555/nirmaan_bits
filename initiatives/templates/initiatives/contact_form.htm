@@ -1,8 +1,15 @@
 {% extends "initiatives/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
+  <style>
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+
   <body>
-  <article class="media content-section" style="margin-left: 180px; width:1100px; ">
+  <article class="media content-section" style="margin-left: 10vw; width:80vw; ">
     <div class="media-body">
       <center>
         <h1 class="article-title" style="align-self: center; margin-top: 10px;">Contact Us</h2>
@@ -28,7 +35,7 @@
     </div>
   </article>
 
-    <div class="content-section" style="margin-left: 180px; width:1100px;">
+    <div class="content-section" style="margin-left: 10vw; width:80vw">
       <form method="POST" style="margin-left: 10px; margin-top: 10px; margin-right: 10px;">
         {% csrf_token %}
         <fieldset class="form-group">

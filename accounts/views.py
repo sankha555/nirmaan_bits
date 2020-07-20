@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from accounts.models import Volunteer, Visitor
 from initiatives.models import Initiative
 from accounts.forms import VisitorRegistrationForm, ProfileForm
@@ -10,12 +11,24 @@ import datetime
 
 @login_required
 def volunteer_login_validation(request):
-
-    if Volunteer.objects.filter(user = request.user).exists() or request.user.is_superuser:       
-        return redirect('index')
+    email = request.user.email
+    print(email)
+    if Volunteer.objects.filter(user = request.user).exists():
+        messages.success(request, 'Welcome, ' + request.user.volunteer.name + '!')
+        return redirect('internal_index')
+    elif Volunteer.objects.filter(bits_email = email).exists():
+        volunteer = Volunteer.objects.get(bits_email = email)
+        volunteer.user = request.user
+        volunteer.save()
+        messages.success(request, 'Welcome, ' + volunteer.name + '!')
+        return redirect('internal_index')
+    elif request.user.is_superuser:
+        messages.success(request, 'Welcome, Administrator!')
+        return redirect('internal_index')
     else:
         messages.error(request, 'Your account was not verified as a Nirmaan Volunteer Account. Please check your email.')
         logout(request)
+        User.objects.get(email = email).delete()
         return redirect('login')
 
 @login_required
@@ -35,8 +48,8 @@ def pl_dashboard(request):
             return render(request, 'initiatives/pl_volunteers.htm', context)
 
         else:
-            messages.error(request, 'You are not authorized to access this page!')
-            return redirect('index')
+            messages.error(request, 'You are not authorized to access that page!')
+            return redirect('internal_index')
     else:
         messages.error(request, 'Your account was not verified as a Nirmaan Volunteer Account. Please check your email.')
         logout(request)
@@ -44,7 +57,7 @@ def pl_dashboard(request):
 
 def register_visitor(request):
     if request.method == "POST":
-        form = VistorRegistrationForm(request.POST)
+        form = VisitorRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
 
@@ -52,10 +65,11 @@ def register_visitor(request):
             return redirect('index')
         
     else:
-        form = VistorRegistrationForm()
+        form = VisitorRegistrationForm()
 
-    return render(request, 'initiatives/register_visitor.htm', {'form' : form})
+    return render(request, 'initiatives/contact_form.htm', {'form' : form})
 
+@login_required
 def profile(request):
     if Volunteer.objects.filter(user = request.user).exists():       
         volunteer = Volunteer.objects.filter(user = request.user)[0]
@@ -80,8 +94,8 @@ def profile(request):
         return render(request, 'initiatives/profile.htm', context)
 
     else:
-        messages.error(request, 'You are not authorized to access this page!')
-        return redirect('index')
+        messages.error(request, 'You are not authorized to access that page!')
+        return redirect('internal_index')
 
         
 @login_required
@@ -122,11 +136,11 @@ def update_volunteers(request):
                 volunteer.save()
 
 
-        return redirect('index')
+        return redirect('internal_index')
            
     else:
-        messages.error(request, 'You are not authorized to access this page!')
-        return redirect('index')
+        messages.error(request, 'You are not authorized to access that page!')
+        return redirect('internal_index')
 
 
 

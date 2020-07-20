@@ -31,9 +31,9 @@ class Volunteer(models.Model):
 class Visitor(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254, unique = True)
-    phone = models.CharField(max_length=13)
-     
-
+    phone = models.CharField(max_length=13, blank = True, null = True)
+    message = models.TextField(max_length = 5000, blank = True, null = True)
+    date = models.DateField(auto_now=True)
 
 
 # Create your models here.
