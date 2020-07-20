@@ -62,7 +62,7 @@ def register_visitor(request):
             form.save()
 
             messages.success(request, 'Thanks for filling out our guestbook! You can now recieve updates about Nirmaan through email.')
-            return redirect('index')
+            return redirect('internal_index')
         
     else:
         form = VisitorRegistrationForm()
