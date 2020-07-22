@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.bundle.min.js "></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -64,12 +63,31 @@
       font-size: medium;
     }
 
+    .box {
+      width: 150px;
+      height: 80px;
+      background-color:white;
+      /*border-bottom-right-radius: 20px 20px;
+      border-bottom-left-radius: 20px 20px;
+      border-right: 15px;*/
+      margin-left: 60px;
+      z-index: 15;
+      position: fixed; 
+      top: 0; 
+      z-index: 20;
+      border-radius: 0 0 10px 10px;
+      height: 110px;
+    }
+
+
     .nav-item {
       color: white;
       margin-left: 30px;
+      margin-top: 20px;
       font-weight: 600;
       font-size: large;
-      border-bottom: none;
+      border-bottom: solid;
+      border-color: #000;
     }
 
     .nav-item:hover {
@@ -381,10 +399,16 @@
   <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top"
     style="width: 99.45%; height: 120px; position: fixed; z-index: 10;">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'index' %}" style="color: black;"><img class="logo"
-          src="../../media/nirmaan.png" height="80px"></a>
+      <a class="navbar-brand" href="#" style="color: black;"></a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"
+          style="margin-top: 20px; border: none; font-weight: 700; margin-left: 50vw;"></span></button>
+
       <div class="collapse navbar-collapse" id="navbarToggle"
-        style="position:absolute; right: 80px; margin-top: 30px; border-radius: none;">
+        style="position:absolute; right: 80px; margin-top: 40px; border-radius: none;">
         <div class="navbar-nav">
           <a class="nav-item " href="{% url 'about' %}">About</a>
 
@@ -403,6 +427,7 @@
               <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
               <a class="dropdown-item" href="/projects/sap">SAP</a>
               <a class="dropdown-item" href="/projects/pkp">PKP</a>
+              <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
               <a class="dropdown-item" href="/prd">PRD</a>
             </div>
           </a>
@@ -426,6 +451,11 @@
         </div>
 
       </div>
+    </div>
+    <div class="box"
+      style="height: 130px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
+      <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
+          style="width: 180px; margin-top: 10px; align-self: center; padding: 5px;"></a>
     </div>
   </nav>
 
@@ -528,7 +558,7 @@
       </h3>
       <p>
         <br>
-        <b>Gyan Bodh, UTKARSH SHIKSHA ki ore & School Adoption</b>
+        <b>Gyan Bodh, Utkarsh, Shiksha ki Ore, Pilani Ki Pathshala & School Adoption Programme</b>
 
         <br>
         Education is often referred to as the noblest of all professions. With our various education schemes, we embark
@@ -544,12 +574,31 @@
         and information to a few individuals and then with their help reach the masses.
         <br><br>
 
-        <b>Unnati & employment Generation</b>
+        <b>Unnati & Employment Generation</b>
         <br>
         Unnati's are our prime women empowerment and employment generation Our prime motive is to make the women skilled
         enough for employment. To suffice that, we are currently helping them develop products of sufficient regular
         use. Following that, we help them find a market for the products they skilfully develop. We also educate them on
         the various employment options available.
+        <br><br><br>
+
+        <h3 style="text-align:center; color: white;">PUBLIC <div class="yellow"> RELATIONS </div> DEPARTMENT
+        </h3><br>
+        
+        <p>
+          We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
+          village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
+          BITS) and other in collaboration with niine foundation), health camp in bass government school and several
+          eductional workshops and seminars.
+        </p>
+        <br>
+        <center>
+          <p>
+            <a href="{% url 'prd_volunteers' %}"><button class="btn btn-outline-info"
+                style="background-color: #ffb300; color: white; font-size: 18px;"><b>MEET THE TEAM</b></button></a>
+          </p>
+        </center>
+        
         <br><br><br>
 
       <h3 style="text-align:center; color: white;">OUR <div class="yellow"> EVENTS</div>

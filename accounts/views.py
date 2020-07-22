@@ -41,7 +41,7 @@ def pl_dashboard(request):
             messages.success(request, 'Welcome ' + volunteer.name + ', Project Leader of ' + project.name)
             
             context = {
-                'volunteers' : Volunteer.objects.filter(project = project),
+                'volunteers' : Volunteer.objects.filter(project = project).order_by('-is_pl','-year'),
                 'project' : project
             }
 

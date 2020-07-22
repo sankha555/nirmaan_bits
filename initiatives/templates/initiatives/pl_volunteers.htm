@@ -17,6 +17,11 @@
                         {% for volunteer in volunteers %}
                         <div class="xl:w-1/4 md:w-1/2 p-4">
                             <div class="tile bg-gray-100 p-6 rounded-lg">
+                                {% if volunteer.is_pl %}
+                                <h3 class="tracking-widest text-red-500 text-xs font-medium title-font">PROJECT LEADER</h3>
+                                {% else %}
+                                <h3 class="tracking-widest text-red-500 text-xs font-medium title-font"></h3>
+                                {% endif %}
                                 <center><img class="tile-img"
                                         src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
                                         alt="content"></center>
