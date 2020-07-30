@@ -7,7 +7,7 @@
   <title>Nirmaan Organization</title>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, max-content=0.5">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, max-content=0.5;">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description"
     content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership.">
@@ -430,9 +430,9 @@
     }
   </style>
 
-  <img id="loader" src="../../../media/load.gif" style="margin-left: 30vw; margin-right:30vw; margin-top:9vw; width: 40vw; height:400px;" >
+  <img id="loader" src="../../../media/load.gif" style="margin-left: 20vw; margin-right:20vw; margin-top:9vw; width: 60vw; height:400px;" >
 
-  <nav id="navbar" class="navbar navbar-expand-md">
+  <nav id="navbar" class="navbar navbar-expand-lg">
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -472,21 +472,19 @@
           <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Hello, {{ user.username}}</a>
+          <a class="nav-link" href="#">Hi, {{ user.username }}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </li>
+        
         {% elif user.volunteer.is_pl %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'pl_dashboard' %}">Hello, {{ user.volunteer.name }}</a>
+          <a class="nav-link" href="{% url 'pl_dashboard' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
         {% elif user.volunteer %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' %}">Hello, {{ user.volunteer.name }}</a>
+          <a class="nav-link" href="{% url 'profile' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -693,12 +691,11 @@
         <br><br><br>
 
         <a href="mailto:nirmaanpilaniprd@gmail.com"><img src="../../../media/mail.png" class="social"
-            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+            style=" display: inline;"></a>&nbsp
         <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
-            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+            style=" display: inline;"></a>&nbsp
         <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
-            style=" display: inline-block;"></a>
-
+            style=" display: inline;"></a>
         </p>
       </div>
     </div>
