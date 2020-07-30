@@ -3,86 +3,131 @@
 {% block content %}
 
 <style>
-    @media only screen and (max-width:1000px) {
-
-      .google-column{
-        align-items: center;
-        border-right: none;
-        border-right-color: white ;
-        padding-left: 30px;
-        margin-left: 80px;
-        margin-bottom: 40px;
-        margin-right: 80px;
-        text-align: center;
-        align-self: center;
-        align-content: center;
-        display: block;
-      }
-
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: medium;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    line-height: 100px;
   }
 
-  a {
-    color: black;
+  .container>div {
+    margin: 10px;
+    border-radius: 6.66%;
   }
-  a:hover {
+
+  /*relative as span becomes absolute about club*/
+  .tile {
+    position: relative;
+    height: 330px;
+    width: 250px;
+    line-height: normal;
+  }
+
+  .tile .image {
+    border-radius: 500px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-color: #ffb300;
+    border-style: inset;
+    border-width: 3px;
+    transition: all 0.5s ease-out;
+  }
+
+  .tile .h3 {
+    color: grey;
+  }
+
+  .tile .h2 {
     color: #ffb300;
-    text-decoration: none;
+  }
+
+  /*for mobile phones*/
+  @media only screen and (max-width: 350px) {
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container>div {
+      margin: 4vw;
+      padding: 0;
+      background-color: white;
+      border-radius: 6.66%;
+    }
+
+
+    .team .span {
+      top: -10.66vw;
+      left: 0vw;
+      width: 40vw;
+      height: 4vw;
+    }
+
   }
 </style>
 
-  </style>
-  <body style="background:  #eeeeee">
-    <br>
-    <center>
-      <center>
-        <div style="margin-left: 18%; width: 90vw;">
-          <h3>Donations</h3>
-          <br>
-          <h4>Your support will motivate us a lot to continue to embark upon our noble mission<p> We are currently accepting donations through the following platforms</p></h4>
+<body style="background: #fbfbfb;">
+  <br>
+  <center>
+    <div class="container flex flex-wrap" style="margin-left: 18vw; margin-right: 20vw; text-align: center; align-items: center; line-height: normal;">
+      <div>
+        <br>
+        <h4>Your support will motivate and help Nirmaan to march forward towards its noble mission</h4>
+        <h4>We are currently accepting donations through the following platforms</h4>
       </div>
-      </center>
-      <div class="row mb-10" style="width: 90vw; margin-top: 30px; margin-left: 7vw;">
-        <div class="google-column column" style="width: 30%; margin-right: 5%; height: 450px; background-color: white;">
-          <div style=" margin-top: 30px;">
-            <img src="https://pay.google.com/about/static_kcs/images/logos/google-pay-logo.svg" height=50px width="100px">
+
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 400px;">
+          <div style="padding: 20px; margin-top: 30px;">
+            <img src="https://pay.google.com/about/static_kcs/images/logos/google-pay-logo.svg" height=50px width="100px" style="margin-left: 25px;">
             <br>
             <a href="../../../media/gpay.png"><img src="../../../media/gpay.png" height=250px width="250px"></a>
-            
-            <p>Please scan above QR <br> to donate via Google Pay</p>
           </div>
         </div>
-                
-        <div class="google-column column" style="width: 25%; margin-right: 5%; height: 450px; background-color: white;">
-          <div style="padding-left: 15px; padding-right: 15px; margin-top: 35%;">
+      </div>
+
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 400px; padding: 5px;">
+          <div style="padding: 20px; margin-top: 30px; line-height: 40px;">
             <strong>
-              <u>
-                <p>
-                  Account Holder Details:
-                </p>
-              </u>
+              <u>Account Holder Details:</u>
             </strong>
-            <b><p>Harshdeep Singh Chhabra</p></b>
-            <p>Head<br> Public Relations Department<br>Nirmaan Organization, BITS Pilani</p>
-            <a href="tel:+91 90394 90451"><p>Phone: +91 90394 90451</p></a>
-            <a href="email:harshdeep0502@gmail.com"><p>Email: harshdeep0502@gmail.com</p></a>
-            <a href="email:f20180775@pilani.bits-pilani.ac.in"><p>BITS Email: f20180775@pilani.bits-pilani.ac.in</p>
+            <p>Harshdeep Singh Chhabra</p>
+            
+            <p>Head<br><br> PRD<br><br>Nirmaan Organization, <br><br>BITS Pilani</p>
+            <a href="tel:+91 90394 90451">
+              <p>Phone: +91 90394 90451</p>
             </a>
-
+            <a href="email:harshdeep0502@gmail.com">
+              <p>Email: <br><br>harshdeep0502@gmail.com</p>
+            </a>
+            <a href="email:f20180775@pilani.bits-pilani.ac.in">
+              <p>BITS Email: <br><br>f20180775@pilani.bits-pilani.ac.in</p>
+            </a>
           </div>
         </div>
+      </div>
 
-        <div class="google-column column" style="width: 30%; height: 450px; background-color: white;">
-          <div style=" margin-top: 30px;">
-            <br>
-            <img src="https://assetscdn1.paytm.com/commonmweb/cc3bba88.svg" height=50px width="100px">
-            <br>
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 400px;">
+          <div style="padding: 20px; margin-top: 30px;">
+            <img src="https://assetscdn1.paytm.com/commonmweb/cc3bba88.svg" height=50px width="100px"  style="margin-left: 25px;">
+            <br><br>
             <a href="../../../media/paytm.png"><img src="../../../media/paytm.png" height=250px width="250px"></a>
-          
-            <p>Please scan above QR <br> to donate via Paytm</p>   
           </div>
         </div>
-      </div> 
-      
-    </center>
-  </body>
+      </div>
+
+    </div>
+  </center>
+</body>
+
+  
 {% endblock content %}

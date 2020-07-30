@@ -56,5 +56,7 @@ def donations(request):
 def test_index(request):
     return render(request, "initiatives/index2.htm")
 
+def troubleshooting(request):
+    return render(request, "initiatives/troubleshooting.htm")
 
 

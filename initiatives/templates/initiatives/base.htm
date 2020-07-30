@@ -620,6 +620,9 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'register_visitor' %}">Contact</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'donations' %}">Donations</a>
           </li>
           {% if user.is_superuser %}
@@ -744,7 +747,7 @@
                   <li><a style="font-size: small;"href="{% url 'about' %}">ABOUT</a></li>
                   <li><a style="font-size: small;"href="{% url 'home' %}">PROJECTS</a></li>
                   <li><a style="font-size: small;"href="{% url 'donations' %}">DONATIONS</a></li>
-                  <li><a style="font-size: small;"href="#">TROUBLESHOOTING</a></li>
+                  <li><a style="font-size: small;"href="{% url 'troubleshooting' %}">TROUBLESHOOTING</a></li>
                 </ul>
               </div>
             </td>
@@ -759,7 +762,7 @@
             </td>
           </tr>
           <tr ><td colspan="3" style="width: 100vw; text-align: center; padding-left: 20vw; margin-bottom: 2vw;">
-            Developed with <i style="font-size:24px; color: red; margin-top: 1px;" class="fa">&nbsp&#xf08a;&nbsp</i> by Public Relations Department, Nirmaan Organization
+            Developed with <i style="font-size:24px; color: red; margin-top: 1px;" class="fa">&#xf08a;</i> by Public Relations Department, Nirmaan Organization
           </td></tr>
           <br><br>
           <tr style="height: 3vh; margin-top: 5vw;"></tr>

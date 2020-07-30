@@ -2,186 +2,216 @@
 {% block content %}
 
 <style>
-  body {
-  width:500px;
-  background: #fbfbfb;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #333333;
-  margin-top: 5rem;
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: medium;
+    margin-left: 10vw;
+    margin-right: 10vw;
   }
 
-  .fa {
-  padding: 8px;
-  font-size: 25px;
-  width: 40px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
+  .container>div {
+    margin: 10px;
+    border-radius: 6.66%;
+    text-align: center;
   }
 
-  .fa:hover {
-  opacity: 0.7;
-}
+  /*relative as span becomes absolute about club*/
+  .tile {
+    position: relative;
+    height: 330px;
+    width: 300px
+  }
 
-  .fa-facebook {
-  background: #3B5998;
-  color: white;
-}
+  .tile .image {
+    border-radius: 500px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-color: #ffb300;
+    border-style: inset;
+    border-width: 3px;
+    transition: all 0.5s ease-out;
+  }
 
-  .fa-instagram {
-  background: rgb(196, 32, 89);
-  color: white;
-}
+  .tile .h3 {
+    color: grey;
+  }
+
+  .tile .h2 {
+    color: #ffb300;
+  }
+
+  /*for mobile phones*/
+  @media only screen and (max-width: 350px) {
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container>div {
+      margin: 4vw;
+      padding: 0;
+      background-color: white;
+      border-radius: 6.66%;
+    }
 
 
+    .team .span {
+      top: -10.66vw;
+      left: 0vw;
+      width: 40vw;
+      height: 4vw;
+    }
+
+  }
 </style>
-    
-    <section class="text-gray-700 body-font p-8" style="margin-top: -80px; width: max-content; position: relative; margin-left: 200px;">
-      <center>
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-10">
-          <div class="lg:w-full w-full mb-6 lg:mb-0">
-            <center><h1 class="sm:text-3xl text-2xl font-large title-font mb-0 text-gray-900 mr-40" style="font-size: 40px;">The Torchbearers</h1></center>
-          </div>
-        </div>
-  
-        <div class="flex flex-wrap -m-4">
-            <!--Prez-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;" src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Deepanshu Gupta</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">President</h1>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
+<div style="margin-left: 10vw; width: 80vw;">
+  <br><br><br>
 
-            <!--Vice-Prez-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Nikhil Jain</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Vice-President</h3>
-                  <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                  <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
+  <div class="container flex flex-wrap">
+    <div class="container" style="margin-left: 20vw; margin-right: 25vw;">
+      <h2>The Torchbearers</font>
+      </h2>
+    </div>
 
-            <!--HRD Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Kanishk Pandya</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Human Resources Development</h3>
-                  <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                  <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--Finance Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Bhanu Reddy</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Finance
-                  </h3>
-                  <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                  <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--PRD Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Minu Rajeeve</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Public Relations Department
-                </h3>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--EdDev Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Akarsh Shroff</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Educational Development
-                </h3>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--EdOps Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Ameya Pathak</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Educational
-                  Operations
-                </h3>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--WomenEmp Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Prachi Jha</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Women Empowerment
-                </h3>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-
-            <!--ComDev Head-->
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
-              <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
-                <center><img
-                    style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
-                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                    alt="content"></center>
-                <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Utkarsh Chauhan</h1>
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Community Development
-                </h3>
-                <p><a href="tel:9999999999">Ph: 9999999999</a></p>
-                <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
-              </div>
-            </div>
-            
-        </div>
-  
+    <!--Prez-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;" src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Deepanshu Gupta</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">President</h1>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
       </div>
-      </center>
-    </section>
+    </div>
+
+    <!--Vice-Prez-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Nikhil Jain</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Vice-President</h3>
+          <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+          <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--HRD Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Kanishk Pandya</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Human Resources Development</h3>
+          <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+          <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--Finance Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Bhanu Reddy</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Finance
+          </h3>
+          <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+          <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--PRD Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Minu Rajeeve</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Public Relations Department
+        </h3>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--EdDev Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Akarsh Shroff</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Educational Development
+        </h3>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--EdOps Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Ameya Pathak</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Educational
+          Operations
+        </h3>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--WomenEmp Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Prachi Jha</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Women Empowerment
+        </h3>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+
+    <!--ComDev Head-->
+    <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+      <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 450px;">
+        <center><img
+            style="width: 200px; height: 30%; padding: 20px; border-radius: 200px; border-width: 3px; border-style:inset; border-color:#ffb300; margin-bottom: 10px;"
+            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+            alt="content"></center>
+        <h1 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: xx-large;">Utkarsh Chauhan</h1>
+        <h3 class="text-lg text-gray-900 font-medium title-font mb-4" style="font-size: x-large;">Head of Community Development
+        </h3>
+        <p><a href="tel:9999999999">Ph: 9999999999</a></p>
+        <a href="mailt" class="leading-relaxed text-base" style="bottom: 10px;">Email</a>
+      </div>
+    </div>
+    
+</div>
+
+</div>
 
 {% endblock content %}

@@ -32,12 +32,81 @@
   }
 </style>
 
-  </style>
-  <body style="background:  #fbfbfb;">
+<style>
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: medium;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
+  .container>div {
+    margin: 10px;
+    border-radius: 6.66%;
+  }
+
+  /*relative as span becomes absolute about club*/
+  .tile {
+    position: relative;
+    height: 330px;
+    width: 250px
+  }
+
+  .tile .image {
+    border-radius: 500px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-color: #ffb300;
+    border-style: inset;
+    border-width: 3px;
+    transition: all 0.5s ease-out;
+  }
+
+  .tile .h3 {
+    color: grey;
+  }
+
+  .tile .h2 {
+    color: #ffb300;
+  }
+
+  /*for mobile phones*/
+  @media only screen and (max-width: 350px) {
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container>div {
+      margin: 4vw;
+      padding: 0;
+      background-color: white;
+      border-radius: 6.66%;
+    }
+
+
+    .team .span {
+      top: -10.66vw;
+      left: 0vw;
+      width: 40vw;
+      height: 4vw;
+    }
+
+  }
+</style>
+
+  <body style="background: #fbfbfb;">
     <br>
     <center>
-      <div class="login row content-section mb-5" style="width: 70vw; margin-top: 30px; margin-left: 15vw;">
-        <div class="google-column" style="width: 50%; margin-right: 10%;">
+    <div class="container flex flex-wrap" style="margin-left: 30vw; margin-right: 30vw;">
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 330px;">
           <div style="padding: 20px; margin-top: 30px;">
             <fieldset class="form-group">
               <legend class="mb-4"> Volunteers' Login </legend>
@@ -45,28 +114,35 @@
             </fieldset>
             {% load socialaccount %}
             <div class="form-group">
-              <a href="{% provider_login_url 'google' %}"><div style="background-image: url(/media/google.png); width: 250px; height: 55px; border-radius: 7px; border: solid 1px; border-color: black;" class="google-button" ></div></a>
+              <a href="{% provider_login_url 'google' %}">
+                <img src="../../../media/google.png" style="border-radius: 5px; width: 200px; height:40px; border: 1px solid; border-color: black;">
+              </a>
             </div>
           </div>
         </div>
-        <div class="admin column">
-          <form method="POST" style="padding: 20px;">
-            {% csrf_token %}
-            <fieldset class="form-group">
-              <legend class="mb-4"> Administrator's Login </legend>
+      </div>
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 330px;">
+          <div style="padding: 20px;">
+            <form method="POST" style="padding: 20px;">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                <legend class="mb-4"> Administrator's Login </legend>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+              </fieldset>
               <div class="form-group">
-                <input class="form-control" type="text" name="username" placeholder="Username">
+                <button class="btn btn-outline-secondary" type="submit"> Log In </button>
               </div>
-              <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="Password">
-              </div>
-            </fieldset>
-            <div class="form-group">
-              <button class="btn btn-outline-secondary" type="submit"> Log In </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
+    </div>
     </center>
   </body>
 {% endblock content %}
