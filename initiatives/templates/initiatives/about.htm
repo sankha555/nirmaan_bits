@@ -86,8 +86,12 @@
     margin-left: 10vw;
     margin-right: 10vw;
   }
+  @media only screen and (max-width:600px) {
 
-  @media only screen and (max-width: 300px) {
+    .about {
+      width: 100vw;
+      margin-left: 10vw;
+    }
     .team {
       background-color: #ffb300;
       border-color: #ffb300;
@@ -112,15 +116,15 @@
       font-weight: 600;
     }
 
-    .text {
-      font-size: small;
+    .heading {
+      font-size: x-large;
     }
 
   }
 </style>
 
 <br>
-<article class="card container mb-20" style="margin-left: 10vw; margin-right: 10vw; width: 80vw;">
+<article class="card container mb-20 about">
   <div class="media-body">
     <center>
       <br>
@@ -129,7 +133,7 @@
         <img class="banner" src="../../../media/1.jpg" alt="banner" style="height: 40vw; width: 95vw;" style="opacity: 0;">
         <div class="text card"
           style="background-color: #ffffff00; border:none; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: inherit;">
-          <h1 style="color: white; font-size: 40px; font-weight: 800; text-transform: uppercase;">NIRMAAN ORGANIZATION</h1>
+          <h1 class="heading" style="color: white; font-weight: 800; text-transform: uppercase;">NIRMAAN ORGANIZATION</h1>
           <br>
           <a href="{% url 'main_contacts' %}">
             <button class="team">
@@ -139,6 +143,7 @@
         </div>
       </div>
     </center>
+  
     
     <!---Page Description Goes Here-->
     <div class="description" style="padding: 20px; font-size: large;">

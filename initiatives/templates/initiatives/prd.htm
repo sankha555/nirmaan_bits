@@ -82,9 +82,41 @@
 }
 
 .container {
-  width: 80vw;
+  width: 120vw;
   left: 10vw;
 }
+
+@media only screen and (max-width:600px) {
+
+    .team {
+      background-color: #ffb300;
+      border-color: #ffb300;
+      color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .team:hover {
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .heading {
+      font-size: x-large;
+    }
+
+  }
 
 </style>
 
@@ -134,7 +166,7 @@
 
       <div class="image mb-4" style="align-content: center; z-index: 0;">
             <div class="text card" style="vertical-align: middle; background-color: #ffffff00; border: none; width: 70%; top: 10%;">
-              <h1 style="color: white; font-size: 40px; font-weight: 800; margin-bottom: 25px;">PUBLIC RELATIONS DEPARTMENT</h1>
+              <h1 style="color: white; font-weight: 800; margin-bottom: 25px;">PUBLIC RELATIONS DEPARTMENT</h1>
               
               <a href="{% url 'prd_volunteers' %}">
                 <button class="team">

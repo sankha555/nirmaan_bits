@@ -14,6 +14,7 @@
   .button {
     text-align: center;
     padding-top: 15px;
+    word-wrap: unset;
   }
 
   .fa {
@@ -54,6 +55,7 @@
     padding: 8px;
     font-size: large;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .team:hover {
@@ -81,12 +83,12 @@
   }
 
   .container {
-    width: 80vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    width: 120vw;
+    left: 10vw;
   }
 
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width:600px) {
+
     .team {
       background-color: #ffb300;
       border-color: #ffb300;
@@ -111,23 +113,23 @@
       font-weight: 600;
     }
 
-    h1 {
-      font-size: 5px;
+    .heading {
+      font-size: x-large;
     }
 
   }
 </style>
 
 <br>
-<article class="card container mb-20" style="margin-left: 10vw; margin-right: 10vw; width: 80vw;">
-  <div class="media-body">
+<article class="card container mb-20">
+  <div class="media-body mob">
     <center>
       <br>
       <div class="image mb-4" style="align-content: center; z-index: 0; display: table-cell; vertical-align: middle; position: relative;">
         <img class="banner" src="{{ init.banner_image.url }}" alt="banner" style="height: 40vw; width: 95vw; "
           style="opacity: 0;">
         <div class="text card" style="background-color: #ffffff00; border:none; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: inherit;">
-          <h1 style="color: white; font-size: 40px; font-weight: 800; text-transform: uppercase;">{{ init.name }}</h1>
+          <h1 class="heading" style="color: white; font-weight: 800; text-transform: uppercase;">{{ init.name }}</h1>
           <a href="{% url 'volunteers' init.slug %}">
             <button class="team">
               MEET THE TEAM
@@ -149,8 +151,8 @@
       <hr style="width: 60%; color: gray; align-self: center;">
     </center>
 
-    <div class="text-gray-700 body-font relative" style="margin-top: -27px;">
-      <div class="container px-5 py-24 mx-auto">
+    <div class="text-gray-700 body-font relative " style="margin-top: -27px; margin-right: 100px;">
+      <div class="container px-5 py-24 mx-auto" style="margin-right: 40px;">
         <div class="flex flex-col text-center w-full mb-1">
           <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch!</h1>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a note for us and never miss out on a new update
