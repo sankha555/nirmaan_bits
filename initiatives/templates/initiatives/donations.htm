@@ -1,0 +1,88 @@
+{% extends "initiatives/base.htm" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    @media only screen and (max-width:1000px) {
+
+      .google-column{
+        align-items: center;
+        border-right: none;
+        border-right-color: white ;
+        padding-left: 30px;
+        margin-left: 80px;
+        margin-bottom: 40px;
+        margin-right: 80px;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+        display: block;
+      }
+
+  }
+
+  a {
+    color: black;
+  }
+  a:hover {
+    color: #ffb300;
+    text-decoration: none;
+  }
+</style>
+
+  </style>
+  <body style="background:  #eeeeee">
+    <br>
+    <center>
+      <center>
+        <div style="margin-left: 18%; width: 90vw;">
+          <h3>Donations</h3>
+          <br>
+          <h4>Your support will motivate us a lot to continue to embark upon our noble mission<p> We are currently accepting donations through the following platforms</p></h4>
+      </div>
+      </center>
+      <div class="row mb-10" style="width: 90vw; margin-top: 30px; margin-left: 7vw;">
+        <div class="google-column column" style="width: 30%; margin-right: 5%; height: 450px; background-color: white;">
+          <div style=" margin-top: 30px;">
+            <img src="https://pay.google.com/about/static_kcs/images/logos/google-pay-logo.svg" height=50px width="100px">
+            <br>
+            <a href="../../../media/gpay.png"><img src="../../../media/gpay.png" height=250px width="250px"></a>
+            
+            <p>Please scan above QR <br> to donate via Google Pay</p>
+          </div>
+        </div>
+                
+        <div class="google-column column" style="width: 25%; margin-right: 5%; height: 450px; background-color: white;">
+          <div style="padding-left: 15px; padding-right: 15px; margin-top: 35%;">
+            <strong>
+              <u>
+                <p>
+                  Account Holder Details:
+                </p>
+              </u>
+            </strong>
+            <b><p>Harshdeep Singh Chhabra</p></b>
+            <p>Head<br> Public Relations Department<br>Nirmaan Organization, BITS Pilani</p>
+            <a href="tel:+91 90394 90451"><p>Phone: +91 90394 90451</p></a>
+            <a href="email:harshdeep0502@gmail.com"><p>Email: harshdeep0502@gmail.com</p></a>
+            <a href="email:f20180775@pilani.bits-pilani.ac.in"><p>BITS Email: f20180775@pilani.bits-pilani.ac.in</p>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="google-column column" style="width: 30%; height: 450px; background-color: white;">
+          <div style=" margin-top: 30px;">
+            <br>
+            <img src="https://assetscdn1.paytm.com/commonmweb/cc3bba88.svg" height=50px width="100px">
+            <br>
+            <a href="../../../media/paytm.png"><img src="../../../media/paytm.png" height=250px width="250px"></a>
+          
+            <p>Please scan above QR <br> to donate via Paytm</p>   
+          </div>
+        </div>
+      </div> 
+      
+    </center>
+  </body>
+{% endblock content %}

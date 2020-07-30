@@ -17,11 +17,11 @@ ul {
 }
 
 .bg-steel {
-  background-color: white;
+  background-color: black;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #474b4d;
+  color: white;
   margin-left: 15px;
 }
 
@@ -31,7 +31,6 @@ ul {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
-
 }
 
 .content-section {

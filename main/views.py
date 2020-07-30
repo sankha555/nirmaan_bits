@@ -50,7 +50,11 @@ def internal_index(request):
 def main_contacts(request):
     return render(request, "initiatives/main_contacts.htm")
 
+def donations(request):
+    return render(request, "initiatives/donations.htm")
 
+def test_index(request):
+    return render(request, "initiatives/index2.htm")
 
 
 

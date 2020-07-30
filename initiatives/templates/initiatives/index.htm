@@ -9,14 +9,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership.">
+  <meta name="description"
+    content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership.">
   <meta name="keywords" content="nirmaan, organization, bits, pilani, social, work, ngo, education">
   <meta name="keywords" content="footer, links, icons" />
   <meta name="theme-color" content="black">
 
   <link rel="icon" href="../../../media/nirmaan_logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="data/main.css">
+
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -26,66 +26,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.bundle.min.js "></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <link
-  href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fondamento&family=Indie+Flower&family=Rowdies:wght@300&display=swap"
-  rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fondamento&family=Indie+Flower&family=Rowdies:wght@300&display=swap"
+    rel="stylesheet">
 
   <style>
+    .navbar-brand {
+      margin-left: 10%;
+    }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: #444444;
-  }
+    .navbar {
+      background-color: black;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      width: 99.4vw;
+      font-size: larger;
+      font-weight: 700;
+      height: 90px;
+    }
 
-  ul {
-    margin: 0;
-  }
+    .box {
+      width: 150px;
+      height: 80px;
+      background-color: white;
+      margin-left: 60px;
+      z-index: 15;
+      position: fixed;
+      top: 0;
+      z-index: 20;
+      border-radius: 0 0 10px 10px;
+      height: 110px;
+    }
 
-  .bg-steel {
-    background-color: black;
-    color: white;
-  }
+    .nav-item {
+      color: white;
+      float: right;
+      background-color: black;
+      margin-right: 10px;
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: large;
+      border-bottom: solid;
+      border-color: #000;
+      margin-top: 7px;
+      padding-right: 5px;
+    }
 
-  .site-header .navbar-nav .nav-link .nav-item{
-    color: white;
-    margin-left: 25px;
-    font-weight: 600;
-    font-size: medium;
-  }
+    .nav-item:hover {
+      float: right;
+      background-color: black;
+      color: #ffb300;
+      margin-right: 10px;
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: large;
+      border-bottom: solid;
+      text-decoration: none;
+      margin-top: 7px;
+      padding-right: 5px;
+    }
 
-  .nav-item {
-    color: white;
-    margin-left: 30px;
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: large;
-    border-bottom: solid;
-    border-color: #000;
-  }
+    .nav-link {
+      color: white;
+      float: right;
+      background-color: black;
+      font-weight: 600;
+      font-size: large;
+      border-bottom: none;
+      border-color: #000;
+      margin-top: 7px;
+    }
 
-  .nav-item:hover {
-    color: #ffb300;
-    margin-left: 30px;
-    font-weight: 600;
-    font-size: large;
-    border-bottom: solid;
-    text-decoration: none;
-  }
+    .nav-link:hover {
+      float: right;
+      background-color: black;
+      color: #ffb300;
+      font-weight: 600;
+      font-size: large;
+      border-bottom: none;
+      text-decoration: none;
+      margin-top: 7px;
+    }
 
+    .navbar-toggle .navbar-toggler-icon {
+      font-weight: 700;
+      color: white;
+      font-size: larger;
+    }
 
-  .site-header .navbar-nav .nav-link:hover .nav-item:hover{
-    color: #ffb300;
-  }
-
-  .site-header .navbar-nav .nav-link.active .nav-item:hover{
-    font-weight: 600;
-  }
-  
+    .dropdown {
+      color: white;
+      border-bottom: solid;
+      border-color: #000;
+    }
   </style>
 
   <style>
@@ -95,23 +135,9 @@
       margin: 0;
       font: 400 15px/1.8 "Lato", sans-serif;
       /*color: #777;*/
+      background-color: black;
     }
 
-    .box {
-      width: 150px;
-      height: 80px;
-      background-color:white;
-      /*border-bottom-right-radius: 20px 20px;
-      border-bottom-left-radius: 20px 20px;
-      border-right: 15px;*/
-      margin-left: 60px;
-      z-index: 15;
-      position: fixed; 
-      top: 0; 
-      z-index: 20;
-      border-radius: 0 0 10px 10px;
-      height: 110px;
-    }
 
     .social {
       height: 50px;
@@ -168,7 +194,7 @@
       filter: saturate(0%)contrast(120%)sepia(80%);
     }
 
-    .caption-navbar{
+    .caption-navbar {
       left: 0;
       display: inline;
       -ms-transform: translateY(-50%);
@@ -218,7 +244,7 @@
       -webkit-touch-callout: none;
     }
 
-    .btn:hover{
+    .btn:hover {
       opacity: 0.9;
     }
 
@@ -386,142 +412,96 @@
     }
   </style>
 
-  <!--New Navbar
-  <style>
-  .topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.nav-item {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.nav-item:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.nav-item.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-  </style>-->
-
 </head>
 
 <body class="demo" style="overflow: scroll; overflow-x: hidden; " onload="load()">
 
-  <div id="loader" class="bgimg-4" style=" background-image:url(); background-color: white; filter: none; transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;">
-    <div class="caption" >
-      <span><img class="logo" src="../../../media/nirmaan.png">
-      </span>
+  <style>
+    .mylink {
+      color: white;
+    }
+
+    .mylink:hover {
+      color: #ffb300;
+    }
+
+    .navbar-nav>li>a {
+      color: white;
+    }
+  </style>
+
+  <img id="loader" src="../../../media/load.gif" style="width: 50vw; margin-left: 25vw; margin-top: 9vw;">
+
+  <nav id="navbar" class="navbar navbar-expand-md">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon">&#9776</span>
+      </button>
+
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item dropdown" style="margin-left: 0;">
+          <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">Projects</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/projects/sko">SKO</a>
+            <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+            <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
+            <a class="dropdown-item" href="/projects/pcd">PCD</a>
+            <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+            <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+            <a class="dropdown-item" href="/projects/sap">SAP</a>
+            <a class="dropdown-item" href="/projects/pkp">PKP</a>
+            <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
+            <a class="dropdown-item" href="/prd">PRD</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'donations' %}">Donations</a>
+        </li>
+        {% if user.is_superuser %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello, {{ user.username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% elif user.volunteer.is_pl %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pl_dashboard' %}">Hello, {{ user.volunteer.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% elif user.volunteer %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Hello, {{ user.volunteer.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
 
-
-    <div class="gooey">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
-
-  </div>
-  
-  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="width: 99.45%; height: 120px; position: fixed; z-index: 10; >
-    <div class="container">
-      <a class="navbar-brand" href="#" style="color: black;"></a>
-      <!-- Collapse button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"
-          style="margin-top: 20px; border: none; font-weight: 700; margin-left: 50vw;"></span></button>
-
-      <div class="collapse navbar-collapse" id="navbarToggle" style="position:absolute; right: 80px; margin-top: 40px; border-radius: none; background-color: black;">
-        <div class="navbar-nav">
-          <a class="nav-item " href="{% url 'about' %}">About</a>
-
-          <a class="dropdown nav-item" style="margin-left: 0;">
-            <a class="nav-item dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/projects/sko">SKO</a>
-              <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
-              <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
-              <a class="dropdown-item" href="/projects/pcd">PCD</a>
-              <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
-              <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
-              <a class="dropdown-item" href="/projects/sap">SAP</a>
-              <a class="dropdown-item" href="/projects/pkp">PKP</a>
-              <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
-              <a class="dropdown-item" href="/prd">PRD</a>
-            </div>
-          </a> 
-
-          <a class="nav-item " href="{% url 'register_visitor' %}">Contact</a>
-
-          {% if user.is_authenticated %}
-            {% if user.volunteer.is_pl %}
-            <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.volunteer.name.split.0}} </a>
-            {% elif user.is_superuser %}
-            <a class="nav-item " href="{% url 'all_visitors' %}">Visitors</a>
-            <a class="nav-item " href="#">Hello, {{user.username}} </a>
-            {% else %}
-            <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.volunteer.name.split.0}} </a>
-            {% endif %}
-            <a class="nav-item " href="{% url 'logout' %}">Logout</a>
-          {% else %}
-            <a class="nav-item " href="{% url 'login' %}">Login</a>
-          {% endif %}
-
-        </div>
-        
-
-      </div>
-    </div>
-    <div class="box" style="height: 130px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
+    <div class="box"
+      style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
       <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
-          style="width: 180px; margin-top: 10px; align-self: center; padding: 5px;"></a>
+          style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
     </div>
   </nav>
-  
-
 
   {% if messages %}
   {% for message in messages %}
@@ -534,7 +514,8 @@
     <center>{{ message }}</center>
   </div>
   {% else %}
-  <div class="alert alert-{{ message.tags }}" style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100;  margin-top: 7vw; background-color: red; color: maroon; padding: 5px; border-radius: 8px; border-color: maroon; border-width: 2px;">
+  <div class="alert alert-{{ message.tags }}"
+    style="width: 60vw; margin-left: 20vw; position: fixed; z-index: 100;  margin-top: 7vw; background-color: red; color: maroon; padding: 5px; border-radius: 8px; border-color: maroon; border-width: 2px;">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -544,7 +525,7 @@
   {% endfor %}
   {% endif %}
 
-  
+
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: 5;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -552,22 +533,22 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-  
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
         <img class="bgimg-1" src="../../../media/1.JPG" style="height: 700px; width: 100%;">
       </div>
-  
+
       <div class="item">
-        <img class="bgimg-2" src="../../../media/2.png" style="height: 700px; width: 100%;" >
+        <img class="bgimg-2" src="../../../media/2.png" style="height: 700px; width: 100%;">
       </div>
-  
+
       <div class="item">
         <img class="bgimg-3" src="../../../media/3.jpg" style="height: 700px; width: 100%;">
       </div>
     </div>
-  
+
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -608,8 +589,10 @@
 
   <div class="bgimg-2 myDiv">
     <div class="caption">
-      <span style="background-color:transparent;font-size:25px;color: #f7f7f7; color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">We have only one
-          <p>Passion,</p>the rise of a great<p>Nation"</p></span>
+      <span
+        style="background-color:transparent;font-size:25px;color: #f7f7f7; color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">We
+        have only one
+        <p>Passion,</p>the rise of a great<p>Nation"</p></span>
     </div>
   </div>
 
@@ -635,7 +618,7 @@
         and information to a few individuals and then with their help reach the masses.
         <br><br>
 
-        <b>Unnati & employment Generation</b>
+        <b>Unnati & Employment Generation</b>
         <br>
         Unnati's are our prime women empowerment and employment generation Our prime motive is to make the women skilled
         enough for employment. To suffice that, we are currently helping them develop products of sufficient regular
@@ -643,47 +626,49 @@
         the various employment options available.
         <br><br><br>
 
-        <h3 style="text-align:center; color: white;">PUBLIC <div class="yellow"> RELATIONS </div> DEPARTMENT
-        </h3><br>
-        
+      <h3 style="text-align:center; color: white;">PUBLIC <div class="yellow"> RELATIONS </div> DEPARTMENT
+      </h3><br>
+
+      <p>
+        We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
+        village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
+        BITS) and other in collaboration with niine foundation), health camp in bass government school and several
+        eductional workshops and seminars.
+      </p>
+      <br>
+      <center>
         <p>
-          We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
-          village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
-          BITS) and other in collaboration with niine foundation), health camp in bass government school and several
-          eductional workshops and seminars.
+          <a href="{% url 'prd_volunteers' %}"><button class="btn btn-outline-info"
+              style="background-color: #ffb300; color: white; font-size: 18px;"><b>MEET THE TEAM</b></button></a>
         </p>
+      </center>
+
+      <br><br><br>
+
+      <h3 style="text-align:center; color: white;">OUR <div class="yellow"> EVENTS</div>
+      </h3><br>
+
+      <p>
+        Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
+        various fun and educational activities.
         <br>
-        <center>
-          <p>
-            <a href="{% url 'prd_volunteers' %}"><button class="btn btn-outline-info"
-                style="background-color: #ffb300; color: white; font-size: 18px;"><b>MEET THE TEAM</b></button></a>
-          </p>
-        </center>
+        Punya: Bi-Annual cycle collection and redistribution
+        <br>
+        Kadam: Annual sporting fest
+        <br>
+        We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
+        village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
+        BITS) and other in collaboration with niine foundation), health camp in bass government school and several
+        eductional workshops and seminars.
+      </p>
 
-        <br><br><br>
-        <h3 style="text-align:center; color: white;">OUR <div class="yellow"> EVENTS</div>
-        </h3><br>
-
+      <br>
+      <center>
         <p>
-          Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
-          various fun and educational activities.
-          <br>
-          Punya: Bi-Annual cycle collection and redistribution
-          <br>
-          Kadam: Annual sporting fest
-          <br>
-          We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
-          village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
-          BITS) and other in collaboration with niine foundation), health camp in bass government school and several
-          eductional workshops and seminars.
+          <a href="{% url 'home' %}"><button class="btn btn-outline-info"
+              style="background-color: #ffb300; color: white; font-size: 18px;"><b>INITIATIVES</b></button>
         </p>
-
-        <br>
-        <center>
-          <p>
-            <a href="{% url 'home' %}"><button class="btn btn-outline-info" style="background-color: #ffb300; color: white; font-size: 18px;"><b>INITIATIVES</b></button>
-          </p>
-        </center>
+      </center>
 
       </p>
 
@@ -694,7 +679,7 @@
     <div class="caption" style="height: 100%; background-color: black; opacity: 0.5;top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); ">
-      <span  style="background-color:transparent;font-size:25px;color: #ffffff;top: 50%;
+      <span style="background-color:transparent;font-size:25px;color: #ffffff;top: 50%;
   -ms-transform: translateY(-50%)translateX(50%);
   transform: translateY(-50%)translateX(50%); position: absolute; right: 50%;
   color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;
@@ -706,16 +691,16 @@
     <div style="position:relative;" class="myDiv">
       <div style="color:#ddd;background-color:#000;text-align:center;padding:50px 80px;">
         <p>
-          <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
-          </h3>
-          <br><br><br>
+        <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
+        </h3>
+        <br><br><br>
 
-          <a href="mailto:f20170269@pilani.bits-pilani.ac.in"><img src="../../../media/mail.png" class="social"
-              style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
-          <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
-              style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
-          <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
-              style=" display: inline-block;"></a>
+        <a href="mailto:f20170269@pilani.bits-pilani.ac.in"><img src="../../../media/mail.png" class="social"
+            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
+            style=" display: inline-block;"></a> &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
+            style=" display: inline-block;"></a>
 
         </p>
       </div>
@@ -727,17 +712,6 @@
       <span style="color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">Thanks for visiting :)</span>
     </div>
   </div>
-
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
 
   
   <script src="data/main.js"></script>
@@ -751,16 +725,16 @@
     carousel.style.display = "none";
 
     function load() {
-      myVar = setTimeout(fadePage, 3000);
+      myVar = setTimeout(fadePage, 6500);
     }
 
     function fadePage() {
-      document.getElementById("loader").style.opacity = "0";
+      loader = document.getElementById("loader");
+      loader.parentNode.removeChild(loader);
       myVar = setTimeout(showPage, 300);
     }
 
     function showPage() {
-      document.getElementById("loader").style.display = "none";
       navbar.style.display = "block";
       carousel.style.display = "block";
       var x = document.getElementsByClassName("myDiv");

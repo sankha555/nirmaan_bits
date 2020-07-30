@@ -17,7 +17,6 @@
 
   <link rel="icon" href="../../../media/nirmaan_logo.png">
 
-  <link rel="stylesheet" type="text/css" href="data/main.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -38,74 +37,96 @@
     rel="stylesheet">
 
   <style>
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #444444;
+    .navbar-brand {
+      margin-left: 10%;
     }
 
-    ul {
-      margin: 0;
-    }
-
-    .bg-steel {
+    .navbar {
       background-color: black;
-      color: white;
-    }
-
-    .site-header .navbar-nav .nav-link .nav-item {
-      color: white;
-      margin-left: 25px;
-      font-weight: 600;
-      font-size: medium;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      width: 99.4vw;
+      font-size: larger;
+      font-weight: 700;
+      height: 90px;
     }
 
     .box {
       width: 150px;
       height: 80px;
-      background-color:white;
-      /*border-bottom-right-radius: 20px 20px;
-      border-bottom-left-radius: 20px 20px;
-      border-right: 15px;*/
+      background-color: white;
       margin-left: 60px;
       z-index: 15;
-      position: fixed; 
-      top: 0; 
+      position: fixed;
+      top: 0;
       z-index: 20;
       border-radius: 0 0 10px 10px;
       height: 110px;
     }
 
-
     .nav-item {
       color: white;
-      margin-left: 30px;
-      margin-top: 20px;
+      float: right;
+      background-color: black;
+      margin-right: 10px;
+      margin-left: 10px;
       font-weight: 600;
       font-size: large;
       border-bottom: solid;
       border-color: #000;
+      margin-top: 7px;
+      padding-right: 5px;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     }
 
     .nav-item:hover {
+      float: right;
+      background-color: black;
       color: #ffb300;
-      margin-left: 30px;
+      margin-right: 10px;
+      margin-left: 10px;
       font-weight: 600;
       font-size: large;
       border-bottom: solid;
       text-decoration: none;
+      margin-top: 7px;
+      padding-right: 5px;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     }
 
-
-    .site-header .navbar-nav .nav-link:hover .nav-item:hover {
-      color: #ffb300;
-    }
-
-    .site-header .navbar-nav .nav-link.active .nav-item:hover {
+    .nav-link {
+      color: white;
+      float: right;
+      background-color: black;
       font-weight: 600;
+      font-size: large;
+      border-bottom: none;
+      border-color: #000;
+      margin-top: 7px;
+    }
+
+    .nav-link:hover {
+      float: right;
+      background-color: black;
+      color: #ffb300;
+      font-weight: 600;
+      font-size: large;
+      border-bottom: none;
+      text-decoration: none;
+      margin-top: 7px;
+    }
+
+    .navbar-toggle .navbar-toggler-icon {
+      font-weight: 700;
+      color: white;
+      font-size: larger;
+    }
+
+    .dropdown {
+      color: white;
+      border-bottom: solid;
+      border-color: #000;
     }
   </style>
 
@@ -116,6 +137,7 @@
       margin: 0;
       font: 400 15px/1.8 "Lato", sans-serif;
       /*color: #777;*/
+      background-color: black;
     }
 
 
@@ -396,66 +418,88 @@
 
 <body class="demo" style="overflow: scroll; overflow-x: hidden; " onload="load()">
 
-  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top"
-    style="width: 99.45%; height: 120px; position: fixed; z-index: 10;">
-    <div class="container">
-      <a class="navbar-brand" href="#" style="color: black;"></a>
+  <style>
+    .mylink {
+      color: white;
+    }
 
-      <!-- Collapse button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"
-          style="margin-top: 20px; border: none; font-weight: 700; margin-left: 50vw;"></span></button>
+    .mylink:hover {
+      color: #ffb300;
+    }
 
-      <div class="collapse navbar-collapse" id="navbarToggle"
-        style="position:absolute; right: 80px; margin-top: 40px; border-radius: none;">
-        <div class="navbar-nav">
-          <a class="nav-item " href="{% url 'about' %}">About</a>
+    .navbar-nav>li>a {
+      color: white;
+    }
+  </style>
 
-          <!-- Dropdown Menu for Projects -->
-          <a class="dropdown nav-item" style="margin-left: 0;">
-            <a class="nav-item dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="true">
-              Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/projects/sko">SKO</a>
-              <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
-              <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
-              <a class="dropdown-item" href="/projects/pcd">PCD</a>
-              <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
-              <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
-              <a class="dropdown-item" href="/projects/sap">SAP</a>
-              <a class="dropdown-item" href="/projects/pkp">PKP</a>
-              <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
-              <a class="dropdown-item" href="/prd">PRD</a>
-            </div>
-          </a>
-          <!-- Menu Ends -->
+  <nav id="navbar" class="navbar navbar-expand-md">
 
-          <a class="nav-item " href="{% url 'register_visitor' %}">Contact</a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon">&#9776</span>
+      </button>
 
-          {% if user.is_authenticated %}
-          {% if user.volunteer.is_pl %}
-          <a class="nav-item " href="{% url 'pl_dashboard' %}">Hello, {{user.volunteer.name.split.0}} </a>
-          {% elif user.is_superuser %}
-          <a class="nav-item " href="{% url 'all_visitors' %}">Visitors</a>
-          <a class="nav-item " href="#">Hello, {{user.username}} </a>
-          {% else %}
-          <a class="nav-item " href="{% url 'profile' %}">Hello, {{user.volunteer.name.split.0}} </a>
-          {% endif %}
-          <a class="nav-item " href="{% url 'logout' %}">Logout</a>
-          {% else %}
-          <a class="nav-item " href="{% url 'login' %}">Login</a>
-          {% endif %}
-        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item dropdown" style="margin-left: 0;">
+          <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">Projects</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/projects/sko">SKO</a>
+            <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+            <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
+            <a class="dropdown-item" href="/projects/pcd">PCD</a>
+            <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+            <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+            <a class="dropdown-item" href="/projects/sap">SAP</a>
+            <a class="dropdown-item" href="/projects/pkp">PKP</a>
+            <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
+            <a class="dropdown-item" href="/prd">PRD</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'donations' %}">Donations</a>
+        </li>
+        {% if user.is_superuser %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello, {{ user.username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% elif user.volunteer.is_pl %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pl_dashboard' %}">Hello, {{ user.volunteer.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% elif user.volunteer %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Hello, {{ user.volunteer.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
 
-      </div>
     </div>
     <div class="box"
-      style="height: 130px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
+      style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
       <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
-          style="width: 180px; margin-top: 10px; align-self: center; padding: 5px;"></a>
+          style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
     </div>
   </nav>
 

@@ -1,4 +1,4 @@
-{% extends "initiatives/base.html" %}
+{% extends "initiatives/base.htm" %}
 {% block content %}
 {% include "base/js.html"%}
 <style>
@@ -88,25 +88,59 @@
 
 </style>
 
-<article class="card container mb-20">
+<br>
+<article class="card container mb-20" >
   <div class="media-body" >
     <center>
-      <br>
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 7px;">
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../../../media/cw.jpg" alt="Content Writers" style="height: 570px; opacity: 0.8; ">
+            <p class="text card"
+              style="background-color: #ffffff00; z-index: 100; color: white; font-size: x-large; font-weight: 600; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; border: none; top: 22vh;">
+              Content Writers</p>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../../media/aw.jpg" alt="App and Web Developers" style="height: 570px; opacity: 0.8; ">
+            <p class="text card"
+              style="background-color: #ffffff00; z-index: 100; color: white; font-size: x-large; font-weight: 600; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; border: none; top: 22vh;">
+              Web & App Developers</p>
+          </div>
+          
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../../media/gd.jpg" alt="Graphic Designers" style="height: 570px; opacity: 0.8; ">
+            <p class="text card"
+              style="background-color: #ffffff00; z-index: 100; color: white; font-size: x-large; font-weight: 600; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; border: none; top: 22%;">
+              Graphic Designers</p>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../../media/vv.jpg" alt="Video Editors" style="height: 570px; opacity: 0.8; ">
+            <p class="text card"
+              style="background-color: #ffffff00; z-index: 100; color: white; font-size: x-large; font-weight: 600; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; border: none; top: 22%;">
+              Video Editors</p>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
       <div class="image mb-4" style="align-content: center; z-index: 0;">
-          <img class="banner" src="../../../media/3.jpg" alt="banner" width=99% style="height: 570px;" style="opacity: 0;">
-            <div class="text card" style="vertical-align: middle; background-color: #ffffff00; border: none; width: 70%; top: 20%;">
-              <h1 style="color: white; font-size: 40px; font-weight: 800; margin-bottom: 20px;">PUBLIC RELATIONS DEPARTMENT</h1>
+            <div class="text card" style="vertical-align: middle; background-color: #ffffff00; border: none; width: 70%; top: 10%;">
+              <h1 style="color: white; font-size: 40px; font-weight: 800; margin-bottom: 25px;">PUBLIC RELATIONS DEPARTMENT</h1>
+              
               <a href="{% url 'prd_volunteers' %}">
                 <button class="team">
                   MEET THE TEAM
                 </button>
               </a>
-              <div>
-                <a class="fa fa-instagram social" href="https://www.instagram.com/nirmaan_pilani/"></a>&nbsp
-                <a class="fa fa-facebook" href="https://www.facebook.com/NirmaanPilaniPage/" style="border-radius: 33px;"></a>&nbsp
-                <a class="social" href="#" title="Ketto"><img src="../../../media/ketto_icon.png" width=33px height=33px
-                    style="border-radius: 33px; display: inline; margin-top: 12px;"></a>
-              </div>
             </div>
       </div>
     </center>
@@ -114,12 +148,17 @@
     <!---Page Description Goes Here-->
     <div class="description" style="padding: 20px; font-size: large;">
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-        type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
-        Lorem Ipsum.
+        The Public Relations Department or PRD, is the face of Nirmaan Organisation, Pilani chapter. PRD is divided into
+        subsections which are content writing, videography, graphic designing, app, and website development. We work closely
+        with the volunteers and alumni associated with Nirmaan and help create awareness about their work both inside and
+        outside of campus. We also undertake the publicity for events like Nirmaan’s flagship donation drive: SORAD(Save One
+        Rupee A Day), GREEN week which is celebrated prior to the tech-fest APOGEE, Oasis(Cultural Fest) stalls selling products
+        manufactured by our beneficiaries, creating invites for gen-Bitsians for several events and seminars like Joy Of Giving
+        Week among many others. We also help to collaborate with other NGOs.The medium for that is through posters, WhatsApp
+        posts, videos, and our Instagram page, through the continuous hard work of the members of PRD we are trying to reach as
+        many people as possible. Our main motive is to connect people who want to help but can't due to time constraints or the
+        knowledge of this domain and people who need help, through Nirmaan volunteers. We are trying to maximize our reach to
+        help people for the same cause.
       </p>
     </div>
     <!--Page Description Ends-->
