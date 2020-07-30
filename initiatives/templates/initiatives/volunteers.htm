@@ -3,36 +3,107 @@
 {% block content %}
 {% include "base/js.html"%}
 
-<div class="main">
-    <section class="text-gray-700 body-font p-10" style="margin-left: 8vw;">
-        <div class="container">
+<style>
+        .container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            font-size: medium;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
 
-            <div class="vrow">
-                {% for volunteer in volunteers %}
-                <div class="holder">
-                    <div class="tile" style="height: 330px;">
-                        {% if volunteer.is_pl %}
-                        <h3 class="text-red-500 text-xs font-medium title-font">PROJECT LEADER</h3>
-                        {% else %}
-                        <h3 class="text-red-500 text-xs font-medium title-font"></h3>
-                        {% endif %}
-                        <center><img class="tile-img"
-                                src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
-                                alt="content"></center>
-                        <h3 class="text-red-500 text-xs font-medium title-font">{{ volunteer.bits_id }}
-                        </h3>
-                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{ volunteer.name }}</h2>
-                        <p class="leading-relaxed text-base">Year {{ volunteer.year }}</p>
-                        <a href="mailto:{{ volunteer.bits_email }}" class="leading-relaxed text-base">Email</a>
-                    </div>
+        .container > div{
+            margin: 10px;
+            border-radius: 6.66%;
+        }
+
+        /*relative as span becomes absolute about club*/
+        .tile {
+            position: relative;
+            height: 330px;
+            width: 250px
+        }
+
+        .tile .image{
+            border-radius: 500px;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-color: #ffb300;
+            border-style: inset;
+            border-width: 3px;
+            transition: all 0.5s ease-out ;
+        }
+
+        .tile .h3 {
+            color: grey;
+        }
+
+        .tile .h2 {
+            color: #ffb300;
+        }
+
+        /*for mobile phones*/
+        @media only screen and (max-width: 350px) {
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        
+            .container > div{
+                margin: 4vw;
+                padding: 0;
+                background-color: white;
+                border-radius: 6.66%;
+            }
+
+
+            .team .span{
+                top: -10.66vw;
+                left: 0vw;
+                width: 40vw;
+                height: 4vw;
+            }       
+        
+        }
+
+</style>
+    <div style="margin-left: 10vw; width: 70vw;">
+            <br><br><br>
+           
+
+            <div class="container flex flex-wrap">
+                <div class="container" style="margin-left: 30px; margin-right: 30px;">
+                    <h2>{{ project.name }} - <font color="grey">Volunteers</font>
+                    </h2>
                 </div>
+                {% for volunteer in volunteers %}
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 330px;">
+                            {% if volunteer.is_pl %}
+                            <h3 class="tracking-widest text-red-500 text-xs font-medium title-font">PROJECT LEADER</h3>
+                            {% else %}
+                            <h3 class="tracking-widest text-red-500 text-xs font-medium title-font"></h3>
+                            {% endif %}
+                            <center><img class="tile-img"
+                                    src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-user-young-boy-avatar-icon-png-image_4827810.jpg"
+                                    alt="content"></center>
+                            <h3 class="tracking-widest text-red-500 text-xs font-medium title-font">{{ volunteer.bits_id }}</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{ volunteer.name }}</h2>
+                            <p class="leading-relaxed text-base">Year {{ volunteer.year }}</p>
+                            <a href="mailto:{{ volunteer.bits_email }}" class="leading-relaxed text-base">Email</a>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
+    </div>
 
 
-        </div>
-    </section>
-</div>
+
 
 
 {% endblock content %}

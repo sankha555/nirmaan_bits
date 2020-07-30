@@ -5,7 +5,7 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005 and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social Leadership." >
     <meta name="keywords" content="nirmaan, organization, bits, pilani, social, work, ngo, education">
@@ -36,7 +36,6 @@
 
 
 <style>
-
   .navbar-brand {
     margin-left: 10%;
   }
@@ -46,7 +45,7 @@
     position: fixed;
     top: 0;
     z-index: 100;
-    width: 99.4vw;
+    width: 100%;
     font-size: larger;
     font-weight: 700;
     height: 90px;
@@ -137,7 +136,8 @@
 <style>
 
   .header {
-    background-color: white
+    background-color: white;
+    width: 100vw;
   }
   .text {
     position: absolute;
@@ -149,7 +149,7 @@
   }
 
   body {
-    width:500px;
+    width:100%;
     background: #fafafa;
     background-attachment: fixed;
     background-size: 100%;
@@ -328,10 +328,6 @@
 <!--Footer-->
 <style>
 
-    .site-header .navbar-nav .nav-link:hover {
-      color: #ffb300;
-    }
-
     .footer-bs {
       background-color: black;
       padding: 60px 40px;
@@ -340,6 +336,7 @@
       border-bottom-right-radius: 6px;
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
+      width: 100vw;
     }
   
     .footer-bs .footer-brand,
@@ -347,12 +344,15 @@
     .footer-bs .footer-social,
     .footer-bs .footer-ns {
       padding: 10px 25px;
+      width: 100vw;
     }
   
     .footer-bs .footer-nav,
     .footer-bs .footer-social,
     .footer-bs .footer-ns {
       border-color: transparent;
+      max-width: max-content;
+      width: 100vw;
     }
   
     .footer-bs .footer-brand h2 {
@@ -445,322 +445,150 @@
       color: #ffb300;
     }
   
-    @media (min-width: 768px) {
+    @media (max-width: 300px) {
   
       .footer-bs .footer-nav,
       .footer-bs .footer-social,
       .footer-bs .footer-ns {
         border-left: solid 1px rgba(255, 255, 255, 0.10);
+        width: 100vw;
       }
     }
 
 </style>
 
-  <!--PL Dashboard-->
-  <style>
-    @media (min-width: 500px) {
-        .sidenav {
-        height: 525px;
-        width: 250px;
-        position: fixed;
-        z-index: 1;
-        top: 120px;
-        bottom: 200px;
-        right: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
-        border-radius: 50px;
-        margin-right: -50px;
-        padding-right: 20px;
-      }
-    
-      .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #bdbbbb;
-        display: block;
-        padding-left: 35px;
-      }
-    
-      .sidenav a:hover {
-        color: #f1f1f1;
-        background-color: #ffb300;
-      }
-    
-      .box {
-        width: 150px;
-        height: 80px;
-        background-color: #ffb300;
-        margin-left: 60px;
-        z-index: 15;
-        position: fixed;
-        top: 0;
-        z-index: 20;
-      }
-    
-      .header {
-        right: 0;
-        top: 0;
-        z-index: 1;
-        background-color: red;
-      }
-    
-      .main {
-    
-        /* Same as the width of the sidenav */
-        font-size: 28px;
-        display: flex;
-        flex-wrap: wrap;
-        width: 3000px;
-        /* Increased text to enable scrolling */
-        padding: 0px 0px;
-      }
-    
-      .pl_details {
-        color: #ffb300;
-        padding: 30p;
-        text-align: center;
-        font-weight: 600;
-        margin-bottom: 40px;
-        line-height: 10px;
-      }
-    
-      .pl_details img {
-        padding: 10px;
-        width: 120px;
-        border-radius: 60px;
-        margin-bottom: 30px;
-      }
+<!--PL Dashboard-->
+<style>
+  .box {
+    width: 150px;
+    height: 80px;
+    background-color: #ffb300;
+    margin-left: 60px;
+    z-index: 15;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+  }
 
-      .vrow {
-        max-width: 2000px;
-        display: flex;
-        flex: 100%;
-        flex-wrap: wrap;
-        align-content: stretch;
-      }
+  .header {
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background-color: red;
+  }
 
-      .holder {
-        background-color: #ffffff00;
-        width: max-content;
-        flex: 20%;
-        flex-wrap: wrap;
-        margin-right: 10px;
-      }
-    
-      .tile {
-        text-align: center;
-        padding: 20px 10px 20px 10px;
-        background-color: white;
-        font-size: medium;
-        border-color: #ffb300;
-        border-width: 3px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        width: 230px;
-      }
-    
-      .tile h3 {
-        color: #ffb300;
-      }
+  .main {
 
-      .tile h2 {
-        color:black;
-        word-wrap: break-word;
-        flex-wrap: wrap;
-      }
-    
-      .tile p {
-        line-height: 10px;
-        color: gray;
-        text-decoration: none;
-      }
-    
-      .tile a {
-        color: gray;
-        text-decoration: none;
-      }
-    
-      .tile a:hover {
-        color: #ffb300;
-        text-decoration: none;
-      }
-    
-      .tile-img {
-        border-radius: 500px;
-        width: 120px;
-        height: 120px;
-        margin-bottom: 20px;
-        border-color: #ffb300;
-        border-style: inset;
-        border-width: 3px;
-      }
-    
-      .volunteers {
-        display: inline;
-        padding: 30px;
-      }
-    }
+    margin-right: 200px;
+    width: max-content;
+    font-size: 28px;
+    padding: 0px 0px;
+  }
 
-    @media screen and (max-width: 300px){
-      .sidenav {
-        height: 525px;
-        width: 250px;
-        position: fixed;
-        z-index: 1;
-        top: 120px;
-        bottom: 200px;
-        right: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
-        border-radius: 50px;
-        margin-right: -50px;
-        padding-right: 20px;
-      }
-    
-      .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #bdbbbb;
-        display: block;
-        padding-left: 35px;
-      }
-    
-      .sidenav a:hover {
-        color: #f1f1f1;
-        background-color: #ffb300;
-      }
-    
-      .box {
-        width: 150px;
-        height: 80px;
-        background-color: #ffb300;
-        margin-left: 60px;
-        z-index: 15;
-        position: fixed;
-        top: 0;
-        z-index: 20;
-      }
-    
-      .header {
-        right: 0;
-        top: 0;
-        z-index: 1;
-        background-color: red;
-      }
-    
-      .main {
-    
-        /* Same as the width of the sidenav */
-        font-size: 28px;
-        display: flex;
-        flex-wrap: wrap;
-        width: fit-content;
-        /* Increased text to enable scrolling */
-        padding: 0px 0px;
-        overflow-x: scroll;
-      }
-    
-      .pl_details {
-        color: #ffb300;
-        padding: 30p;
-        text-align: center;
-        font-weight: 600;
-        margin-bottom: 40px;
-        line-height: 10px;
-      }
-    
-      .pl_details img {
-        padding: 10px;
-        align: center;
-        width: 120px;
-        border-radius: 60px;
-        margin-bottom: 30px;
-      }
+  .tile {
+    text-align: center;
+    background-color: white;
+    font-size: medium;
+    border-color: #ffb300;
+    border-width: 3px;
+  }
 
-      .vrow {
-        max-width: 2000px;
-        display: flex;
-        flex: 25%;
-        flex-wrap: wrap;
-        align-content: center;
-      }
+  .pl_details {
+    color: #ffb300;
+    padding: 30p;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 10px;
+  }
 
-      .holder {
-        background-color: #ffffff00;
-        width: 200px;
-        flex: 50%;
-        flex-wrap: wrap;
-        margin-right: 10px;
-      }
-    
-      .tile {
-        text-align: center;
-        padding: 20px 10px 20px 10px;
-        background-color: white;
-        font-size: medium;
-        border-color: #ffb300;
-        border-width: 3px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        width: 150px;
-      }
-    
-      .tile h3 {
-        color: #ffb300;
-      }
+  .pl_details img {
+    padding: 10px;
+      width: 120px;
+    border-radius: 60px;
+    margin-bottom: 30px;
+  }
 
-      .tile h2 {
-        color:black;
-        word-wrap: break-word;
-        flex-wrap: wrap;
-      }
-    
-      .tile p {
-        line-height: 10px;
-        color: gray;
-        text-decoration: none;
-      }
-    
-      .tile a {
-        color: gray;
-        text-decoration: none;
-      }
-    
-      .tile a:hover {
-        color: #ffb300;
-        text-decoration: none;
-      }
-    
-      .tile-img {
-        border-radius: 500px;
-        width: 120px;
-        height: 120px;
-        margin-bottom: 20px;
-        border-color: #ffb300;
-        border-style: inset;
-        border-width: 3px;
-      }
-    
-      .volunteers {
-        display: inline;
-        padding: 30px;
-      }
-    }
-      
-  </style>
+  .container-volunteer {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      height: max-content;
+  }
 
+  .container-volunteer > div{
+      margin: 4vw;
+      padding: 0;
+      background-color: white;
+      overflow: hidden;
+  }
+
+  .holder {
+    padding: 20px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+
+  .tile {
+      text-align: center;
+      background-color: white;
+      font-size: medium;
+      border-color: #ffb300;
+      border-radius: 10px;
+      border-width: 3px;
+      width: 250px;
+      padding-top: 20px;
+  }
+
+  .tile h3 {
+    color: #ffb300;
+  }
+
+  .tile p {
+    line-height: 10px;
+    color: gray;
+    text-decoration: none;
+  }
+
+  .tile a {
+    color: gray;
+    text-decoration: none;
+  }
+
+  .tile a:hover {
+    color: #ffb300;
+    text-decoration: none;
+  }
+
+  .tile-img {
+    border-radius: 500px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-color: #ffb300;
+    border-style: inset;
+    border-width: 3px;
+  }
+
+  /*for mobile phones*/
+  @media only screen and (max-width: 200px) { 
+      .container > div{
+          margin: 4vw;
+      }
+  }
+
+
+
+</style>
 
 </head>
 
-<body>
+<body >
   
-  <header class="site-header">
-    <nav id="navbar" class="navbar navbar-expand-md">
+  <header class="site-header-fullwidth">
+    <nav id="navbar" class="navbar navbar-expand-md ">
       <a class="navbar-brand" href="#"></a>
 
       <!-- Toggler/collapsibe Button -->
@@ -866,7 +694,8 @@
     background: black;
   }
   .fa-facebook {
-    padding: 10px 0 0 3px;
+    padding-top: 8px;
+    text-align: center;
     font-size: 20px;
     background-color: black;
     color: white;
@@ -878,7 +707,9 @@
   }
 
   .fa-instagram {
-    padding: 9px 0 0 2px;
+    padding-top: 8px;
+    vertical-align: middle;
+    text-align: center;
     font-size: 20px;
     background-color: black;
     color: white;
@@ -891,10 +722,10 @@
 
 </style>
     <div id="footer">
-      <footer class="footer-bs" style="width: 100vw;">
-        <table>
-    
+        <table class="footer-bs" style="background-color: #000; border-radius: 0;">
+          <tr style="height: 2vw;"></tr>
           <tr>
+            <td style="width: 5vw;"></td>
             <td style="width:40vw;">
               <a><img src="../../../media/nirmaan.png" style="z-index: 1; height: 100px;"></a>
               <br>
@@ -927,8 +758,12 @@
               </div>
             </td>
           </tr>
+          <tr ><td colspan="3" style="width: 100vw; text-align: center; padding-left: 20vw; margin-bottom: 2vw;">
+            Developed with <i style="font-size:24px; color: red; margin-top: 1px;" class="fa">&nbsp&#xf08a;&nbsp</i> by Public Relations Department, Nirmaan Organization
+          </td></tr>
+          <br><br>
+          <tr style="height: 3vh; margin-top: 5vw;"></tr>
         </table>
-      </footer>
    </div>
     
 </body>
