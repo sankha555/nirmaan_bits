@@ -126,6 +126,39 @@
       border-bottom: solid;
       border-color: #000;
     }
+
+    .home {
+      height: 75vh;
+      width: 100vw;
+    }
+
+    .item{
+      height: 95vh;
+      width: 100vw;
+    }
+
+    .load {
+      width: 40vw;
+      margin-left: 30vw;
+      margin-top: 9vw;
+    }
+
+    @media only screen and (max-width:450px){
+
+      .load {
+        width: 100vw;
+        margin-top: 30vh;
+      }
+
+      .item {
+        height: 100vh;
+      }   
+      .caro {
+        margin-top: 5vh;
+        height: 40vh;
+      }
+    }
+    
   </style>
 
   <style>
@@ -430,7 +463,7 @@
     }
   </style>
 
-  <img id="loader" src="../../../media/load.gif" style="margin-left: 20vw; margin-right:20vw; margin-top:9vw; width: 60vw; height:400px;" >
+  <img id="loader" class="load" src="../../../media/load.gif" style="margin-right:20vw;" >
 
   <nav id="navbar" class="navbar navbar-expand-lg">
 
@@ -526,8 +559,8 @@
   {% endfor %}
   {% endif %}
 
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: 5;">
+  <br><br>
+  <div id="myCarousel" class="carousel slide caro" data-ride="carousel" style="z-index: 5; background-color: white;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -538,31 +571,31 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img class="bgimg-1" src="../../../media/1.JPG" style="height: 700px; width: 100%;">
+        <img class="home" src="../../../media/1.JPG" >
       </div>
 
       <div class="item">
-        <img class="bgimg-2" src="../../../media/2.png" style="height: 700px; width: 100%;">
+        <img class="home" src="../../../media/2.png" >
       </div>
 
       <div class="item">
-        <img class="bgimg-3" src="../../../media/3.jpg" style="height: 700px; width: 100%;">
+        <img class="home" src="../../../media/3.jpg" >
       </div>
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="height: 95%;">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="height: 95%;">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
 
 
-  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;"
+  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;  z-index: 100;"
     class="myDiv">
     <h3 style="text-align:center;">ABOUT <div class="yellow"> US</div>
     </h3>
