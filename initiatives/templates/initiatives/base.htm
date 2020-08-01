@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
 
     {% if title %}
         <title>Nirmaan Organization | {{ title }}</title>
@@ -73,6 +75,8 @@
     border-bottom: solid;
     border-color: #000;
     padding-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
   }
 
   .nav-item:hover {
@@ -85,6 +89,8 @@
     border-bottom: solid;
     text-decoration: none;
     padding-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
   }
 
   .nav-link {
@@ -572,10 +578,29 @@
     border-width: 3px;
   }
 
+  .credit{
+    margin-left: 40vw; 
+    font-size: medium;
+  }
+
   /*for mobile phones*/
   @media only screen and (max-width: 650px) { 
       .container > div{
           margin: 4vw;
+      }
+
+      .credit {
+        margin-left: 25vw;
+      }
+  }
+
+  @media only screen and (max-width: 274px) { 
+      .container > div{
+          margin: 4vw;
+      }
+
+      .credit {
+        margin-right: 0;
       }
   }
 
@@ -759,10 +784,17 @@
               </div>
             </td>
           </tr>
-          <tr style="height: 3vh; margin-top: 5vw;"></tr>
+          <tr style="height: 3vh; margin-top: 5vw;"> <td colspan="3">
+            <p class="credit" >
+              <br>
+              Made with &nbsp<i class="fa fa-heart" style="font-size:24px;color:red"></i>&nbsp  by PRD Nirmaan
+            </p>
+          </td></tr>
          
           <br><br>
-          <tr style="height: 3vh; margin-top: 5vw;"></tr>
+          <tr style="height: 3vh; margin-top: 5vw;">
+            
+          </tr>
         </table>
    </div>
     

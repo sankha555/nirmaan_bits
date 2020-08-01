@@ -32,9 +32,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fondamento&family=Indie+Flower&family=Rowdies:wght@300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
   <style>
    
@@ -78,6 +76,8 @@
       border-color: #000;
       margin-top: 7px;
       padding-right: 5px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
     }
 
     .nav-item:hover {
@@ -92,6 +92,8 @@
       text-decoration: none;
       margin-top: 7px;
       padding-right: 5px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
     }
 
     .nav-link {
@@ -281,100 +283,20 @@
       -webkit-touch-callout: none;
     }
 
+    .btn {
+      background-color: #ffb300;
+      color: white;
+      font-size: 18px;
+      border-radius: 25px;
+    }
+
     .btn:hover {
-      opacity: 0.9;
+      background-color: white;
+      color: black;
+      border-color: white;
     }
 
-    .gooey {
-      position: absolute;
-      opacity: 0.8;
-      top: 80%;
-      left: 50%;
-      width: 142px;
-      height: 40px;
-      margin: -20px 0 0 -71px;
-      background: #fff;
-      filter: contrast(20);
-    }
-
-    .gooey .dot {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: 12px;
-      left: 15px;
-      filter: blur(4px);
-      background: #000;
-      border-radius: 50%;
-      transform: translateX(0);
-      animation: dot 2.8s infinite;
-    }
-
-    .gooey .dots {
-      transform: translateX(0);
-      margin-top: 12px;
-      margin-left: 31px;
-      animation: dots 2.8s infinite;
-    }
-
-    .gooey .dots span {
-      display: block;
-      float: left;
-      width: 16px;
-      height: 16px;
-      margin-left: 16px;
-      filter: blur(4px);
-      background: #000;
-      border-radius: 50%;
-    }
-
-    @-moz-keyframes dot {
-      50% {
-        transform: translateX(96px);
-      }
-    }
-
-    @-webkit-keyframes dot {
-      50% {
-        transform: translateX(96px);
-      }
-    }
-
-    @-o-keyframes dot {
-      50% {
-        transform: translateX(96px);
-      }
-    }
-
-    @keyframes dot {
-      50% {
-        transform: translateX(96px);
-      }
-    }
-
-    @-moz-keyframes dots {
-      50% {
-        transform: translateX(-31px);
-      }
-    }
-
-    @-webkit-keyframes dots {
-      50% {
-        transform: translateX(-31px);
-      }
-    }
-
-    @-o-keyframes dots {
-      50% {
-        transform: translateX(-31px);
-      }
-    }
-
-    @keyframes dots {
-      50% {
-        transform: translateX(-31px);
-      }
-    }
+    
   </style>
 
   <style type="text/css">
@@ -615,13 +537,10 @@
       campus.</p>
 
     <br><br>
-    <br>
-    <br>
     <h3 style="text-align:center;">OUR <div class="yellow"> VISION</div>
     </h3>
     <p style="text-align: center;">To achieve a knowledge driven and an economically empowered society.</p>
     <br>
-    <br><br>
     <br>
     <h3 style="text-align:center;">OUR <div class="yellow"> MISSION</div>
     </h3>
@@ -667,7 +586,7 @@
         enough for employment. To suffice that, we are currently helping them develop products of sufficient regular
         use. Following that, we help them find a market for the products they skilfully develop. We also educate them on
         the various employment options available.
-        <br><br><br>
+        <br><br>
 
       <h3 style="text-align:center; color: white;">PUBLIC <div class="yellow"> RELATIONS </div> DEPARTMENT
       </h3><br>
@@ -681,23 +600,22 @@
       <br>
       <center>
         <p>
-          <a href="{% url 'prd_volunteers' %}"><button class="btn btn-outline-info"
-              style="background-color: #ffb300; color: white; font-size: 18px;"><b>MEET THE TEAM</b></button></a>
+          <a href="{% url 'prd_volunteers' %}"><button class="btn btn-outline-info"><b>MEET THE TEAM</b></button></a>
         </p>
       </center>
 
-      <br><br><br>
+      <br><br>
 
       <h3 style="text-align:center; color: white;">OUR <div class="yellow"> EVENTS</div>
       </h3><br>
 
       <p>
-        Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
+        <strong>Joy of Giving Week</strong> is our flagship annual event. All the beneficiaries gather in our college campus for
         various fun and educational activities.
         <br>
-        Punya: Bi-Annual cycle collection and redistribution
+        <strong>Punya</strong>: Bi-Annual cycle collection and redistribution
         <br>
-        Kadam: Annual sporting fest
+        <strong>Kadam</strong>: Annual sporting fest
         <br>
         We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
         village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
