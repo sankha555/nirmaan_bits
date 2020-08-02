@@ -141,26 +141,22 @@
 
     @media (max-width:992px){
 
-      .dropdown-item {
-        color: white;
-        background-color: #000;
-      }
-
-      .dropdown-item:active .nav-item {
-        background-color: #000;
-      }
-
       .nav-item{
         background-color: black;
         padding-right: 10px;
       }
 
-      .nav-link{
-        background-color: black;
+      .dropdown-menu {
+        background-color: #000;
       }
 
-      .dropdown-item:hover{
-        color: #ffb300;
+      .nav-item:active .dropdown-menu{
+        background-color: #000;
+      } 
+
+      .dropdown-item:active {
+        background-color: #ffb300;
+        color: #000;
       }
     }
 
@@ -433,6 +429,7 @@
             aria-expanded="true">Projects</a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="/projects/sko">SKO</a>
+            <a class="dropdown-item" href="/projects/disha">Disha</a>
             <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
             <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
             <a class="dropdown-item" href="/projects/pcd">PCD</a>

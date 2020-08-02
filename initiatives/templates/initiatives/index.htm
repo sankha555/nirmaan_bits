@@ -147,6 +147,31 @@
       margin-top: 9vw;
     }
 
+    .dropdown:hover .dropdown-menu{
+      display: block;
+    }
+
+    @media (max-width:992px){
+
+      .nav-item{
+        background-color: black;
+        padding-right: 10px;
+      }
+
+      .dropdown-menu {
+        background-color: #000;
+      }
+
+      .nav-item:active .dropdown-menu{
+        background-color: #000;
+      } 
+
+      .dropdown-item:active {
+        background-color: #ffb300;
+        color: #000;
+      }
+    }
+
     @media only screen and (max-width:450px){
 
       .load {
@@ -413,6 +438,7 @@
     aria-expanded="true">Projects</a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/projects/sko">SKO</a>
+    <a class="dropdown-item" href="/projects/disha">Disha</a>
     <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
     <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
     <a class="dropdown-item" href="/projects/pcd">PCD</a>
@@ -648,7 +674,7 @@
         <p>
         <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
         </h3>
-        <br><br><br>
+        <br>
 
         <a href="mailto:nirmaanpilaniprd@gmail.com"><img src="../../../media/mail.png" class="social"
             style=" display: inline;"></a>&nbsp
