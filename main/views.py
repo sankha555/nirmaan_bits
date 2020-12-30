@@ -16,7 +16,7 @@ import json
 from django.http import HttpResponse
 
 def read_file(request):
-    f = open('media/F220C20EFFF9D4E1714FBAB66862C485.txt', 'r')
+    f = open('media/3DA9A1B51A4A4F15D6A11BFC8EF38461.txt', 'r')
     file_content = f.read()
     f.close()
     return HttpResponse(file_content, content_type="text/plain")

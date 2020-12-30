@@ -35,7 +35,7 @@ urlpatterns = [
     path('visitors', all_visitors, name='all_visitors'),
     path('delete_visitor/<int:pk>', delete_visitor, name='delete_visitor'),
     path('donations/', donations, name='donations'),
-    path('.well-known/pki-validation/F220C20EFFF9D4E1714FBAB66862C485.txt', read_file, name='ssl'),
+    path('.well-known/pki-validation/3DA9A1B51A4A4F15D6A11BFC8EF38461.txt', read_file, name='ssl'),
 ]
 
 
