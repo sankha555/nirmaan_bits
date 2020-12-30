@@ -13,11 +13,13 @@ from accounts.forms import VisitorRegistrationForm
 import random
 import json
 
+from django.http import HttpResponse
 
-# Razorpay
-#import razorpay
-#client = razorpay.Client(auth=(settings.RAZORPAY_KEY, settings.RAZORPAY_SECRET))
-#client.set_app_details({"title" : "Nirmaan Organization BITS Pilani", "version" : "1"})
+def read_file(request):
+    f = open('media/F220C20EFFF9D4E1714FBAB66862C485.txt', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
 
 def to_paise(amount):
     return float(amount*100)

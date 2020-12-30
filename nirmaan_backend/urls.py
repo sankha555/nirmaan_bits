@@ -18,7 +18,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import password_reset, donations
+from main.views import password_reset, donations, read_file
 from initiatives.views import prd, prd_volunteers, all_visitors, delete_visitor
 from django.views.static import serve
 
@@ -35,6 +35,7 @@ urlpatterns = [
     path('visitors', all_visitors, name='all_visitors'),
     path('delete_visitor/<int:pk>', delete_visitor, name='delete_visitor'),
     path('donations/', donations, name='donations'),
+    path('.well-known/pki-validation/F220C20EFFF9D4E1714FBAB66862C485.txt', read_file, name='ssl'),
 ]
 
 
