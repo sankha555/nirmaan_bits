@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from main.views import password_reset, donations
 from initiatives.views import prd, prd_volunteers, all_visitors, delete_visitor
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,5 +37,13 @@ urlpatterns = [
     path('donations/', donations, name='donations'),
 ]
 
-if settings.DEBUG:
+
+if settings.DEBUG == False:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

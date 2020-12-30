@@ -411,7 +411,7 @@
     }
   </style>
 
-  <nav id="navbar" class="navbar navbar-expand-lg">
+  <!---<nav id="navbar" class="navbar navbar-expand-lg">
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -484,7 +484,106 @@
       <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
           style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
     </div>
-  </nav>
+  </nav>-->
+
+  <header class="site-header-fullwidth"> 
+    <nav id="navbar" class="navbar navbar-expand-lg">
+  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="navbar-toggler-icon">&#9776</span>
+      </button>
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+
+    <li class="nav-item dropdown" style="margin-left: 0;">
+      <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="true">Projects</a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="row">
+          <div class="column">
+            <p class="dropdown-item"><u>Educational</u></p>
+            <a class="dropdown-item" href="/projects/sko">Siksha Ki Ore</a>
+            <a class="dropdown-item" href="/projects/gb_baas">Gyan Bodh</a>
+            <a class="dropdown-item" href="/projects/pkp">Pilani Ki Pathshala</a>
+            <a class="dropdown-item" href="/projects/sap">School Adoption <br>Programme</a>
+          </div>
+
+          <div class="column">
+            <p class="dropdown-item"><u><b>Community</b></u></p>
+            <a class="dropdown-item" href="/projects/disha">Disha</a>
+            <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+            <a class="dropdown-item" href="/projects/pcd">Participatory <br>Community <br>Development</a>
+          </div>
+
+          <div class="column">
+            <p class="dropdown-item"><u><b>Employment</b></u></p>
+            <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+            <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+            <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
+          </div>
+        </div>
+    
+      </div>
+    </li>
+
+
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'register_visitor' %}">Contact</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'donations' %}">Donations</a>
+    </li>
+    {% if user.is_superuser %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Hi, {{ user.username }}</a>
+    </li>
+    
+    {% elif user.volunteer.is_pl %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'pl_dashboard' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% elif user.volunteer %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'profile' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+    {% endif %}
+    </ul>
+    
+
+
+    </div>
+    <div class="box" style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
+      <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
+      style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
+    </div>
+
+    <div class="box" style="height: 100px; border-radius: 0px 0px 10px 10px ; padding: 10px; width: fit-content; margin-left: 250px; background-color: #ffffff00; color: #f7f7f7; font-family: 'Montserrat', sans-serif;">
+      <strong>BITS PILANI</strong> <br>
+      Student Chapter
+    </div>
+    </nav>
+  </header>
+
 
   {% if messages %}
   {% for message in messages %}
@@ -544,18 +643,16 @@
   </div>
 
 
-  <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;"
-    class="myDiv">
+  <div style="color: #777; background-color:white; text-align:justify; padding:50px; z-index: 100;" class="myDiv">
     <h3 style="text-align:center;">ABOUT <div class="yellow"> US</div>
     </h3>
-    <p style="text-align: center;">Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005
+    <p style="text-align: justify;">Nirmaan Organization is a registered NGO incepted by students of BITS Pilani in 2005
       and works in the areas of Education, Community development, Women Empowerment, Employment generation, and Social
       Leadership. Since then, the organization has grown to work in several cities nationwide but the Pilani chapter
       still works with the people of villages around Pilani for their upliftment and operates from within the college
       campus.</p>
-
+  
     <br><br>
-
     <h3 style="text-align:center;">OUR <div class="yellow"> VISION</div>
     </h3>
     <p style="text-align: center;">To achieve a knowledge driven and an economically empowered society.</p>
@@ -565,7 +662,7 @@
     </h3>
     <p style="text-align: center;">To promote grassroots social innovations, volunteering spirit, active citizenship and
       social leadership among the youth of the nation.</p>
-
+  
   </div>
 
   <div class="bgimg-2 myDiv">
