@@ -15,8 +15,8 @@ import json
 
 
 # Razorpay
-import razorpay
-client = razorpay.Client(auth=(settings.RAZORPAY_KEY, settings.RAZORPAY_SECRET))
+#import razorpay
+#client = razorpay.Client(auth=(settings.RAZORPAY_KEY, settings.RAZORPAY_SECRET))
 #client.set_app_details({"title" : "Nirmaan Organization BITS Pilani", "version" : "1"})
 
 def to_paise(amount):
@@ -73,7 +73,7 @@ def troubleshooting(request):
 
 def donations(request):
     
-    
+    '''
     if request.method=="POST":
         
         form = DonationForm(request.POST)
@@ -94,5 +94,5 @@ def donations(request):
         
     else:
         form = DonationForm()
-        
+    '''   
     return render(request, "initiatives/donations.htm")
