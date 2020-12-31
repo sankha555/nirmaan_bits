@@ -1,0 +1,174 @@
+{% extends "initiatives/base.htm" %}
+{% block content %}
+{% include "base/js.html"%}
+<style>
+  body {
+    background-image: url("../../../media/3.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    color: #333333;
+    margin-top: 5rem;
+    width: 100%; 
+    overflow-x: hidden;
+  }
+
+  .button {
+    text-align: center;
+    padding-top: 15px;
+    word-wrap: unset;
+  }
+
+  .fa {
+    padding: 8px;
+    font-size: 22px;
+    width: 36px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: rgb(196, 32, 89);
+    color: white;
+  }
+
+  .banner {
+    opacity: 0.65;
+  }
+
+  .team {
+    background-color: #ffb300;
+    border-color: #ffb300;
+    color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .team:hover {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .social {
+    display: inline;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social:hover {
+    display: inline;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .heading {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 40px;
+    opacity: 1.0;
+    z-index: 5;
+    position: relative;;
+  }
+
+  .text {
+    background-color: #ffffff00;
+  }
+
+
+  @media only screen and (max-width:600px) {
+
+    .team {
+      background-color: #ffb300;
+      border-color: #ffb300;
+      color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .team:hover {
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .heading {
+      background-color: #ffffff00;
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+
+  }
+</style>
+
+<br>
+<article class="card container mb-20">
+  <div class="media-body">
+    <center>
+      <br>
+
+
+    <div class="text-gray-700 body-font relative " style="margin-top: -27px;">
+      <div class="container px-5 py-24 mx-auto" style="margin-right: 40px;">
+        <div class="flex flex-col text-center w-full mb-1">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Thanks a Lot!!</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Today you've done a great deed towards mankind. Be proud of yourself. Download a small token of appreciation from us and show it to the world!</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <form method="POST" class="flex flex-wrap -m-2">
+              {% csrf_token %}
+              <div class="p-2 w-1/2">
+                <input
+                  class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="donor_name"
+                  placeholder="Name" type="text">
+              </div>
+              <div class="p-2 w-1/2">
+                <input
+                  class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="donor_email"
+                  placeholder="Email" type="email">
+              </div>
+              <div class="p-2 w-full">
+                <button type="submit" class="flex mx-auto team rounded">Download Certificate</button>
+              </div>  
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</article>
+
+
+{% endblock content %}

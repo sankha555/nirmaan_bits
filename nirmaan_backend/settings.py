@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #(os.environ.get('DEBUG_VALUE')=='True') or True
+DEBUG = True #(os.environ.get('DEBUG_VALUE')=='True') or True
 
 ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com', '127.0.0.1', 'bitspilani.nirmaan.org', 'bitspilani-nirmaan.herokuapp.com']
 
@@ -124,20 +124,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-'''
-from django.contrib.sites.models import Site
-
-current_site = Site.objects.get_current()
-current_site.domain
-'''
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 if DEBUG == True:

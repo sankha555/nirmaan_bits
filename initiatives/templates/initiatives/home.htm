@@ -11,20 +11,29 @@
   margin-top: 5rem;
   }
 
+  .link{
+    color: #ffb300;
+    text-decoration: none;
+  }
+
+  .link:hover{
+    color: black;
+    text-decoration: none;
+  }
+
 </style>
     
-    <section class="text-gray-700 body-font p-8" style="margin-top: -80px; width: max-content; position: relative; margin-left: 200px;">
+    <section class="text-gray-700 body-font p-8" style="margin-top: -80px; width: max-content; position: relative; margin-left: 30%; margin-right: auto;">
       <center>
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-10">
-          <div class="lg:w-full w-full mb-6 lg:mb-0">
-            <center><h1 class="sm:text-3xl text-2xl font-large title-font mb-0 text-gray-900 mr-40" style="font-size: 40px;">All Projects</h1></center>
-          </div>
+      <div class="container px-5 mx-auto">
+        
+        <div style="margin-top: 10%;">
+          <h1>All Projects</h1>
         </div>
   
-        <div class="flex flex-wrap -m-4">
-          {% for project in inits %}
-            <div class="xl:w-1/2 md:w-1/2 p-4 mb-20" style="width: 450px;">
+        <div class="flex flex-wrap -m-4 ml-auto mr-auto">
+          <!--{% for project in inits %}
+            <div class="xl:w-1/4 md:w-1/4 p-4 mb-20" style="width: 450px;">
               <div class="tile bg-gray-100 p-6 rounded-lg" style="height: 550px; background-color: white;">
                 <center><img style="width: 100%; height: 300px; padding: 20px;"  
                     src="{{ project.banner_image.url }}"
@@ -33,6 +42,18 @@
                 <p style="line-height: normal;">{{ project.description|truncatechars:100 }}</p>
                 <a href="{% url 'init_detail' project.slug %}" class="leading-relaxed text-base" style="bottom: 10px;">Read More</a>
               </div>
+            </div>
+          {% endfor %}-->
+
+          {% for project in inits %}
+            <div class="card" style="width: 18rem; height: 100%; margin-top: 7%; margin-left: 5%; margin-left: 5%;">
+              <img src="../../../media/banner_images/PKP.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text" style="margin-bottom: 14px; text-align: justify;">{{ project.description|truncatechars:100 }}</p>
+                <a class="link" href="{% url 'init_detail' project.slug %}" class="leading-relaxed text-base" style="bottom: 10px;">Read More</a>
+              </div>
+
             </div>
           {% endfor %}
         </div>

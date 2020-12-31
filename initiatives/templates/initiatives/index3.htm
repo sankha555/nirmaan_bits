@@ -16,7 +16,7 @@
   <meta name="theme-color" content="black">
 
   <link rel="icon" href="../../../media/nirmaan_logo.png">
-
+  
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -602,7 +602,7 @@
 
     </div>
     <div class="box" style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
-      <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
+      <a href="{% url 'internal_index' %}"><img class="logo" src="../../../media/nirmaan.png"
       style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
     </div>
 
@@ -756,19 +756,30 @@
       <h3 style="text-align:center; color: white;">OUR <div class="yellow"> EVENTS</div>
       </h3><br>
 
-      <p>
-        Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
-        various fun and educational activities.
-        <br>
-        Punya: Bi-Annual cycle collection and redistribution
-        <br>
-        Kadam: Annual sporting fest
-        <br>
-        We also conduct several workshops and seminars. Last year, we conducted two eye check-up camps(one in Bass
-        village, Second for mess workers in BITS Pilani), two women empowerment seminars(by Ms. Sangeeta Sharma(prof.
-        BITS) and other in collaboration with niine foundation), health camp in bass government school and several
-        eductional workshops and seminars.
-      </p>
+      <div class="card-group" style="margin-right: auto; margin-left: 2%;">
+        <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
+          <img src="../../../media/banner_images/Utkarsh.jpg" class="card-img-top" alt="../../../media/" style="width: 100%; height: 200px;">
+          <div class="card-body">
+            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Joy Of Giving Week</h5>
+            <p class="card-text" style="color: #222222;">Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
+              various fun and educational activities.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
+          <img src="../../../media/banner_images/SKO.JPG" class="card-img-top" alt="../../../media/">
+          <div class="card-body">
+            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">SORAD</h5>
+            <p class="card-text" style="color: #222222;">Save One Rupee A Day (SORAD) is our annual flagship event and one of the biggest fund collection drives on campus in which hundreds of students and faculties pledge to save atleast one rupee everyday for a noble cause.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
+          <img src="../../../media/banner_images/SAP.jpg" class="card-img-top" alt="..." style="width: 100%; height: 200px;">
+          <div class="card-body">
+            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Punya</h5>
+            <p class="card-text" style="color: #222222;">Punya is our bi-annual cycle collection and redistribution drive, benefitting thousands of underpriviledged students and communities.<br></p>
+          </div>
+        </div>
+      </div>
 
       <br>
       </p>
@@ -796,7 +807,7 @@
         </h3>
         <br><br><br>
 
-        <a href="mailto:nirmaanpilaniprd@gmail.com"><img src="../../../media/mail.png" class="social"
+        <a href="mailto:bitspilani.prd@nirmaan.org"><img src="../../../media/mail.png" class="social"
             style=" display: inline-block;"></a> &nbsp
         <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
             style=" display: inline-block;"></a> &nbsp
@@ -810,8 +821,93 @@
 
   <div class="bgimg-4 myDiv">
     <div class="caption">
-      <span style="color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">Thanks for visiting :)</span>
+      <span style="color: #fff; padding: 18px; font-size: 25px; letter-spacing: 10px;">Nirmaan Organization <br>BITS Pilani Student Chapter</span>
     </div>
+  </div>
+
+  <style>
+    .fa {
+      background: black;
+    }
+  
+    .fa-facebook {
+      padding-top: 8px;
+      text-align: center;
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      border: 2px solid;
+      border-color: white;
+      border-radius: 30px;
+      width: 40px;
+      height: 40px;
+    }
+  
+    .fa-instagram {
+      padding-top: 8px;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      border: 2px solid;
+      border-color: white;
+      border-radius: 30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .footer-link{
+      color: white;
+    }
+
+    .footer-link:hover{
+      color: #ffb300;
+    }
+  </style>
+
+  <div id="footer">
+    <table class="footer-bs" style="background-color: #000; border-radius: 0;">
+      <tr>
+        <td style="width: 5vw;"></td>
+        <td style="width:40vw;">
+          <a><img src="../../../media/nirmaan.png" style="z-index: 1; height: 100px;"></a>
+          <br>
+          <p style="margin-left: 10px;">
+            Phone: +91 90394 90451<br>
+            E-mail: bitspilani.pr@nirmaan.org
+            <br>
+            Birla Institute of Technology and Science, Pilani<br>
+            Vidya Vihar, Pilani, Rajasthan - 333031</p>
+        </td>
+        <td style="width:30vw;">
+          <div class="col footer-social animated fadeInDown">
+            <h5 style="color: white;">Quick Links</h5>
+            <ul style="list-style: none;">
+              <li style="margin-left: -10%;"><a class="footer-link" style="font-size: small; list-style: none; color: white; text-decoration: none;" href="{% url 'internal_index' %}">HOME</a></li>
+              <li style="margin-left: -10%;"><a class="footer-link" style="font-size: small; list-style: none; color: white; text-decoration: none;" href="{% url 'about' %}">ABOUT</a></li>
+              <li style="margin-left: -10%;"><a class="footer-link" style="font-size: small; list-style: none; color: white; text-decoration: none;" href="{% url 'home' %}">PROJECTS</a></li>
+              <li style="margin-left: -10%;"><a class="footer-link" style="font-size: small; list-style: none; color: white; text-decoration: none;" href="{% url 'donations' %}">DONATIONS</a></li>
+              <li style="margin-left: -10%;"><a class="footer-link" style="font-size: small; list-style: none; color: white; text-decoration: none;" href="{% url 'troubleshooting' %}">TROUBLESHOOTING</a></li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="col footer-social animated fadeInDown">
+            <h5 style="color: white; margin-left: 10%;">&nbsp;&nbsp;&nbsp;Follow Us</h5>
+            <ul>
+              <li style="list-style: none; margin-left: -10%; margin-bottom: 5px;"><a href="https://www.facebook.com/NirmaanPilaniPage/" class="fa fa-facebook" style="color: white; text-decoration: none;"></a></li>
+              <li style="list-style: none; margin-left: -10%;"><a href="https://www.instagram.com/nirmaan_pilani/" class="fa fa-instagram" style="color: white; text-decoration: none;"></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      
+      <br><br>
+      <tr style="height: 3vh; margin-top: 5vw;">
+  
+      </tr>
+    </table>
   </div>
 
   
@@ -819,7 +915,6 @@
   <script src="data/main.js"></script>
 
   <script type="text/javascript">
-     var myVar;
     var nav = document.getElementById("navbar");
     var box = document.getElementsByClassName("box");
     var carousel = document.getElementById("myCarousel");
@@ -831,9 +926,9 @@
     var x = document.getElementsByClassName("myDiv");
     var i;
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "block";
+      x[i].style.display = "none";
     }
-    footer.style.display = "block";
+    
     function load() {
       carousel.style.display = "none";
       myVar = setTimeout(fadePage, 3000);

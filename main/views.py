@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from .models import ContactSender, Donation
-from .forms import ContactForm, DonationForm
+from .forms import ContactForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -12,6 +12,7 @@ from accounts.models import Volunteer
 from accounts.forms import VisitorRegistrationForm
 import random
 import json
+from PIL import Image, ImageFont, ImageDraw 
 
 from django.http import HttpResponse
 
@@ -73,28 +74,24 @@ def test_index(request):
 def troubleshooting(request):
     return render(request, "initiatives/troubleshooting.htm")
 
-def donations(request):
+def donation_cert(request):
     
-    '''
     if request.method=="POST":
         
-        form = DonationForm(request.POST)
-        if form.is_valid():
+        data = dict(request.POST)
+        print(data)
             
-            form.save()
-            donation = form.instance
-            
-            context = {
-                "amount" : float(donation.amount),
-                "currency" : 'INR',
-                "receipt" : ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))+'#'+str(donation.donor_name.replace(' ', '-'))+"_DonationID_"+str(donation.id)+"_on_"+str(donation.date),
-                "notes" : {'donation_id':donation.id},
-                "payment_capture":'0',
-            }
-            
-            resp = client.order.create(data=context)
+        # Variables
+        name_text = str(data["donor_name"]).replace('[', '').replace(']', '').replace("'", "")
+        name_coords = (15, 15)
+        background_url = "media/background.jpg"
+        title_font = ImageFont.truetype('media/Redressed-Regular.ttf', 200)
+        text_color = (237, 230, 211)
         
-    else:
-        form = DonationForm()
-    '''   
-    return render(request, "initiatives/donations.htm")
+        my_image = Image.open(background_url)
+        image_editable = ImageDraw.Draw(my_image)
+        image_editable.text(name_coords, name_text, text_color,  font=title_font)
+        
+        my_image.save(name_text+" - Nirmaan Organization.jpg")
+        
+    return render(request, "initiatives/donation_cert.htm")
