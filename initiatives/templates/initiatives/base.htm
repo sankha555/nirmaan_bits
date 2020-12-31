@@ -647,6 +647,12 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">&#9776</span>
       </button>
+      <div class="box" style="height: 100px; border-radius: 0px 0px 10px 10px ; padding: 10px; width: fit-content; margin-left: 250px; background-color: #ffffff00; color: #f7f7f7; font-family: 'Montserrat', sans-serif;">
+        <div class="chapter" style="margin-top: 5px;">
+          <p class="chapter"><strong>BITS PILANI</strong> <br>
+              Student Chapter</p>
+        </div>
+      </div>
 
       <!-- Navbar links -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -655,21 +661,20 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item dropdown" style="margin-left: 0;">
-            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            <a href="{% url 'home' %}" class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">Projects
             </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/projects/sko">SKO</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu">
+              <a class="dropdown-item" href="/projects/sko">Siksha Ki Ore</a>
               <a class="dropdown-item" href="/projects/disha">Disha</a>
               <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
-              <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
-              <a class="dropdown-item" href="/projects/pcd">PCD</a>
+              <a class="dropdown-item" href="/projects/gb_baas">Gyan Bodh</a>
+              <a class="dropdown-item" href="/projects/pcd">Participatory Community Development</a>
               <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
               <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
-              <a class="dropdown-item" href="/projects/sap">SAP</a>
-              <a class="dropdown-item" href="/projects/pkp">PKP</a>
+              <a class="dropdown-item" href="/projects/sap">School Adoption Programme</a>
+              <a class="dropdown-item" href="/projects/pkp">Pilani Ki Pathshala</a>
               <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
-              <a class="dropdown-item" href="/prd">PRD</a>
             </div>
           </li>
           <li class="nav-item">
@@ -713,7 +718,9 @@
         style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
         <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
             style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
+            
       </div>
+      
     </nav>
     
   {% if messages %}

@@ -695,82 +695,84 @@
 
 <body style="width: 100%; overflow: hidden;">
 
-  <header class="site-header-fullwidth">
+ <header class="site-header-fullwidth"> 
     <nav id="navbar" class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#"></a>
-
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">&#9776</span>
+  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="navbar-toggler-icon">&#9776</span>
       </button>
+    </div>
 
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto mr-10">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About</a>
-          </li>
-          <li class="nav-item dropdown" style="margin-left: 0;">
-            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="true" onclick="drop()" id="dropdown">Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu">
-              <a class="dropdown-item" href="/projects/sko">SKO</a>
-              <a class="dropdown-item" href="/projects/disha">Disha</a>
-              <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
-              <a class="dropdown-item" href="/projects/gb_baas">GB BAAS</a>
-              <a class="dropdown-item" href="/projects/pcd">PCD</a>
-              <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
-              <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
-              <a class="dropdown-item" href="/projects/sap">SAP</a>
-              <a class="dropdown-item" href="/projects/pkp">PKP</a>
-              <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
-              <a class="dropdown-item" href="/prd">PRD</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register_visitor' %}">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Donations</a>
-          </li>
-          {% if user.is_superuser %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hello, {{ user.username}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% elif user.volunteer.is_pl %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'pl_dashboard' %}">Hi, {{ user.volunteer.name }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% elif user.volunteer %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">Hello, {{ user.volunteer.name }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
-          {% endif %}
-        </ul>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+
+    <li class="nav-item dropdown" style="margin-left: 0;">
+      <a href="{% url 'home' %}" class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="true" onfocus="drop()" id="dropdown">Projects
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu">
+        <a class="dropdown-item" href="/projects/sko">Siksha Ki Ore</a>
+        <a class="dropdown-item" href="/projects/disha">Disha</a>
+        <a class="dropdown-item" href="/projects/utkarsh">Utkarsh</a>
+        <a class="dropdown-item" href="/projects/gb_baas">Gyan Bodh</a>
+        <a class="dropdown-item" href="/projects/pcd">Participatory Community Development</a>
+        <a class="dropdown-item" href="/projects/unnati_1">Unnati 1</a>
+        <a class="dropdown-item" href="/projects/unnati_2">Unnati 2</a>
+        <a class="dropdown-item" href="/projects/sap">School Adoption Programme</a>
+        <a class="dropdown-item" href="/projects/pkp">Pilani Ki Pathshala</a>
+        <a class="dropdown-item" href="/projects/ye">Youth Employment</a>
       </div>
-      <div class="box"
-        style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
-        <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
-            style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
-      </div>
+    </li>
+
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'register_visitor' %}">Contact</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'donations' %}">Donations</a>
+    </li>
+    {% if user.is_superuser %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'all_visitors' %}">Visitors</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Hi, {{ user.username }}</a>
+    </li>
+    
+    {% elif user.volunteer.is_pl %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'pl_dashboard' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% elif user.volunteer %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'profile' %}">Hi, {{ user.volunteer.name.split.0 }}</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+    {% endif %}
+    </ul>
+    
+
+
+    </div>
+    <div class="box" style="height: 100px; border-radius: 0px 0px 10px 10px ; background-color: white; padding: 10px; width: fit-content; margin-left: 40px; border-width: 0 0px 6px 0px; border-color: #bbbbbb; border-style: solid;">
+      <a href="{% url 'internal_index' %}"><img class="logo" src="../../media/nirmaan.png"
+      style="width: 180px; margin-top: -9px; align-self: center; padding: 5px;"></a>
+    </div>
+
+    
     </nav>
   </header>
     
