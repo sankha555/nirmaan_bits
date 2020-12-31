@@ -83,15 +83,19 @@ def donation_cert(request):
             
         # Variables
         name_text = str(data["donor_name"]).replace('[', '').replace(']', '').replace("'", "")
-        name_coords = (15, 15)
+        name_coords = (400, 400)
         background_url = "media/background.jpg"
-        title_font = ImageFont.truetype('media/Redressed-Regular.ttf', 200)
+        title_font = ImageFont.truetype('media/Redressed-Regular.ttf', 100)
         text_color = (237, 230, 211)
         
         my_image = Image.open(background_url)
         image_editable = ImageDraw.Draw(my_image)
         image_editable.text(name_coords, name_text, text_color,  font=title_font)
         
-        my_image.save(name_text+" - Nirmaan Organization.jpg")
-        
+        response = HttpResponse(content_type='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename='+name_text+' - Nirmaan Organization.jpg'
+
+        my_image.save(response, "JPEG")
+        return response
+                
     return render(request, "initiatives/donation_cert.htm")
