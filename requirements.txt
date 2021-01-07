@@ -145,7 +145,6 @@ pycodestyle==2.6.0
 pycparser==2.18
 pyflakes==2.2.0
 Pygments==2.7.3
-PyGObject==3.38.0
 PyHamcrest==2.0.2
 PyJWT==1.7.1
 pylint==2.4.4
