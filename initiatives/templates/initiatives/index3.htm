@@ -567,6 +567,9 @@
     <a class="nav-link" href="{% url 'register_visitor' %}">Contact</a>
     </li>
     <li class="nav-item">
+    <a class="nav-link" href="{% url 'mask_register' %}">Peahen</a>
+    </li>
+    <li class="nav-item">
     <a class="nav-link" href="{% url 'donations' %}">Donations</a>
     </li>
     {% if user.is_superuser %}
@@ -575,6 +578,9 @@
     </li>
     <li class="nav-item">
     <a class="nav-link" href="#">Hi, {{ user.username }}</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
     </li>
     
     {% elif user.volunteer.is_pl %}

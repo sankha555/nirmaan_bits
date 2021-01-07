@@ -13,8 +13,9 @@ from accounts.forms import VisitorRegistrationForm
 import random
 import json
 from PIL import Image, ImageFont, ImageDraw 
-
+import xlwt
 from django.http import HttpResponse
+from datetime import date, datetime
 
 def read_file(request):
     f = open('media/F220C20EFFF9D4E1714FBAB66862C485.txt', 'r')
@@ -99,3 +100,85 @@ def donation_cert(request):
         return response
                 
     return render(request, "initiatives/donation_cert.htm")
+
+def mask_register(request):
+    
+    if request.method == "POST":
+        
+        form = ContactForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            customer = form.instance
+            
+            return redirect('index')
+        
+    else:
+        form = ContactForm()
+        
+    return render(request, 'initiatives/mask_register.htm', {'form':form})
+
+#@staff_member_required
+def mask_sales(request):
+    
+    if not request.user.is_superuser:
+        return redirect('index')
+    
+    customers = ContactSender.objects.all().filter(marked = False)
+    
+    if len(customers) > 0:
+        
+        today = date.today().strftime("%d%m%Y")
+        
+        response = HttpResponse(content_type='application/ms-excel')
+        response['Content-Disposition'] = "attachment; filename=Sales_"+str(today)+".xlsx"
+
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet("Sales_"+str(today))
+
+        #Writing the headers
+        row = 0
+        font_style = xlwt.XFStyle()
+        font_style.font.bold = True
+        columns = [
+            'Name', 'Email', 'Phone', 'Address', 'Remarks',
+        ]
+
+        for col in range(len(columns)):
+            ws.write(row, col, columns[col], font_style)
+        
+        #Writing Orders data to the sheet
+        font_style = xlwt.XFStyle()
+        
+        for customer in customers:
+            row += 1
+            ws.write(row, 0, customer.name, font_style)
+            ws.write(row, 1, customer.email, font_style)
+            ws.write(row, 2, customer.phone, font_style)
+            ws.write(row, 3, customer.address, font_style)
+            ws.write(row, 4, customer.message, font_style)
+                
+        row += 1
+        ws.write(row, 3, "TOTAL NEW CUSTOMERS", font_style)
+        ws.write(row, 4, len(customers), font_style)
+        
+        wb.save(response)
+            
+        return response
+            
+    else:
+        
+        messages.success(request, 'Sorry, no new buyers yet!', fail_silently=False)
+        return redirect('index')
+    
+def error_404(request, exception=None):
+    return render(request, 'initiatives/404.htm', status=404)
+
+def error_403(request, exception=None):
+    return render(request, 'initiatives/403.htm', status=403)
+
+def error_400(request, exception=None):
+    return render(request, 'initiatives/400.htm', status=400)
+
+def error_500(request, exception=None):
+    return render(request, 'initiatives/503.htm', status=500)

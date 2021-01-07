@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls import handler404
 from django.conf.urls.static import static
 from main.views import password_reset, donations, read_file, donation_cert
 from initiatives.views import prd, prd_volunteers, all_visitors, delete_visitor
@@ -38,6 +39,11 @@ urlpatterns = [
     path('donations/certificate', donation_cert, name='donation_cert'),
     path('.well-known/pki-validation/F220C20EFFF9D4E1714FBAB66862C485.txt', read_file, name='ssl'),
 ]
+
+handler404 = 'main.views.error_404'
+handler500 = 'main.views.error_500'
+handler403 = 'main.views.error_403'
+handler400 = 'main.views.error_400'
 
 
 if settings.DEBUG == False:

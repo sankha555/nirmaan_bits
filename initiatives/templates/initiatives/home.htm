@@ -46,8 +46,8 @@
           {% endfor %}-->
 
           {% for project in inits %}
-            <div class="card" style="width: 18rem; height: 100%; margin-top: 7%; margin-left: 5%; margin-left: 5%;">
-              <img src="../../../media/banner_images/PKP.jpg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem; height: 24rem; margin-top: 7%; margin-left: 5%; margin-left: 5%;">
+              <img src="{{ project.banner_image.url }}" class="card-img-top" alt="..." style="height: 150px;">
               <div class="card-body">
                 <h5 class="card-title">{{ project.name }}</h5>
                 <p class="card-text" style="margin-bottom: 14px; text-align: justify;">{{ project.description|truncatechars:100 }}</p>

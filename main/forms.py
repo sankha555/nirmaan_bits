@@ -5,7 +5,7 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = ContactSender
-        fields = ['name', 'phone', 'address', 'message']
+        fields = '__all__'
 
 '''
 class DonationForm(forms.Form):

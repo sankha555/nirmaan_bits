@@ -2,10 +2,12 @@ from django.db import models
 from django.utils import timezone
 
 class ContactSender(models.Model):
-    name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=12)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    phone = models.CharField(max_length=12, null=False, blank=False)
     address = models.TextField(max_length=255)
     message = models.TextField(max_length=500)
+    email = models.EmailField(max_length=254, null=False, blank=False, default="")
+    marked = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

@@ -135,7 +135,6 @@ def update_volunteers(request):
                 volunteer.year = (datetime.datetime.now().year - int(str(sheet.cell_value(i, 1))[0:4]) + 1) if datetime.datetime.now().month >= 8 else (datetime.datetime.now().year - int(str(sheet.cell_value(i, 1))[0:4]))
                 volunteer.save()
 
-
         return redirect('internal_index')
            
     else:
