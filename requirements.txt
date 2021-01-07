@@ -177,7 +177,6 @@ ruamel.yaml.clib==0.2.2
 s3transfer==0.3.3
 scholarly==0.2.5
 scp==0.13.3
-secrets==1.0.2
 semantic-version==2.5.0
 service-identity==18.1.0
 simplejson==3.17.0
