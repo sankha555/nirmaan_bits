@@ -118,7 +118,7 @@ def mask_register(request):
         
     return render(request, 'initiatives/mask_register.htm', {'form':form})
 
-#@staff_member_required
+@staff_member_required
 def mask_sales(request):
     
     if not request.user.is_superuser:
@@ -141,7 +141,7 @@ def mask_sales(request):
         font_style = xlwt.XFStyle()
         font_style.font.bold = True
         columns = [
-            'Name', 'Email', 'Phone', 'Address', 'Remarks',
+            'Name', 'Email', 'Phone', 'Address', 'PIN Code', 'TYPE 1 Quantity', 'TYPE 1 Color', 'TYPE 2 Quantity', 'TYPE 2 Color', 'TYPE 2 String', 'Remarks'
         ]
 
         for col in range(len(columns)):
@@ -156,7 +156,13 @@ def mask_sales(request):
             ws.write(row, 1, customer.email, font_style)
             ws.write(row, 2, customer.phone, font_style)
             ws.write(row, 3, customer.address, font_style)
-            ws.write(row, 4, customer.message, font_style)
+            ws.write(row, 4, customer.pincode, font_style)
+            ws.write(row, 5, customer.type1_quant, font_style)
+            ws.write(row, 6, customer.type1_color, font_style)
+            ws.write(row, 7, customer.type2_quant, font_style)
+            ws.write(row, 8, customer.type2_color, font_style)
+            ws.write(row, 9, customer.type2_string, font_style)
+            ws.write(row, 10, customer.message, font_style)
                 
         row += 1
         ws.write(row, 3, "TOTAL NEW CUSTOMERS", font_style)
@@ -170,6 +176,28 @@ def mask_sales(request):
         
         messages.success(request, 'Sorry, no new buyers yet!', fail_silently=False)
         return redirect('index')
+
+def masks_dash(request):
+    
+    customers = ContactSender.objects.all().filter(marked=False)
+    context = {
+        'customers' : customers
+    }
+    
+    return render(request, 'initiatives/masks_dash.htm', context)
+    
+def mark_order(request, pk):
+    order = get_object_or_404(ContactSender, pk = pk)
+    order.marked = True
+    order.save()
+    
+    return redirect('masks_dash')
+
+def tnc(request):
+    return render(request, 'initiatives/tnc.htm')
+
+def privacy_policy(request):
+    return render(request, 'initiatives/ppc.htm')
     
 def error_404(request, exception=None):
     return render(request, 'initiatives/404.htm', status=404)

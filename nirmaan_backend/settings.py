@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #(os.environ.get('DEBUG_VALUE')=='True') or True
+DEBUG = False #(os.environ.get('DEBUG_VALUE')=='True') or True
 
 ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com', '127.0.0.1', 'bitspilani.nirmaan.org', 'bitspilani-nirmaan.herokuapp.com']
 
@@ -136,7 +136,7 @@ if DEBUG == True:
 else:
     #MEDIA_URL = 'http://127.0.0.1:8000/media/'
     #MEDIA_URL = str(current_site.domain)+'/media/'
-    MEDIA_URL = 'http://nirmaan-bppc.herokuapp.com/media/'
+    MEDIA_URL = 'https://bitspilani.nirmaan.org/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

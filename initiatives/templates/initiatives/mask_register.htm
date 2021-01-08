@@ -143,6 +143,23 @@
       <div class="container px-5 py-10 mx-auto" style="margin-right: 40px;">
         <div class="flex flex-col text-center w-full mb-1">
           <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Order a Mask Today!</h1>
+          
+          <center>
+          <div class="row" style="margin-left: 200px;">
+            <div  style="display: inline-block; margin-right: 10px;">
+              <img src="../../../media/IMG_20201103_122105.jpg" style="width: 200px; height: 200px;">
+            </div>
+            
+            <div  style="display: inline-block; margin-right: 10px;">
+              <img src="../../../media/IMG_20201103_121632.jpg" style="width: 200px; height: 200px;">
+            </div>
+            <div  style="display: inline-block; margin-right: 10px;">
+              <img src="../../../media/IMG_20201103_121745_1.jpg" style="width: 200px; height: 200px;">
+            </div>
+            
+          </div>
+          </center>
+          <br>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Thanks for taking this great step! Please fill in the details below to help us deliver you better.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -166,17 +183,60 @@
               <div class="p-2 w-full">
                 <textarea
                   class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="address"
-                  placeholder="Address" type="text"></textarea>
+                  placeholder="Address" type="text" required></textarea>
               </div>
+              <div class="p-2 w-full">
+                <input
+                  class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="pincode"
+                  placeholder="PIN Code" type="text" required>
+              </div>
+
+              <hr>
+
+              <legend>Mask Type 1</legend> 
+              <div class="p-2 w-1/2">
+                <select class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="type1_color">
+                  <option value="Baby Pink" selected>Baby Pink</option>
+                  <option value="Aqua Green">Aqua Green</option>
+                </select>
+              </div>
+              <div class="p-2 w-1/2">
+                <input
+                  class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="type1_quant"
+                  placeholder="Quantity" type="number" required>
+              </div>
+
+              <legend>Mask Type 2</legend> 
+              <div class="p-2 w-1/2">
+                <select class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="type2_color">
+                  <option value="White" selected>White</option>
+                  <option value="Black">Black</option>
+                  <option value="Navy Blue">Navy Blue</option>
+                </select>
+              </div>
+              <div class="p-2 w-1/2">
+                <input
+                  class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="type2_quant"
+                  placeholder="Quantity" type="number" required>
+              </div>
+              <div class="p-2 w-full">
+                <select class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="type2_string">
+                  <option value="Strings" selected>Strings</option>
+                  <option value="Elastic">Elastic</option>
+                </select>
+              </div>
+
               <div class="p-2 w-full">
                 <textarea
                   class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2" name="message"
                   placeholder="Remarks (if any)" type="text"></textarea>
-              </div>  
+              </div>
 
               <div class="p-2 w-full">
                 <button type="submit" class="flex mx-auto team rounded">Submit</button>
               </div> 
+
+              <h6>We will contact you soon to confirm your order. Thanks for selecting us to help you serve better!</h6>
           </form>
         </div>
       </div>
