@@ -108,7 +108,7 @@ iniconfig==1.1.1
 isort==5.7.0
 itsdangerous==0.24
 itypes==1.2.0
-Jinja2==2.10
+Jinja2==2.10.1
 jmespath==0.9.3
 jsonfield==3.1.0
 jsonschema==3.2.0
