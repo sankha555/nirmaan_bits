@@ -148,7 +148,7 @@ if DEBUG == False:
 else:
     #MEDIA_URL = 'http://127.0.0.1:8000/media/'
     #MEDIA_URL = str(current_site.domain)+'/media/'
-    MEDIA_URL = 'https://bitspilani.nirmaan.org/media/'
+    MEDIA_URL = 'http://165.227.106.47/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
