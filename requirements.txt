@@ -2,9 +2,6 @@ alabaster==0.7.12
 amqp==2.5.2
 appdirs==1.4.3
 asgiref==3.2.3
-azure-common==1.1.24
-azure-storage-blob==1.5.0
-azure-storage-common==1.4.2
 Babel==2.8.0
 billiard==3.6.1.0
 celery==4.3.0
@@ -61,7 +58,6 @@ mysql-connector-python==8.0.19
 nltk==3.4.5
 oauthlib==3.1.0
 openpyxl==3.0.2
-orjson==2.0.7
 packaging==19.2
 Pillow==6.2.1
 protobuf==3.6.1
@@ -74,7 +70,6 @@ python-dateutil==1.5
 python-decouple==3.3
 python3-openid==3.1.0
 pytz==2019.3
-PyYAML==5.1.2
 redis==3.3.11
 regex==2019.11.1
 requests==2.22.0
@@ -85,8 +80,6 @@ six==1.14.0
 slumber==0.7.1
 smmap2==2.0.5
 snowballstemmer==2.0.0
-Sphinx==1.8.5
-sphinxcontrib-websupport==1.1.2
 sqlparse==0.3.0
 stripe==2.38.0
 textblob==0.15.3
