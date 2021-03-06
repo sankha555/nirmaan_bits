@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'nirmaan_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
+if DEBUG == False:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -143,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-if DEBUG == True:
+if DEBUG == False:
     MEDIA_URL = '/media/'
 else:
     #MEDIA_URL = 'http://127.0.0.1:8000/media/'
