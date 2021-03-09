@@ -18,7 +18,7 @@ from django.http import HttpResponse
 from datetime import date, datetime
 
 def read_file(request):
-    with open('media/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r') as f:
+    with open('../media/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r') as f:
         file_content = f.read()
     return HttpResponse(file_content, content_type="text/plain")
 
