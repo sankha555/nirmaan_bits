@@ -18,15 +18,15 @@ from django.http import HttpResponse
 from datetime import date, datetime
 
 def read_file(request):
-    with open('media/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r') as f:
-        file_content = f.read()
-        return HttpResponse(file_content, content_type="text/plain")
+    #with open('/media/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r') as f:
+    #    file_content = f.read()
+    file_content = "91309D24F7FF609BC40DABF2CA351864CA210E060A63F532581E128CDE8E09EB\ncomodoca.com\n18e5fc22ea61c0e"
+    return HttpResponse(file_content, content_type="text/plain")
 
 def to_paise(amount):
     return float(amount*100)
 
 def index(request):
-    #return render(request, "initiatives/index2.htm")
     return redirect('internal_index')
 
 def about(request):

@@ -203,10 +203,3 @@ ACCOUNT_FORMS = {
 }
 
 #django_heroku.settings(locals())
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'lite'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'lite'
-
-# Razorpay
-RAZORPAY_KEY = 'lite'
-RAZORPAY_SECRET = 'lite'
