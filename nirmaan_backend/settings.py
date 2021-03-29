@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #(os.environ.get('DEBUG_VALUE')=='True') or True
+DEBUG = True #(os.environ.get('DEBUG_VALUE')=='True') or True
 
 ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com', '127.0.0.1', 'bitspilani.nirmaan.org', 'bitspilani-nirmaan.herokuapp.com', '165.227.106.47']
 
@@ -95,6 +95,7 @@ if DEBUG == True:
             'PORT': '',
         }
     }
+
 else:
     DATABASES = {
         'default': {
@@ -143,12 +144,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 if DEBUG == False:
     MEDIA_URL = '/media/'
+
+
+
 else:
-    #MEDIA_URL = 'http://127.0.0.1:8000/media/'
-    #MEDIA_URL = str(current_site.domain)+'/media/'
-    MEDIA_URL = 'http://165.227.106.47:8000/media/'
+    MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

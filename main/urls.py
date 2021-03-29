@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index, about, password_reset, internal_index, main_contacts, test_index, troubleshooting, mask_register, mask_sales, masks_dash, mark_order, tnc, privacy_policy
+from .views import index, about, password_reset, internal_index, main_contacts, test_index, troubleshooting, mask_register, mask_sales, masks_dash, mark_order, tnc, privacy_policy, sorad
 
 urlpatterns = [
     path('index', internal_index, name='internal_index'),
@@ -17,5 +17,6 @@ urlpatterns = [
     path('<int:pk>/complete', mark_order, name='mark_order'),
     path('terms', tnc, name='tnc'),
     path('policy', privacy_policy, name='ppc'),
+    path('sorad', sorad, name='sorad'),
 ]
 
