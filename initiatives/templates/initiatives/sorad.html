@@ -1,0 +1,193 @@
+{% extends "initiatives/base.htm" %}
+{% block content %}
+{% include "base/js.html"%}
+
+<style>
+  body {
+    width: 500px;
+    background-image: url("../../../media/3.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    color: #333333;
+    margin-top: 5rem;
+    width: 100%; 
+    overflow-x: hidden;
+  }
+
+  .button {
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  .fa {
+    padding: 8px;
+    font-size: 22px;
+    width: 36px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: rgb(196, 32, 89);
+    color: white;
+  }
+
+  .banner {
+    opacity: 0.65;
+  }
+
+  .team {
+    background-color: #ffb300;
+    border-color: #ffb300;
+    color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .team:hover {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    align-self: center;
+    width: fit-content;
+    padding: 8px;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .social {
+    display: inline;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social:hover {
+    display: inline;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  
+  @media only screen and (max-width:600px) {
+
+    .about {
+      width: 100vw;
+      margin-left: 10vw;
+    }
+    .team {
+      background-color: #ffb300;
+      border-color: #ffb300;
+      color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .team:hover {
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+      align-self: center;
+      width: fit-content;
+      padding: 8px;
+      font-size: small;
+      font-weight: 600;
+    }
+
+    .heading {
+      font-size: x-large;
+    }
+
+  }
+</style>
+
+<br>
+<article class="card container mb-20 about">
+  <div class="media-body">
+    <center>
+      <br>
+      <div class="image mb-4"
+        style="align-content: center; z-index: 0; display: table-cell; vertical-align: middle; position: relative;">
+        <img class="banner" src="../../../media/sorad.jpg" alt="banner" style="height: 40vw; width: 95vw;" style="opacity: 0;">
+        <div class="text card"
+          style="background-color: #ffffff00; border:none; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: inherit;">
+          <h1 class="heading" style="color: white; font-weight: 800; text-transform: uppercase;">SAVE ONE RUPEE A DAY</h1>
+          <br>
+          <a href="https://rzp.io/l/OpPm0Pu">
+            <button class="team">
+              DONATE NOW
+            </button>
+          </a>
+        </div>
+      </div>
+    </center>
+  
+    
+    <!---Page Description Goes Here-->
+    <div class="description" style="padding: 20px; font-size: large; text-align: justify;">
+      <p>
+        <i>No act of kindness, no matter how small, is ever wasted.</i><br><br>Nirmaan's Annual Fundraiser SORAD (Save One Rupee A Day) urges you to save a rupee each day and contribute to the welfare and development of the underprivileged members of society. By donating ₹365 a year, you support Nirmaan in its various projects that aim to educate young children, empower women, and provide employment opportunities to the youth belonging to rural areas of Pilani. Our humble request to you all is to donate as much as possible and help in our beneficiaries' welfare.
+      </p>
+    </div>
+    <!--Page Description Ends-->
+
+    <center><hr style="width: 60%; color: gray; align-self: center;"></center>
+    
+    <div class="text-gray-700 body-font relative" style="margin-top: -27px;">
+        <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-1">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get in Touch!</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a note for us and never miss out on a new update from Nirmaan</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <form method="POST" class="flex flex-wrap -m-2">
+            {% csrf_token %}
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                name="name" placeholder="Name" type="text">
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                name="email" placeholder="Email" type="email">
+            </div>
+            <div class="p-2 w-full">
+              <textarea
+                class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-red-500 text-base px-4 py-2 resize-none block"
+                name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="p-2 w-full">
+              <button class="flex mx-auto team rounded">Submit</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+  
+  </div>
+
+</article>
+
+
+{% endblock content %}
