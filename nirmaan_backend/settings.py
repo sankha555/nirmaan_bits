@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'sffx$xu(ce8)nxre*!u89wmus4u8&!=v%p!gu6v%hev$vt4jm7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #(os.environ.get('DEBUG_VALUE')=='True') or True
+DEBUG = False #(os.environ.get('DEBUG_VALUE')=='True') or True
 
 ALLOWED_HOSTS = ['nirmaan-bppc.herokuapp.com', '127.0.0.1', 'bitspilani.nirmaan.org', 'bitspilani-nirmaan.herokuapp.com', '165.227.106.47']
 
@@ -87,15 +87,10 @@ WSGI_APPLICATION = 'nirmaan_backend.wsgi.application'
 if DEBUG == True:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'nirmaan_web',
-            'USER': 'nirmaan',
-            'PASSWORD': 'pilani@2020',
-            'HOST': 'localhost',
-            'PORT': '',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 else:
     DATABASES = {
         'default': {
@@ -147,9 +142,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG == False:
     MEDIA_URL = '/media/'
-
-
-
 else:
     MEDIA_URL = '/media/'
 
