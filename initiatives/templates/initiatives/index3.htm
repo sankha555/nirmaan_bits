@@ -192,6 +192,30 @@
         height: 40vh;
       }
     }
+
+    .team {
+      background-color: #ffb300;
+      border-color: black;
+      color: black;
+      width: 200px;
+      border-radius: 25px;
+      align-self: center;
+      padding: 8px;
+      font-size: large;
+      font-weight: 600;
+    }
+
+    .team:hover {
+      background-color: black;
+      color: white;
+      border: solid #ffb300 3px;
+      border-radius: 25px;
+      align-self: center;
+      width: 200px;
+      padding: 8px;
+      font-size: large;
+      font-weight: 600;
+    }
   </style>
 
   <style>
@@ -409,20 +433,6 @@
     .navbar-nav>li>a {
       color: white;
     }
-
-    /*@media only screen and (min-width: 900px){
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .column {
-      width: 30%;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-    }*/
 
     @media only screen and (max-width: 600){
       .chapter{
@@ -658,11 +668,27 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
+        <br>
+        <img class="home" src="../../../media/sorad.jpg">
+        <div class="text card"
+          style="background-color: #ffffff00; border:none; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: inherit;">
+          <!--<h1 class="heading" style="color: white; font-weight: 800; text-transform: uppercase;">SAVE ONE RUPEE A DAY</h1>-->
+          <br>
+          <a href="{% url 'sorad' %}">
+            <button class="team">
+              LEARN MORE
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="item">
         <img class="home" src="../../../media/1.JPG">
       </div>
     
@@ -773,7 +799,7 @@
         <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
           <img src="../../../media/banner_images/Utkarsh.jpg" class="card-img-top" alt="../../../media/" style="width: 100%; height: 200px; border-radius: 5px;">
           <div class="card-body">
-            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Joy Of Giving Week</h5>
+            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Joy Of Giving Week</h3>
             <p class="card-text" style="color: #222222;">Joy of giving week is our flagship annual event. All the beneficiaries gather in our college campus for
               various fun and educational activities.</p>
           </div>
@@ -781,14 +807,16 @@
         <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
           <img src="../../../media/banner_images/SKO.JPG" class="card-img-top" alt="../../../media/" style="border-radius: 5px; height: 200px;">
           <div class="card-body">
-            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">SORAD</h5>
+            <a href="{% url 'sorad' %}">
+              <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">SORAD</h3>
+            </a>
             <p class="card-text" style="color: #222222;">Save One Rupee A Day (SORAD) is our annual flagship event and one of the biggest fund collection drives on campus in which hundreds of students and faculties pledge to save atleast one rupee everyday for a noble cause.</p>
           </div>
         </div>
         <div class="card" style="width: 20rem; margin-right: 5rem; border-radius: 10px; border: 3px solid #ffb300; ">
           <img src="../../../media/banner_images/SAP.jpg" class="card-img-top" alt="..." style="width: 100%; height: 200px; border-radius: 5px;">
           <div class="card-body">
-            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Punya</h5>
+            <h3 class="card-title" style="color: #000; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Punya</h3>
             <p class="card-text" style="color: #222222;">Punya is our bi-annual cycle collection and redistribution drive, benefitting thousands of underpriviledged students and communities.<br></p>
           </div>
         </div>
@@ -811,26 +839,6 @@
   ">"Be the change you want to see"</span>
     </div>
   </div>
-
-  <!--<a name="contact_links">
-    <div style="position:relative;" class="myDiv">
-      <div style="color:#ddd;background-color:#000;text-align:center;padding:50px 80px;">
-        <p>
-        <h3 style="text-align:center; color: white;">CONTACT <div class="yellow"> US</div>
-        </h3>
-        <br><br><br>
-
-        <a href="mailto:bitspilani.prd@nirmaan.org"><img src="../../../media/mail.png" class="social"
-            style=" display: inline-block;"></a> &nbsp
-        <a href="https://www.facebook.com/NirmaanPilaniPage"><img src="../../../media/fb.png" class="social"
-            style=" display: inline-block;"></a> &nbsp
-        <a href="https://www.instagram.com/nirmaan_pilani/"><img src="../../../media/insta.png" class="social"
-            style=" display: inline-block;"></a>
-
-        </p>
-      </div>
-    </div>
-  </a>-->
 
   <style>
     .fa {
