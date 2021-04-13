@@ -16,9 +16,11 @@ from PIL import Image, ImageFont, ImageDraw
 import xlwt
 from django.http import HttpResponse
 from datetime import date, datetime
+from fpdf import FPDF
+from django.core.files.storage import FileSystemStorage
 
 def read_file(request):
-    f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r')
+    f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE690F336.txt', 'r')
     file_content = f.read()
     return HttpResponse(file_content, content_type="text/plain")
 
@@ -106,6 +108,109 @@ def donation_cert(request):
         return response
                 
     return render(request, "initiatives/donation_cert.htm")
+
+def donation_bill(request):
+    
+    if request.method=="POST":
+        
+        data = dict(request.POST)
+        bill_no = str(data["bill_no"]).replace('[', '').replace(']', '').replace("'", "")
+        donor_name = str(data["donor_name"]).replace('[', '').replace(']', '').replace("'", "")
+        psrn_id = str(data["psrn_id"]).replace('[', '').replace(']', '').replace("'", "")
+        amount = str(data["amount"]).replace('[', '').replace(']', '').replace("'", "")
+        amount_iw = str(data["amount_iw"]).replace('[', '').replace(']', '').replace("'", "")
+        date_donated = str(data["date_donated"]).replace('[', '').replace(']', '').replace("'", "")
+        #date_gen = str(date.today())
+        pdf = FPDF()
+        pdf.add_page()        
+        pdf.set_font("Arial", size = 15)
+        pdf.rect(5, 5, 200, 287, 'D')
+
+        pdf.image('media/nirmaan.png', 60, 10, w = 100, h = 53)
+
+        pdf.cell(200, 10, txt = " ", 
+                ln = 1, align = 'C') 
+        pdf.cell(200, 10, txt = " ", 
+                ln = 1, align = 'C') 
+        pdf.cell(200, 10, txt = " ", 
+                ln = 1, align = 'C') 
+        pdf.cell(200, 10, txt = " ", 
+                ln = 1, align = 'C')
+        pdf.cell(200, 10, txt = " ", 
+                ln = 1, align = 'C')
+        
+        
+        
+
+        pdf.cell(200, 10, txt = "Nirmaan Organization, BITS Pilani", 
+                ln = 1, align = 'C')        
+        pdf.cell(200, 10, txt = "Donation Receipt",
+                ln = 2, align = 'C')
+        pdf.cell(200, 10, txt = "     ",
+                ln = 3, align = 'C')
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "Bill Number: ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, bill_no, 1, 0)
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "Name: ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, donor_name, 1, 0)
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "PSRN ID: ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, psrn_id, 1, 0)
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "Amount: ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, 'Rs '+amount, 1, 0)
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "Amount (in words): ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, 'Rupees '+amount_iw, 1, 0)
+        top = pdf.y
+        offset = pdf.x + 90
+        pdf.multi_cell(90, 10, "Date Donated: ", 1, 0)
+        pdf.y = top
+        pdf.x = offset 
+        pdf.multi_cell(90, 10, date_donated, 1, 0)
+        # pdf.cell(200, 10, txt = "Name: "+donor_name,
+        #         ln = 4, align = 'C')
+        # pdf.cell(200, 10, txt = "PSRN ID: "+psrn_id,
+        #         ln = 5, align = 'C')
+        # pdf.cell(200, 10, txt = "Amount: Rs "+amount,
+        #         ln = 6, align = 'C')
+        # pdf.cell(200, 10, txt = "Amount (in words): Rupees "+amount_iw,
+        #         ln = 7, align = 'C')
+        # pdf.cell(200, 10, txt = "Date Donated: "+date_donated,
+        #         ln = 8, align = 'C')
+        #pdf.cell(200, 10, txt = "Date Bill Generated: "+date_gen,
+        #        ln = 8, align = 'C')
+        #response = HttpResponse(pdf, content_type='application/pdf')
+        #response['Content-Disposition'] = 'attachment; filename='+"test"+' - Nirmaan Organization.pdf'
+        pdf.output('./media/'+bill_no+'.pdf', 'F')
+
+        fs = FileSystemStorage()
+        filename = bill_no+'.pdf'
+        if fs.exists(filename):
+            with fs.open(filename) as pdf:
+                response = HttpResponse(pdf, content_type='application/pdf')
+                response['Content-Disposition'] = 'attachment; filename="'+bill_no+'.pdf"'
+                return response
+            
+        return redirect('/donation_bill')
+                
+    return render(request, "initiatives/bill_form.html")
 
 def mask_register(request):
     
