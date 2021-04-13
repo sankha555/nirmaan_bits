@@ -113,7 +113,7 @@ def donation_cert(request):
 @login_required
 def donation_bill(request):
     
-    if not request.user.is_superuser or request.user.email != 'f20190663@pilani.bits-pilani.ac.in':
+    if not request.user.username =='ut':
         return redirect('index')
     
     if request.method=="POST":
