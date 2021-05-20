@@ -18,9 +18,10 @@ from django.http import HttpResponse
 from datetime import date, datetime
 from fpdf import FPDF
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
 
 def read_file(request):
-    f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE690F336.txt', 'r')
+    f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r')
     file_content = f.read()
     return HttpResponse(file_content, content_type="text/plain")
 
@@ -109,7 +110,11 @@ def donation_cert(request):
                 
     return render(request, "initiatives/donation_cert.htm")
 
+@login_required
 def donation_bill(request):
+    
+    if not request.user.username =='ut':
+        return redirect('index')
     
     if request.method=="POST":
         
@@ -171,13 +176,13 @@ def donation_bill(request):
         pdf.multi_cell(90, 10, "Amount: ", 1, 0)
         pdf.y = top
         pdf.x = offset 
-        pdf.multi_cell(90, 10, 'Rs '+amount, 1, 0)
+        pdf.multi_cell(90, 10, 'Rs. '+amount, 1, 0)
         top = pdf.y
         offset = pdf.x + 90
         pdf.multi_cell(90, 10, "Amount (in words): ", 1, 0)
         pdf.y = top
         pdf.x = offset 
-        pdf.multi_cell(90, 10, 'Rupees '+amount_iw, 1, 0)
+        pdf.multi_cell(90, 10, 'Rupees '+amount_iw+'only', 1, 0)
         top = pdf.y
         offset = pdf.x + 90
         pdf.multi_cell(90, 10, "Date Donated: ", 1, 0)
