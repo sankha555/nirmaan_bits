@@ -12,7 +12,6 @@ from accounts.forms import VisitorRegistrationForm
 from django.conf import settings
 from django.contrib import messages
 from accounts.models import Volunteer, Visitor
-import xlrd
 
 def home(request):
 
@@ -121,19 +120,4 @@ def volunteers(request, slug):
     volunteers = Volunteer.objects.filter(project = project).order_by('-is_pl', '-year')
 
     return render(request, 'initiatives/volunteers.htm', {'project':project, 'volunteers':volunteers})
-
-def update_projects(request):
-    workbook = xlrd.open_workbook("./media/test.xls")
-
-    sheet = workbook.sheet_by_index(0)
-    row_count = sheet.nrows
-
-    for cur_row in range(1, row_count):
-        name_cur = sheet.cell(cur_row, 0).value
-        slug_cur = sheet.cell(cur_row, 1).value
-        desc_cur = sheet.cell(cur_row, 2).value
-
-        Initiative.objects.create(name = name_cur, slug = slug_cur, description = desc_cur)
-    
-    return render(request, 'initiatives/update_projects.html')
 
