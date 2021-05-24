@@ -19,6 +19,7 @@ from datetime import date, datetime
 from fpdf import FPDF
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
+import xlrd
 
 def read_file(request):
     f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r')
@@ -216,6 +217,21 @@ def donation_bill(request):
         return redirect('/donation_bill')
                 
     return render(request, "initiatives/bill_form.html")
+
+def update_projects(request):
+    workbook = xlrd.open_workbook("./media/nirmaan_projects.xls")
+
+    sheet = workbook.sheet_by_index(0)
+    row_count = sheet.nrows
+
+    for cur_row in range(1, row_count):
+        name_cur = sheet.cell(cur_row, 0).value
+        slug_cur = sheet.cell(cur_row, 1).value
+        desc_cur = sheet.cell(cur_row, 2).value
+
+        Initiative.objects.create(name = name_cur, slug = slug_cur, description = desc_cur, date_started = '2020-01-01')
+    
+    return render(request, 'initiatives/update_projects.html')
 
 def mask_register(request):
     
