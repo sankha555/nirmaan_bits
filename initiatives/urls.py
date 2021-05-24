@@ -13,6 +13,5 @@ urlpatterns = [
     path('<str:slug>', init_detail, name='init_detail' ),
     path('<str:slug>/volunteers', volunteers, name='volunteers' ),
     path('<int:pk>/liked', like_initiative, name='like_initiative' ),
-    path('update_projects', update_projects, name='update_projects'),
 ]
 
