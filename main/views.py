@@ -20,9 +20,18 @@ from fpdf import FPDF
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 
+ssl = (
+    """
+    FBBBFC95D8234969735B7467CE5834F040D769B1D6289031330C44EDEEC66330
+    comodoca.com
+    564083a67bf61d1
+    """
+)
+
 def read_file(request):
-    f = open('.well-known/pki-validation/29A67ED8BA36CF4CD6D00DCEE680F336.txt', 'r')
-    file_content = f.read()
+    # f = open('/media/404F3EC4D03547B8DFB9F9D284420423.txt', 'r')
+    # file_content = f.read()
+    file_content = ssl
     return HttpResponse(file_content, content_type="text/plain")
 
 def to_paise(amount):
@@ -143,9 +152,7 @@ def donation_bill(request):
                 ln = 1, align = 'C')
         pdf.cell(200, 10, txt = " ", 
                 ln = 1, align = 'C')
-        
-        
-        
+         
 
         pdf.cell(200, 10, txt = "Nirmaan Organization, BITS Pilani", 
                 ln = 1, align = 'C')        
@@ -189,20 +196,6 @@ def donation_bill(request):
         pdf.y = top
         pdf.x = offset 
         pdf.multi_cell(90, 10, date_donated, 1, 0)
-        # pdf.cell(200, 10, txt = "Name: "+donor_name,
-        #         ln = 4, align = 'C')
-        # pdf.cell(200, 10, txt = "PSRN ID: "+psrn_id,
-        #         ln = 5, align = 'C')
-        # pdf.cell(200, 10, txt = "Amount: Rs "+amount,
-        #         ln = 6, align = 'C')
-        # pdf.cell(200, 10, txt = "Amount (in words): Rupees "+amount_iw,
-        #         ln = 7, align = 'C')
-        # pdf.cell(200, 10, txt = "Date Donated: "+date_donated,
-        #         ln = 8, align = 'C')
-        #pdf.cell(200, 10, txt = "Date Bill Generated: "+date_gen,
-        #        ln = 8, align = 'C')
-        #response = HttpResponse(pdf, content_type='application/pdf')
-        #response['Content-Disposition'] = 'attachment; filename='+"test"+' - Nirmaan Organization.pdf'
         pdf.output('./media/'+bill_no+'.pdf', 'F')
 
         fs = FileSystemStorage()
