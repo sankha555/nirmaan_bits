@@ -22,7 +22,7 @@ urlpatterns = [
     path('delete_visitor/<int:pk>', delete_visitor, name='delete_visitor'),
     path('donations/', donations, name='donations'),
     path('donations/certificate', donation_cert, name='donation_cert'),
-    path('.well-known/pki-validation/404F3EC4D03547B8DFB9F9D284420423.txt', read_file, name='ssl'),
+    path('.well-known/pki-validation/97547760E84535736DCCAF0137940C67.txt', read_file, name='ssl'),
 ]
 
 handler404 = 'main.views.error_404'

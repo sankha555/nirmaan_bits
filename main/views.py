@@ -29,9 +29,9 @@ ssl = (
 )
 
 def read_file(request):
-    # f = open('/media/404F3EC4D03547B8DFB9F9D284420423.txt', 'r')
-    # file_content = f.read()
-    file_content = ssl
+    f = open(settings.MEDIA_ROOT + '/97547760E84535736DCCAF0137940C67.txt', 'r')
+    file_content = f.read()
+    #file_content = ssl
     return HttpResponse(file_content, content_type="text/plain")
 
 def to_paise(amount):
