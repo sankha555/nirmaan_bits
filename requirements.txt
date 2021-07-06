@@ -31,7 +31,7 @@ django-storages==1.7.2
 django-taggit==1.1.0
 django-textclassifier==1.0
 django-vanilla-views==1.0.6
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 djangorestframework-jsonp==1.0.2
 dnspython==1.16.0
 docker==4.1.0
