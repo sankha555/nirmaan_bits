@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index, about, password_reset, internal_index, main_contacts, test_index, troubleshooting, mask_register, mask_sales, masks_dash, mark_order, tnc, privacy_policy, sorad, donation_bill
+from .views import index, about, password_reset, internal_index, main_contacts, test_index, troubleshooting, mask_register, mask_sales, masks_dash, mark_order, tnc, privacy_policy, sorad, donation_bill, update_projects
 
 urlpatterns = [
     path('index', internal_index, name='internal_index'),
@@ -18,6 +18,7 @@ urlpatterns = [
     path('terms', tnc, name='tnc'),
     path('policy', privacy_policy, name='ppc'),
     path('sorad', sorad, name='sorad'),
-    path('donation_bill', donation_bill, name='donation_bill')
+    path('donation_bill', donation_bill, name='donation_bill'),
+    path('update_projects', update_projects, name='update_projects'),
 ]
 
